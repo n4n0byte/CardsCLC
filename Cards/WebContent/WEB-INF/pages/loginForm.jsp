@@ -12,7 +12,7 @@ pageEncoding="ISO-8859-1"%>
 			</tr>
 			<tr>
 				<td><form:label path="Password">Password:</form:label></td>
-				<td><form:input path="Password" type="password"/></td>
+				<td><form:input path="Password" type="Password"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">
