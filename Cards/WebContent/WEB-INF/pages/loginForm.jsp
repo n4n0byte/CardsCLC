@@ -7,12 +7,12 @@ pageEncoding="ISO-8859-1"%>
 	<form:form method="POST" modelAttribute="user" action="addUser">
 		<table>
 			<tr>
-				<td><form:label path="userName">User Name:</form:label></td>
-				<td><form:input path="userName"/></td>
+				<td><form:label path="username">User Name:</form:label></td>
+				<td><form:input path="username"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="Password">Password:</form:label></td>
-				<td><form:input path="Password" path="Password"/></td>
+				<td><form:input path="Password" type="password"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">

@@ -5,8 +5,8 @@
 	<definition name="addUser" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/addUser.jsp" />
 	</definition>
-	<definition name="displayUser" extends="DefaultTemplate">
-    	<put-attribute name="body" value="/WEB-INF/pages/displayUser.jsp" />
+	<definition name="login" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/loginForm.jsp" />
 	</definition>
 	<definition name="displayUsers" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/displayUsers.jsp" />

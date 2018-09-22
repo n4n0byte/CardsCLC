@@ -5,7 +5,7 @@
     <definition name="DefaultTemplate" template="/WEB-INF/layouts/template/defaultTemplate.jsp">
 		<put-attribute name="title" value="Home" />
 		<put-attribute name="header" value="/WEB-INF/layouts/template/header.jsp" />
-		<put-attribute name="body" value="" />
+		<put-attribute name="body" />
 		<put-attribute name="footer" value="/WEB-INF/layouts/template/footer.jsp" />
 	</definition>
 </tiles-definitions>
