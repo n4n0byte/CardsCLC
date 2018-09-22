@@ -4,24 +4,24 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
-import com.services.implementations.MockLoginBusinessService;
-import com.services.implementations.MockLoginDataService;
-import com.services.interfaces.ILoginBusinessService;
-import com.services.interfaces.ILoginDataService;
+import com.services.implementations.MockCredentialsBusinessService;
+import com.services.implementations.MockCredentialsDataService;
+import com.services.interfaces.ICredentialsBusinessService;
+import com.services.interfaces.ICredentialsDataService;
 
 @Configuration
 public class Services {
 	
 	@Bean
     @Primary
-	public ILoginBusinessService loginBusinessService() {
-		return new MockLoginBusinessService();
+	public ICredentialsBusinessService loginBusinessService() {
+		return new MockCredentialsBusinessService();
 	}
 	
 	@Bean
 	@Primary
-	public ILoginDataService loginDataService() {
-		return new MockLoginDataService();
+	public ICredentialsDataService loginDataService() {
+		return new MockCredentialsDataService();
 	}
 	
 	

@@ -4,35 +4,72 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.models.User;
-import com.services.interfaces.ILoginBusinessService;
+import com.services.interfaces.ICredentialsBusinessService;
 
 @Controller
 public class LoginController {
 	
-	private ILoginBusinessService loginService;
+	private ICredentialsBusinessService credentialsService;
 	
 	@Autowired
-	public void setLoginService(ILoginBusinessService loginService) {
-		this.loginService = loginService;
+	public void setLoginService(ICredentialsBusinessService businessService) {
+		this.credentialsService = businessService;
 	}
 	
 	
+	/**
+	 * home page for login
+	 * @return
+	 */
 	@GetMapping("/")
-	public ModelAndView login(@Valid @ModelAttribute("user")User user, BindingResult result) {
-		
-		if (result.hasErrors()) {
-			return new ModelAndView("login", "user", user);
-		}
-		
+	public ModelAndView login() {
 		return new ModelAndView("login", "user", new User());
 	}
+	
+	/**
+	 * logs user in, will redirect to login 
+	 * if there are validation errors
+	 * @param user
+	 * @param result
+	 * @return ModelAndView
+	 */
+	@PostMapping("/login")
+	public String home(@Valid @ModelAttribute("user")User user, BindingResult result, ModelMap map) {
+		
+		
+		// checks username and password for errors
+		for (ObjectError field : result.getAllErrors()) {
+			// cast to field error to see name of field
+			if (field instanceof FieldError) {
+				FieldError error = (FieldError) field;
+				System.out.println("FIELD: " + field);
+				if (error.getField().equals("username") || error.getField().equals("password")) {
+					map.addAttribute("user", user);
+					return "login";
+				}
+				break;				
+			}
+
+		}
+		
+		if (!credentialsService.isValidCredentials(user)) {
+			map.addAttribute("message", "Wrong Password");
+		}
+		
+		return "login";
+	}
+	
 	
 }
