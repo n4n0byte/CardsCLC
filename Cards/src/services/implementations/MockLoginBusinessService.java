@@ -1,5 +1,7 @@
 package services.implementations;
 
-public class MockLoginBusinessService {
+import services.interfaces.ILoginBusinessService;
+
+public class MockLoginBusinessService implements ILoginBusinessService{
 
 }

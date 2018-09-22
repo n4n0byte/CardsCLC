@@ -1,10 +1,31 @@
 
 package models;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+
 public class User {
 	
+    @NotNull
 	private int id;
-	private String firstName, lastName, username, email, password;
+    
+	@Size(min = 3, max = 10, message = "Must be between 3 and 10 characters")    
+	private String firstName;
+	
+	@Size(min = 3, max = 10, message = "Must be between 3 and 10 characters")
+	private String lastName;
+	
+	@Size(min = 3, max = 10, message = "Must be between 3 and 10 characters")
+	private String username;
+	
+	@NotNull
+	@Email(message = "Must be a valid email")
+	private String email;
+	
+	@Size(min = 3, max = 10, message = "Must be between 3 and 10 characters")	
+	private String password;
 	
 	
 	
