@@ -2,6 +2,13 @@ package com.services.interfaces;
 
 import com.models.User;
 
+/**
+ * 
+ * @author Ali Cooper
+ * 
+ * interface for
+ *
+ */
 public interface ICredentialsBusinessService {
 	
 	/**
@@ -12,7 +19,7 @@ public interface ICredentialsBusinessService {
 	
 	/**
 	 * tries to register a user,
-	 * returns true if succesful and false if 
+	 * returns true if successful and false if 
 	 * not successful
 	 * @param user
 	 * @return Bool success

@@ -18,6 +18,13 @@ import org.springframework.web.servlet.ModelAndView;
 import com.models.User;
 import com.services.interfaces.ICredentialsBusinessService;
 
+import com.utils.FieldChecker;
+
+/**
+ * 
+ * @author Ali Cooper
+ * Login Controller 
+ */
 @Controller
 public class LoginController {
 	
@@ -27,7 +34,6 @@ public class LoginController {
 	public void setLoginService(ICredentialsBusinessService businessService) {
 		this.credentialsService = businessService;
 	}
-	
 	
 	/**
 	 * home page for login
@@ -47,28 +53,20 @@ public class LoginController {
 	 */
 	@PostMapping("/login")
 	public String home(@Valid @ModelAttribute("user")User user, BindingResult result, ModelMap map) {
-		
-		
-		// checks username and password for errors
-		for (ObjectError field : result.getAllErrors()) {
-			// cast to field error to see name of field
-			if (field instanceof FieldError) {
-				FieldError error = (FieldError) field;
-				System.out.println("FIELD: " + field);
-				if (error.getField().equals("username") || error.getField().equals("password")) {
-					map.addAttribute("user", user);
-					return "login";
-				}
-				break;				
-			}
-
+				
+		//validate only username and password
+		if (FieldChecker.hasError(result, "username", "password")) {
+			map.addAttribute("user", user);
+			return "login";
 		}
-		
+	
+		// check to see if credentials are valid
 		if (!credentialsService.isValidCredentials(user)) {
-			map.addAttribute("message", "Wrong Password");
+			map.addAttribute("message", "Wrong Username or Password");
+			return "login";
 		}
 		
-		return "login";
+		return "home";
 	}
 	
 	

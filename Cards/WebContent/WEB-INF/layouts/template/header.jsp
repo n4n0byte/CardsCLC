@@ -1,3 +1,3 @@
 <div align="center">
-	<h1>CST-341 In-Class Activity</h1>
+	<h1>Cards CLC</h1>
 </div>

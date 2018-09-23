@@ -5,13 +5,15 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
-import org.springframework.context.annotation.Scope;
 
 import lombok.Builder;
+import lombok.ToString;
 
+@ToString
 @Builder
 public class User {
-	
+
+	@NotNull
 	private int id;
     
 	@Size(min = 3, max = 10, message = "First Name Must be between 3 and 10 characters")    
@@ -47,6 +49,7 @@ public class User {
 		this.email = email;
 		this.password = password;
 	}
+	
 	public int getId() {
 		return id;
 	}

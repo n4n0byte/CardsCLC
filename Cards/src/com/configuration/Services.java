@@ -9,6 +9,11 @@ import com.services.implementations.MockCredentialsDataService;
 import com.services.interfaces.ICredentialsBusinessService;
 import com.services.interfaces.ICredentialsDataService;
 
+/**
+ * 
+ * @author Ali Cooper
+ * IoC Configuration class for services
+ */
 @Configuration
 public class Services {
 	

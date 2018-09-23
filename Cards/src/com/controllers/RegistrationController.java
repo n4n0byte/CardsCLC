@@ -4,14 +4,17 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.models.User;
 import com.services.interfaces.ICredentialsBusinessService;
+import com.utils.FieldChecker;
 
 
 @Controller
@@ -25,7 +28,18 @@ private ICredentialsBusinessService credentialsService;
 	}
 	
 	
-	
+	/**
+	 * 
+	 * @param user
+	 * @param result
+	 * @param map
+	 * @return
+	 */
+	@GetMapping("/register")
+	public String registerPage(@Valid @ModelAttribute("user")User user, BindingResult result, ModelMap map) {
+		map.addAttribute("user",new User());		
+		return "register";
+	}	
 	
 	/**
 	 * attempts to register a user
@@ -34,21 +48,23 @@ private ICredentialsBusinessService credentialsService;
 	 * @return
 	 */
 	@PostMapping("/register")
-	public ModelAndView register(@Valid @ModelAttribute("user")User user, BindingResult result) {
-		
-		ModelAndView resultView;
+	public String register(@Valid @ModelAttribute("user")User user, BindingResult result, ModelMap map) {
 		
 		
-		if (true) {
-			resultView = new ModelAndView("login", "user", user);
-		} 
-		else if(!credentialsService.tryRegisterUser(user)) {
-			resultView = new ModelAndView("register", "user", user);
+		if (FieldChecker.hasError(result, "username", "password", "email", "firstName", "lastName")) {
+			map.addAttribute("user", user);
+			return "register";
+		}
+		
+		// try to register user, will return false
+		// if user is already registered
+		if (credentialsService.tryRegisterUser(user)) {
+			map.addAttribute("message", "You are already registered, please login");
 		} else {
-			resultView = new ModelAndView("home","user", user);
+			map.addAttribute("message", "You have been successfully registered");
 		}
 
-		return resultView;
+		return "login";
 
 	}
 

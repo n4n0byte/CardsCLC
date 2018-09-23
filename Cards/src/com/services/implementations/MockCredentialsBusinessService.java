@@ -1,14 +1,17 @@
 package com.services.implementations;
 
-import java.util.logging.Logger;
-
-import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.models.User;
 import com.services.interfaces.ICredentialsBusinessService;
 import com.services.interfaces.ICredentialsDataService;
 
+/**
+ * 
+ * @author Ali Cooper
+ * TODO add docs
+ *
+ */
 public class MockCredentialsBusinessService implements ICredentialsBusinessService{
 	
 	// TODO add data service
@@ -33,7 +36,7 @@ public class MockCredentialsBusinessService implements ICredentialsBusinessServi
 	 */
 	@Override
 	public boolean tryRegisterUser(User user) {
-		return true;
+		return false;
 	}
 	
 	/**
@@ -41,7 +44,7 @@ public class MockCredentialsBusinessService implements ICredentialsBusinessServi
 	 */
 	@Override
 	public boolean isValidCredentials(User user) {
-		return false;
+		return true;
 	}
 
 	
