@@ -33,6 +33,11 @@ pageEncoding="ISO-8859-1"%>
 					<input type="submit" value="Register"/>
 				</td>
 			</tr>
+			<tr>
+			<td colspan="2">
+				<a href="/Card">Login Page</a>
+			</td>
+			</tr>
 		</table>
 		<br/>
 		<form:errors path="*"/>

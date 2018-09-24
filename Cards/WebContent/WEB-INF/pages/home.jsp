@@ -13,7 +13,7 @@
 	</tr>
 	<tr>
 		<td colspan="2">
-			<a href="add">Log Out</a>
+			<a href="login">Log Out</a>
 		</td>
 	</tr>
 	</table>
