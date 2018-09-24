@@ -25,6 +25,9 @@ pageEncoding="ISO-8859-1"%>
 					<input type="submit" value="Login"/>
 				</td>
 			</tr>
+			<tr>
+			<td colspan="2"><a href="register">Register Here</a></td>
+			</tr>
 		</table>
 		<br/>
 	</form:form>
