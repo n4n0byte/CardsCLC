@@ -5,6 +5,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import lombok.Builder;
 import lombok.ToString;
@@ -16,18 +18,27 @@ public class User {
 	@NotNull
 	private int id;
     
+	@NotBlank
+	@NotEmpty
 	@Size(min = 3, max = 10, message = "First Name Must be between 3 and 10 characters")    
 	@NotNull
 	private String firstName;
 	
+	
+	@NotBlank
+	@NotEmpty
 	@Size(min = 3, max = 10, message = "Last Name Must be between 3 and 10 characters")
 	@NotNull
 	private String lastName;
 	
+	@NotBlank
+	@NotEmpty
 	@Size(min = 3, max = 10, message = "Username Must be between 3 and 10 characters")
 	@NotNull
 	private String username;
 	
+	@NotBlank
+	@NotEmpty
 	@NotNull
 	@Email(message = "Must be a valid email")
 	private String email;
