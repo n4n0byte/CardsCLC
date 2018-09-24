@@ -12,9 +12,8 @@
 		<td><label>${user.lastName}</label></td>
 	</tr>
 	<tr>
-	<!-- Link to log user out and takes them back to the index page -->
 		<td colspan="2">
-			<a href="index">Log Out</a>
+			<a href="login">Log Out</a>
 		</td>
 	</tr>
 	</table>

@@ -10,7 +10,6 @@ pageEncoding="ISO-8859-1"%>
 	<td colspan="2"><a href="Card">Login Here</a><td/>
 </tr>
 <tr>
-<!-- Links will take user to user or registration page -->
 	<td colspan="2"><a href="Card">Login Here</a><td/>
 	<td colspan="2"><a href="Card">Login Here</a></td>
 </tr>

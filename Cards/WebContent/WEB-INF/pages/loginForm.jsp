@@ -26,7 +26,9 @@ pageEncoding="ISO-8859-1"%>
 				</td>
 			</tr>
 			<tr>
-			<td colspan="2"><a href="register">Register Here</a></td>
+				<td colspan="2">
+					<a href="register">New User</a>
+				</td>
 			</tr>
 		</table>
 		<br/>
