@@ -52,11 +52,12 @@ public class LoginController {
 	 * @return ModelAndView
 	 */
 	@PostMapping("/login")
-	public String home(@Valid @ModelAttribute("user")User user, BindingResult result, ModelMap map) {
-				
+	public String doLogin(@Valid @ModelAttribute("user")User user, BindingResult result, ModelMap map) {
+
+		map.addAttribute("user", user);
+		
 		//validate only username and password
 		if (FieldChecker.hasError(result, "username", "password")) {
-			map.addAttribute("user", user);
 			return "login";
 		}
 	
@@ -65,7 +66,7 @@ public class LoginController {
 			map.addAttribute("message", "Wrong Username or Password");
 			return "login";
 		}
-		
+			
 		return "home";
 	}
 	

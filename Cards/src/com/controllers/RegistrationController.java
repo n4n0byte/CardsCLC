@@ -17,11 +17,20 @@ import com.services.interfaces.ICredentialsBusinessService;
 import com.utils.FieldChecker;
 
 
+/**
+ * 
+ * @author Ali Cooper
+ * Controller for regisitration based pages
+ */
 @Controller
 public class RegistrationController {
 	
 private ICredentialsBusinessService credentialsService;
 	
+	/**
+	 * injects Credentials service
+	 * @param businessService
+	 */
 	@Autowired
 	public void setLoginService(ICredentialsBusinessService businessService) {
 		this.credentialsService = businessService;
@@ -50,9 +59,9 @@ private ICredentialsBusinessService credentialsService;
 	@PostMapping("/register")
 	public String register(@Valid @ModelAttribute("user")User user, BindingResult result, ModelMap map) {
 		
+		map.addAttribute("user", user);
 		
 		if (FieldChecker.hasError(result, "username", "password", "email", "firstName", "lastName")) {
-			map.addAttribute("user", user);
 			return "register";
 		}
 		
