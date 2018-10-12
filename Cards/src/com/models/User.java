@@ -8,11 +8,6 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import lombok.Builder;
-import lombok.ToString;
-
-@ToString
-@Builder
 public class User {
 
 	@NotNull
@@ -64,9 +59,11 @@ public class User {
 	public int getId() {
 		return id;
 	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
