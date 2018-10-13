@@ -6,7 +6,7 @@ import com.models.User;
  * 
  * @author Ali Cooper
  * 
- * interface for
+ * interface for Credentials business service
  *
  */
 public interface ICredentialsBusinessService {

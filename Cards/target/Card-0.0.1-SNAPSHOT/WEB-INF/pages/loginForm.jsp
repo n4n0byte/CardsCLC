@@ -19,9 +19,15 @@ pageEncoding="ISO-8859-1"%>
 				<td><form:errors path="username"/></td>
 				<td><form:input path="password"  minlength="3" maxlength="10" required="required" /></td>
 			</tr>
+			
 			<tr>
 				<td colspan="2">
 					<input type="submit" value="Login"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<a href="register">New User</a>
 				</td>
 			</tr>
 		</table>
