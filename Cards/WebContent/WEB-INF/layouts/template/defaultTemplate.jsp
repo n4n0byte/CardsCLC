@@ -2,10 +2,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-x<html>
+<html>
 <head>
 	<spring:url value="/resources/main.css" var="mainCss" />
-<link href="${mainCss}" rel="stylesheet" />
+	<link href="${mainCss}" rel="stylesheet" />
 
     <title>Cards CLC</title>
     

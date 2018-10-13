@@ -11,5 +11,7 @@ C:\Users\AC\git\CardsCLC\Cards\src\com\services\interfaces\ICredentialsBusinessS
 C:\Users\AC\git\CardsCLC\Cards\src\com\controllers\LoginController.java
 C:\Users\AC\git\CardsCLC\Cards\src\com\models\Collection.java
 C:\Users\AC\git\CardsCLC\Cards\src\com\models\User.java
+C:\Users\AC\git\CardsCLC\Cards\src\com\services\interfaces\ICollectionDataService.java
 C:\Users\AC\git\CardsCLC\Cards\src\com\models\Deck.java
+C:\Users\AC\git\CardsCLC\Cards\src\com\services\interfaces\IDeckDataService.java
 C:\Users\AC\git\CardsCLC\Cards\src\com\exceptions\GlobalExceptionHandler.java

@@ -9,9 +9,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 public class Resources implements WebMvcConfigurer {
 
-    public void addResourceHandlers(final ResourceHandlerRegistry registry) {
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
     	   registry
     	   		.addResourceHandler("/resources/**")
-    	   		.addResourceLocations("/WEB-INF/resources/*");
-    	   }
+    	   		.addResourceLocations("/WEB-INF/resources/");
+    	   registry
+    	   		.addResourceHandler("/public/**")
+    	   		.addResourceLocations("classpath:/public/");
+      }
 }
