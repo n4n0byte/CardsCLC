@@ -6,6 +6,7 @@ import java.util.Optional;
 import com.models.Deck;
 
 public interface IDeckDataService {
+	
 	public void addDeckToCollectionById(Deck deck, int collectionId);
 	public Optional<Deck> findDeckById(int id);
 	public Optional<List<Deck>> findAllDecksByUsername(String username);
