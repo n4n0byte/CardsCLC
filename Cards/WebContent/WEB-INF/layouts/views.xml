@@ -16,6 +16,18 @@
 	<definition name="addDeck" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/home.jsp" />
 	</definition>
+	<definition name="addDeck" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/newCard.jsp" />
+	</definition>
+	<definition name="addDeck" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/newDeck.jsp" />
+	</definition>
+	<definition name="addDeck" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/displayCards.jsp" />
+	</definition>
+	<definition name="addDeck" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/displayDecks.jsp" />
+	</definition>
  <!--
   <definition name="*" extends="DefaultTemplate" >
   	<put-attribute name="body" value="/WEB-INF/pages/{1}.jsp"/>
