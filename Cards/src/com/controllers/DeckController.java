@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.models.Deck;
 import com.models.User;
-import com.services.interfaces.ICardBusinessService;
 import com.services.interfaces.IDeckBusinessService;
 import com.utils.FieldChecker;
 
@@ -38,6 +37,20 @@ public class DeckController {
 		modelMap.put("message", "Successfully Added Deck");
 		return "home";
 	}
-
+	
+	@PostMapping("addCard")
+	public String addCard(@Valid @ModelAttribute("card")Deck card, ModelMap modelMap, BindingResult result) {
+		
+		//validate only title and description
+		if (FieldChecker.hasError(result, "title", "description")) {
+			modelMap.put("message", "Validation Error");
+			return "addDeck";
+		}
+		
+		modelMap.put("message", "Successfully Added Deck");
+		
+		return "home";
+		
+	}
 	
 }

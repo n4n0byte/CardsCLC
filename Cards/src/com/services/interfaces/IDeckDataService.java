@@ -20,5 +20,8 @@ public interface IDeckDataService {
 	public boolean deleteDeckById(int id);
 	public boolean deleteDeck(Deck card);
 	public boolean addCardToDeckWithDeckId(Card card, int deckId);
-	
+	public Card findCardById(int id);
+	public Card findCardByUserId(int id);
+	public Card findCardByTitle(String title);
+
 }

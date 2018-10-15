@@ -2,13 +2,6 @@ package com.services.interfaces;
 
 import com.models.User;
 
-/**
- * 
- * @author Ali Cooper
- * 
- * interface for Credentials business service
- *
- */
 public interface ICredentialsBusinessService {
 	
 	/**

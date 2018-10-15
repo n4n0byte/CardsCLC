@@ -12,51 +12,33 @@ import com.services.interfaces.IDeckBusinessService;
 public class DeckBusinessService implements IDeckBusinessService {
 
 	IDeckBusinessService service;
-	private static ArrayList<Card> deck = new ArrayList<Card>();
-	private static ArrayList<Card> deck2 = new ArrayList<Card>();
+	private static Deck deck1 = new Deck();
+	private static Deck deck2 = new Deck();
 	private static ArrayList<Deck> decks = new ArrayList<Deck>();
-	private static ArrayList<Card> cards = new ArrayList<Card>();
 	
 	public DeckBusinessService() {
-		cards.add(new Card(1,"Monster1","description",10,10));
-		cards.add(new Card(2,"Monster2","description",10,10));
-		cards.add(new Card(3,"Monster3","description",10,10));
+		deck1.setTitle("Deck 1");
+		deck1.setDescription("Deck Description");
+		deck1.addCard(new Card(1,"Monster1Deck1","description",10,10));
+		deck1.addCard(new Card(2,"Monster2Deck1","description",10,10));
+		deck1.addCard(new Card(3,"Monster3Deck1","description",10,10));
 		
-		deck.add(new Card(3,"Monster1","description",10,10));
-		deck.add(new Card(3,"Monster2","description",10,10));
-		deck.add(new Card(3,"Monster3","description",10,10));
-		
-		deck2.add(new Card(3,"Monster1","description",10,10));
-		deck2.add(new Card(3,"Monster2","description",10,10));
-		deck2.add(new Card(3,"Monster3","description",10,10));
-		
-		decks.add(deck);
+		deck2.addCard(new Card(3,"Monster1Deck2","description",10,10));
+		deck2.addCard(new Card(3,"Monster2Deck2","description",10,10));
+		deck2.addCard(new Card(3,"Monster3Deck2","description",10,10));
+				
+		decks.add(deck1);
 		decks.add(deck2);
 		
 	}
-	@Override
-	public boolean delete() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public void update(Deck d, int num) {
-		// TODO Auto-generated method stub
-		int id = d.getId();
-		String title = d.getTitle();
-		String descript = d.getDescription();
-		
-		decks.get(num).setDescription(descript);
-		decks.get(num).setTitle(title);
-	}
-
-	public ArrayList<Deck> getAllDecksFromUser(int id) {
+	
+	public List<Deck> getAllDecksFromUser(int id) {
 		// Auto-generated method stub TODO
 		int size = decks.size();
 		int count = 0;
-		ArrayList<Deck> deckVal = new ArrayList<Deck>();
+		List<Deck> deckVal = new ArrayList<Deck>();
 		for(int i=1; i<size;i++) {
-			if(decks.get(i).getId()==id) {
+			if(decks.get(i).getUserId() == id) {
 				deckVal.add(decks.get(i));
 				count++;
 			}		
@@ -68,20 +50,115 @@ public class DeckBusinessService implements IDeckBusinessService {
 
 	}
 
-	public ArrayList<Card> getCardsByDeckTitle(String title) {
+		
+	@Override
+	public void addCardToDeck(Card card, String deckTitle) {
 		// TODO Auto-generated method stub
 		
-		for(int i=1;i<deck.size();i++){
-			cards.add(deck.get(i));
+		for(Deck deck : decks) {
+			if (deck.getTitle().equals(deckTitle)) {
+				deck.addCard(new Card(4, card.getTitle(),card.getDescription(),card.getHealth(),card.getDamage()));
+			}
 		}
-		return cards;
+		
 	}
 
+	public boolean delete() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	public List<Card> getCardsByDeckTitle(String title) {
+		
+		for (Deck deck : decks) {
+			if (deck.getTitle().equals(title)) return deck.getCards();
+		}
+		
+		return null;
+	}
+		
 	@Override
 	public Deck getDeckByUserId(int id) {
 		// TODO Auto-generated method stub
 		
+		for (Deck deck : decks) {
+			if (deck.getUserId() == id) return deck;
+		}
+		
+		
 		return decks.get(id);
 	}
+
+	@Override
+	public boolean addDeck(Deck deck) {
+		decks.add(deck);
+		return true;
+	}
+
+	
+	/**
+	 * returns a deck given its specified id
+	 * @param id
+	 * @return
+	 */
+	@Override
+	public Deck findDeckById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Deck> findAllDecksByUsername(String username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Deck> findAllDecksByUserId(int username) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+	@Override
+	public void updateDeck(Deck deck) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean deleteDeckById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteDeck(Deck card) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean addCardToDeckWithDeckId(Card card, int deckId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Card findCardById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Card findCardByUserId(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
 
 }
