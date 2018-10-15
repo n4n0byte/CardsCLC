@@ -5,7 +5,6 @@
 	<ul>
 		<li><a href="/Card/Home">Home</a></li>
 		<li><a href="/Card/diplayDecks">View Decks</a></li>
-		<li><a href="/Card/newCard">Create Cards</a></li>
 		<li><a href="/Card/displayCards">View Cards</a></li>
 	</ul> <br/>
 <div align="center">	
