@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.models.Card;
+import com.models.CardDeckComposite;
 import com.models.Deck;
 import com.models.User;
 import com.services.interfaces.IDeckBusinessService;
@@ -41,8 +42,8 @@ public class HomeController {
 	}
 	
 	@GetMapping("newDeck")
-	public String addNewDeck (BindingResult result,ModelMap map) {
-		
+	public String addNewDeck (Deck deck,ModelMap map) {
+		map.addAttribute("cardDeckComposite",new CardDeckComposite());
 		return "newDeck";
 	}
 	

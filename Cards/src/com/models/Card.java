@@ -31,14 +31,7 @@ public class Card {
 	@NotNull
 	private String description;
 	
-	@NotBlank
-	@NotEmpty
-	@NotNull
 	private int health;
-	
-	@NotBlank
-	@NotEmpty
-	@NotNull
 	private int damage;
 
 	

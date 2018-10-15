@@ -6,13 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.models.Card;
 import com.models.Deck;
-import com.models.User;
 import com.services.interfaces.IDeckBusinessService;
 import com.utils.FieldChecker;
 
@@ -26,7 +24,7 @@ public class DeckController {
 		IDeckBusinessService = iDeckBusinessService;
 	}
 
-	@PostMapping("addDeck")
+	@PostMapping("createDeck")
 	public String addDeck(@Valid @ModelAttribute("deck")Deck deck, ModelMap modelMap, BindingResult result) {
 		
 		//validate only username and password
@@ -48,7 +46,7 @@ public class DeckController {
 			return "newCard";
 		}
 		
-		modelMap.put("message", "Successfully Added Deck");
+		modelMap.put("message", "Successfully Added Card");
 		
 		return "home";
 		

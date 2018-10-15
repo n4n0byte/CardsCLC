@@ -28,14 +28,8 @@ public class Deck {
 	
 	List<Card> cards;
 	
-	@NotBlank
-	@NotEmpty
-	@NotNull
 	int deckId;
 
-	@NotBlank
-	@NotEmpty
-	@NotNull
 	int userId;
 	
 	public Deck() {

@@ -28,19 +28,10 @@
 				<td><form:input path="damage"/></td>
 			</tr>
 			<tr>
-				<td><form:label path="deckTitle">${deck.title}</form:label></td>
-				<td><form:input path="deckTitle"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">
 					<input type="submit" value="Submit"/>
-				</td>
-			</tr>
-			<tr>
-				<td>
-				<button>
-					<a href="/home.jsp" colspan="2">Go Back to Home</a>
-				</button>
 				</td>
 			</tr>
 		</table>

@@ -4,10 +4,8 @@
 	
 	
 	<ul>
-		<li><a href="/home">Home</a></li>
-		<li><a href="/diplayDecks">View Decks</a></li>
-		<li><a href="/newCard">Create Cards</a></li>
-		<li><a href="/displayCards">View Cards</a></li>
+		<li><a href="/Card/home">Home</a></li>
+		<li><a href="/Card/newCard">Create Cards</a></li>
 	</ul>
 	<br/>
 	<h2>Login Response</h2>
