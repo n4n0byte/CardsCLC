@@ -28,5 +28,6 @@ public interface IDeckBusinessService {
 	public boolean addDeck(Deck deck);
 	public List<Card> getAllCardsFromUser(User id);
 	void addCardToDeck(Card card, String deckTitle);
+	List<Deck> getAllDecksByUser(User user);
 
 }
