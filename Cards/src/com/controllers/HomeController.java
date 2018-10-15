@@ -45,7 +45,7 @@ public class HomeController {
 	
 	@GetMapping("newDeck")
 	public String addNewDeck (Deck deck,ModelMap map) {
-		map.addAttribute("card",new Card());
+		map.addAttribute("deck",new Deck());
 		map.addAttribute("message", "Added Deck");
 		return "newDeck";
 	}

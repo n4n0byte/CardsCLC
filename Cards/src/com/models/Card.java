@@ -19,16 +19,16 @@ public class Card {
 	
 	int id;
 	
-	@NotBlank
-	@NotEmpty
-	@Size(min = 1, max = 20, message = "Must be between 1 and 10 characters")    
-	@NotNull
+//	@NotBlank
+//	@NotEmpty
+//	@Size(min = 1, max = 20, message = "Must be between 1 and 10 characters")    
+//	@NotNull
 	private String title;
 	
-	@NotBlank
-	@NotEmpty
-	@Size(min = 1, max = 40, message = "Must be between 1 and 40 characters")    
-	@NotNull
+//	@NotBlank
+//	@NotEmpty
+//	@Size(min = 1, max = 40, message = "Must be between 1 and 40 characters")    
+//	@NotNull
 	private String description;
 	
 	private int health;

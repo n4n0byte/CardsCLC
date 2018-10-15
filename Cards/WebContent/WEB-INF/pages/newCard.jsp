@@ -9,18 +9,18 @@
 	</ul> <br/>
 	<div align="center">
 	<h2>Create New Card</h2>
-	<form:form method="POST" modelAttribute="card" action="addCard">
+	<form:form method="POST" modelAttribute="card" action="makeDeck">
 		<table>
-			<tr>
-				<td>${title}</td>
-			</tr>
 			<tr>
 				<td><form:label path="title">Card Title:</form:label></td>
 				<td><form:input path="title"/></td>
+				<td><form:input path="title" minlength="3" maxlength="10" required="required"/></td>				
 			</tr>
 			<tr>
 				<td><form:label path="description">Description:</form:label></td>
 				<td><form:input path="description"/></td>
+				<td><form:input path="description" minlength="3" maxlength="10" required="required"/></td>
+				
 			</tr>
 			<tr>
 				<td><form:label path="health">Health:</form:label></td>

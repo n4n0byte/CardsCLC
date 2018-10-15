@@ -21,6 +21,15 @@
 				<td><form:input path="description" minlength="3" maxlength="10" required="required"/></td>
 			</tr>
 			<tr>
+				<td><form:label path="health">Health:</form:label></td>
+				<td><form:input path="health"/></td>
+			</tr>
+			<tr>
+				<td><form:label path="damage">Damage:</form:label></td>
+				<td><form:errors path="damage"/></td>
+				<td><form:input path="Damage" minlength="3" maxlength="10" required="required"/></td>
+			</tr>
+			<tr>
 				<td colspan="2">
 					<input type="submit" value="Submit"/>
 				</td>
