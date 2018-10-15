@@ -23,6 +23,8 @@ public class MockDeckBusinessService implements IDeckBusinessService {
 		deck1.addCard(new Card(2,"Monster2Deck1","description",10,10));
 		deck1.addCard(new Card(3,"Monster3Deck1","description",10,10));
 		
+		deck2.setTitle("Deck 2");
+		deck2.setDescription("Deck Description");
 		deck2.addCard(new Card(3,"Monster1Deck2","description",10,10));
 		deck2.addCard(new Card(3,"Monster2Deck2","description",10,10));
 		deck2.addCard(new Card(3,"Monster3Deck2","description",10,10));
@@ -39,7 +41,7 @@ public class MockDeckBusinessService implements IDeckBusinessService {
 		int count = 0;
 		List<Deck> deckVal = new ArrayList<Deck>();
 		for(int i=1; i<size;i++) {
-			if(decks.get(i).getUserId() == user.getId()) {
+			if(/**decks.get(i).getUserId() == user.getId()**/ true) {
 				deckVal.add(decks.get(i));
 				count++;
 			}		

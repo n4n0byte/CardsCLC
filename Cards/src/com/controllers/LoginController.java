@@ -64,7 +64,7 @@ public class LoginController {
 		}
 			
 		request.getSession().setAttribute("user", user);
-		return "home";
+		return "redirect:/home";
 	}
 	
 	

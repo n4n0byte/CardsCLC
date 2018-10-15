@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.models.Card;
 import com.models.Deck;
 import com.models.User;
 import com.services.interfaces.IDeckBusinessService;
@@ -39,12 +40,12 @@ public class DeckController {
 	}
 	
 	@PostMapping("addCard")
-	public String addCard(@Valid @ModelAttribute("card")Deck card, ModelMap modelMap, BindingResult result) {
+	public String addCard(@Valid @ModelAttribute("card")Card card, ModelMap modelMap, BindingResult result) {
 		
 		//validate only title and description
 		if (FieldChecker.hasError(result, "title", "description")) {
 			modelMap.put("message", "Validation Error");
-			return "addDeck";
+			return "newCard";
 		}
 		
 		modelMap.put("message", "Successfully Added Deck");

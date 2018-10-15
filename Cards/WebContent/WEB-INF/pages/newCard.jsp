@@ -4,11 +4,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 	<h2>Create New Card</h2>
-	<form:form method="POST" modelAttribute="card" action="createCard">
+	<form:form method="POST" modelAttribute="card" action="addCard">
 		<table>
 			<tr>
-				<td><form:label path="cardTitle">Card Title:</form:label></td>
-				<td><form:input path="cardTitle"/></td>
+				<td><form:label path="title">Card Title:</form:label></td>
+				<td><form:input path="title"/></td>
 			</tr>
 			<tr>
 				<td><form:label path="description">Description:</form:label></td>
@@ -23,7 +23,7 @@
 				<td><form:input path="damage"/></td>
 			</tr>
 			<tr>
-				<td><form:label path="deckTitle">Deck Title:</form:label></td>
+				<td><form:label path="deckTitle">${deck.title}</form:label></td>
 				<td><form:input path="deckTitle"/></td>
 			</tr>
 			<tr>

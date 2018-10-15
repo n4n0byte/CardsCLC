@@ -38,11 +38,5 @@ public class Services {
 	public IDeckBusinessService iDeckBusinessService() {
 		return new MockDeckBusinessService();
 	}
-	
-	@Bean
-	@Primary
-	public IDeckDataService iDeckDataService() {
-		return new MockDeckDataService();
-	}
-	
+		
 }
