@@ -6,13 +6,13 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.models.Card;
-import com.models.CardDeckComposite;
+import com.models.CardWithDeckName;
 import com.models.Deck;
 import com.models.User;
 import com.services.interfaces.IDeckBusinessService;
@@ -34,24 +34,22 @@ public class HomeController {
 		return "home";
 	}
 	
-	@GetMapping("newCard")
-	public String addNewCard(Deck deck, ModelMap map) {
+	@GetMapping("newCard/{deckTitle}")
+	public String addNewCard(@PathVariable("deckTitle") String title, Card card, ModelMap map) {
+
+		System.out.println(title);
 		map.addAttribute("card", new Card());
-		map.addAttribute("deckTitle",deck.getTitle());
+		map.addAttribute("title",title);
+		
 		return "newCard";
 	}
 	
 	@GetMapping("newDeck")
 	public String addNewDeck (Deck deck,ModelMap map) {
-		map.addAttribute("cardDeckComposite",new CardDeckComposite());
+		map.addAttribute("card",new Card());
+		map.addAttribute("message", "Added Deck");
 		return "newDeck";
 	}
-	
-	@GetMapping("addDeck")
-	public String showAddDeck() {
-		return "addDeck";
-	
-	}
-	
+		
 	
 }

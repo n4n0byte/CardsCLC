@@ -13,6 +13,9 @@
 	<form:form method="POST" modelAttribute="card" action="addCard">
 		<table>
 			<tr>
+				<td>${}</td>
+			</tr>
+			<tr>
 				<td><form:label path="title">Card Title:</form:label></td>
 				<td><form:input path="title"/></td>
 			</tr>
@@ -27,8 +30,6 @@
 			<tr>
 				<td><form:label path="damage">Damage:</form:label></td>
 				<td><form:input path="damage"/></td>
-			</tr>
-			<tr>
 			</tr>
 			<tr>
 				<td colspan="2">

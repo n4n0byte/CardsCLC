@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.models.Card;
@@ -32,13 +33,13 @@ public class DeckController {
 			modelMap.put("message", "Validation Error");
 			return "addDeck";
 		}
-		
+		IDeckBusinessService.addDeck(deck);
 		modelMap.put("message", "Successfully Added Deck");
-		return "home";
+		return "redirect:/home";
 	}
 	
 	@PostMapping("addCard")
-	public String addCard(@Valid @ModelAttribute("card")Card card, ModelMap modelMap, BindingResult result) {
+	public String addCard(@PathVariable("deckTitle") String title, @Valid @ModelAttribute("card")Card card, ModelMap modelMap, BindingResult result) {
 		
 		//validate only title and description
 		if (FieldChecker.hasError(result, "title", "description")) {
@@ -47,8 +48,7 @@ public class DeckController {
 		}
 		
 		modelMap.put("message", "Successfully Added Card");
-		
-		return "home";
+		return "redirect:/home";
 		
 	}
 	

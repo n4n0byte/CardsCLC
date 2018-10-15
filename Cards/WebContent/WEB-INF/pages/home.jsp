@@ -32,10 +32,9 @@
 		<c:forEach var="deck" items="${decks}">
 			<tr>
 				<td><label>${deck.title}</label></td>
-				
 				<td><label>${deck.description}</label></td>
 				<td>
-					<label><a href="newCard/${deck.title}">Add</a></label>
+					<label><a href="/Card/newCard/${deck.title}">Add</a></label>
 				</td>
 			</tr>
 		</c:forEach>

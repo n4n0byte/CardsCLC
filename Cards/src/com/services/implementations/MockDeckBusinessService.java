@@ -17,6 +17,7 @@ public class MockDeckBusinessService implements IDeckBusinessService {
 	private static ArrayList<Deck> decks = new ArrayList<Deck>();
 	
 	public MockDeckBusinessService() {
+		System.out.println("IN MOCK DECK SVc CONSTRUCTOR");
 		deck1.setTitle("Deck 1");
 		deck1.setDescription("Deck Description");
 		deck1.addCard(new Card(1,"Monster1Deck1","description",10,10));
