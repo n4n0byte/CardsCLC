@@ -26,20 +26,21 @@
 		<tr>
 			<th><label>Title</label></th>
 			<th><label>Description</label></th>
-			<th><label>Cards</label></th>
+			<th><label>Add Card</label></th>
 		</tr>
 		<c:forEach var="deck" items="${decks}">
 			<tr>
-				<td><label>${decks.title}</label></td>
-				<td><label>${decks.description}</label></td>
-				<c:forEach var="card" items="${decks}">
-					<td><label>${decks.cards}</label><td>
-				</c:forEach>
+				<td><label>${deck.title}</label></td>
+				
+				<td><label>${deck.description}</label></td>
+				<td>
+					<label><a href="newCard/${deck.title}">Add</a></label>
+				</td>
 			</tr>
 		</c:forEach>
 		<tr>
 			<td colspan="2">
-			<a href="add">Add a User</a>
+				<a href="/Card/newDeck">Add a Deck</a>
 			</td>
 		</tr>
 	</table>

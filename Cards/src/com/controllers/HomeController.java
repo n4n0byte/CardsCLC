@@ -41,7 +41,7 @@ public class HomeController {
 	}
 	
 	@GetMapping("newDeck")
-	public String addNewDeck () {
+	public String addNewDeck (BindingResult result,ModelMap map) {
 		
 		return "newDeck";
 	}
