@@ -41,6 +41,16 @@ public class Card {
 	@NotNull
 	private int damage;
 
+	
+	public Card(int id, String title, String description, int health, int damage) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.health = health;
+		this.damage = damage;
+	}
+
 	public int getId() {
 		return id;
 	}
