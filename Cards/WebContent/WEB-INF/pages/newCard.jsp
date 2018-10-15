@@ -13,7 +13,7 @@
 	<form:form method="POST" modelAttribute="card" action="addCard">
 		<table>
 			<tr>
-				<td>${}</td>
+				<td>${title}</td>
 			</tr>
 			<tr>
 				<td><form:label path="title">Card Title:</form:label></td>

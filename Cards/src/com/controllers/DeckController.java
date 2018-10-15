@@ -39,7 +39,7 @@ public class DeckController {
 	}
 	
 	@PostMapping("addCard")
-	public String addCard(@PathVariable("deckTitle") String title, @Valid @ModelAttribute("card")Card card, ModelMap modelMap, BindingResult result) {
+	public String addCard(@Valid @ModelAttribute("card")Card card, ModelMap modelMap, BindingResult result) {
 		
 		//validate only title and description
 		if (FieldChecker.hasError(result, "title", "description")) {
