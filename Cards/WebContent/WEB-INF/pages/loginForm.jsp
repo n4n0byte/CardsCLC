@@ -3,25 +3,15 @@ pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-	<ui>
-		<li><a href="/Home">Home</a></li>
-		<li><a href="/diplayDecks">View Decks</a></li>
-		<li><a href="/newCard">Create Cards</a></li>
-		<li><a href="/displayCards">View Cards</a></li>
-	</ui>
-	
-	<br/><br/>
-	<body>
-	<div id="loginGridContainer">
-			<div id="navbar">
-				
-				
-			</div>
-			<div id="login">
 
+
+
+			
+			<div id="login" align="center">
+				<div align="center">
 				<form:form method="POST" class="form-group" modelAttribute="user" action="login" align="center">
-				<div id="title">
-					<h2>Login</h2>	
+				<div id="title" align="center">
+					<h3>Login</h3>	
 				</div>
 				<table>
 					<tr>				
@@ -47,7 +37,6 @@ pageEncoding="ISO-8859-1"%>
 				</table>
 				<br/>
 			</form:form>	
-						
 			</div>
-	</div>
-</body>
+			</div>
+	

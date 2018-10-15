@@ -4,7 +4,7 @@ pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <form:form method="POST" modelAttribute="user" action="register">
-		
+<div align="center">	
 		<table>
 			<tr>				
 				<td>${message}</td>
@@ -43,3 +43,4 @@ pageEncoding="ISO-8859-1"%>
 		<br/>
 		<form:errors path="*"/>
 	</form:form>
+</div>

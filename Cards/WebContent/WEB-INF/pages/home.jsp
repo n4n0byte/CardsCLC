@@ -5,9 +5,12 @@
 	
 	<ul>
 		<li><a href="/Card/home">Home</a></li>
+		<li><a href="/Card/diplayDecks">View Decks</a></li>
 		<li><a href="/Card/newCard">Create Cards</a></li>
+		<li><a href="/Card/displayCards">View Cards</a></li>
 	</ul>
 	<br/>
+
 	<h2>Login Response</h2>
 	<table>
 	<tr>
