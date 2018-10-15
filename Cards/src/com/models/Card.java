@@ -51,6 +51,9 @@ public class Card {
 		this.damage = damage;
 	}
 
+	public Card() {
+	}
+
 	public int getId() {
 		return id;
 	}
