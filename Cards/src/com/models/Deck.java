@@ -24,15 +24,38 @@ public class Deck {
 	@NotEmpty
 	@NotNull
 	private String description;
+	
+	
 	List<Card> cards;
-	int id;
-		
-	public int getId() {
-		return id;
+	
+	@NotBlank
+	@NotEmpty
+	@NotNull
+	int deckId;
+
+	@NotBlank
+	@NotEmpty
+	@NotNull
+	int userId;
+	
+	public Deck() {
+		cards = new ArrayList<>();
+	}
+	
+	public int getDeckId() {
+		return deckId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setDeckId(int deckId) {
+		this.deckId = deckId;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	public void addCard(Card card) {

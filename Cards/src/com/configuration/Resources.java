@@ -13,8 +13,5 @@ public class Resources implements WebMvcConfigurer {
     	   registry
     	   		.addResourceHandler("/resources/**")
     	   		.addResourceLocations("/WEB-INF/resources/");
-    	   registry
-    	   		.addResourceHandler("/public/**")
-    	   		.addResourceLocations("classpath:/public/");
       }
 }

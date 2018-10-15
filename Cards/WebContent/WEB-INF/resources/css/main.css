@@ -1,0 +1,60 @@
+@charset "ISO-8859-1";
+
+*{
+	padding: 0;
+	padding: 0;
+}
+
+:root {
+  --login-grid-rows: 5;
+  --login-grid-cols: 3;
+  --login-grid-nav-cols: 5;
+}
+
+#loginGridContainer {
+	margin: 0;
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	grid-template-columns: repeat(3,1fr);
+	grid-template-rows: repeat(3,1fr);
+	grid-template-areas: 
+		"navbar navbar navbar"
+		". login . "
+		". . .";
+}
+
+#loginGridContainer > #login{
+	grid-area: login;
+	background-color: green;
+	justify-self: center;
+	align-self: center;
+	padding: 9vh 0 0 0;
+}
+
+#loginGridContainer > #navbar{
+	grid-area: navbar;	
+	background-color: wheat;
+	padding: 0;
+}
+
+
+#loginGridContainer > #title{
+	grid-area: title;
+	background-color: blue;
+	padding: 0px;
+}
+
+body{
+	background-color:white;
+	font-family: georgia; 
+	font-size:100%;
+	}
+h1{
+	font-family:georgia;
+	font-size:175%;
+}
+h2{
+	font-family:georgia;
+	font-size:175%;
+}

@@ -4,9 +4,10 @@
 
 <html>
 <head>
-	<spring:url value="/resources/main.css" var="mainCss" />
+	<spring:url value="/resources/css/main.css" var="mainCss" />
 	<link href="${mainCss}" rel="stylesheet" />
-
+	<link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     <title>Cards CLC</title>
     
 </head>

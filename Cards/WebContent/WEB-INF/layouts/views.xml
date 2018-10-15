@@ -7,9 +7,13 @@
     	<put-attribute name="body" value="/WEB-INF/pages/registrationForm.jsp" />
 	</definition>
 	<definition name="login" extends="DefaultTemplate">
+    	<put-attribute name="header" value="/WEB-INF/pages/loginHeader.jsp" />		
     	<put-attribute name="body" value="/WEB-INF/pages/loginForm.jsp" />
 	</definition>
 	<definition name="home" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/home.jsp" />
+	</definition>
+	<definition name="addDeck" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/home.jsp" />
 	</definition>
  <!--

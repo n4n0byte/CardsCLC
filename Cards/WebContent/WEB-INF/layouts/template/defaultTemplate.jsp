@@ -4,9 +4,16 @@
 
 <html>
 <head>
-	<spring:url value="/resources/main.css" var="mainCss" />
+	<spring:url value="/resources/css/main.css" var="mainCss" />
 	<link href="${mainCss}" rel="stylesheet" />
-
+	<!-- 
+	<spring:url value="/resources/bootstrap-3.3.7-dist/css/bootstrap.css" var="bootstrapCss" />
+	<link href="${bootstrapCss}" rel="stylesheet" />
+	<spring:url value="/resources/bootstrap-3.3.7-dist/js/bootstrap.js" var="bootstrapJs" />
+	<link href="${bootstrapJs}" rel="stylesheet" />
+	 -->
+	
+	
     <title>Cards CLC</title>
     
 </head>
@@ -17,9 +24,7 @@
 	<tiles:insertAttribute name="header" />
 
 	<!-- Body Page -->
-	<div align="center">
-		<tiles:insertAttribute name="body" />
-	</div>
+	<tiles:insertAttribute name="body" />
 
 	<!-- Footer Page -->
 	<tiles:insertAttribute name="footer" />
