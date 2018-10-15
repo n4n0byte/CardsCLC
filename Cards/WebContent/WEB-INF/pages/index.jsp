@@ -2,7 +2,7 @@
 pageEncoding="ISO-8859-1"%>
 
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-
+<div align="center">
 <table>
 <tr>
 	<th><label>Login</label></th>
@@ -14,3 +14,4 @@ pageEncoding="ISO-8859-1"%>
 	<td colspan="2"><a href="Card">Login Here</a></td>
 </tr>
 </table>
+</div>

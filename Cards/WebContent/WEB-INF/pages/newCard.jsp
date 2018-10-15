@@ -8,6 +8,7 @@
 		<li><a href="/newCard">Create Cards</a></li>
 		<li><a href="/displayCards">View Cards</a></li>
 	</ul> <br/>
+	<div align="center">
 	<h2>Create New Card</h2>
 	<form:form method="POST" modelAttribute="card" action="addCard">
 		<table>
@@ -47,3 +48,4 @@
 		<br/>
 		<form:errors path="*"/>
 	</form:form>
+</div>

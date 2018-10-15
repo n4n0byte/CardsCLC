@@ -11,17 +11,16 @@ pageEncoding="ISO-8859-1"%>
 	</ui>
 	
 	<br/><br/>
+	<div align="center">
 	<body>
-	<div id="loginGridContainer">
-			<div id="navbar">
-				
-				
+	
+			<div id="navbar">	
 			</div>
 			<div id="login">
-
+				<div align="center">
 				<form:form method="POST" class="form-group" modelAttribute="user" action="login" align="center">
 				<div id="title">
-					<h2>Login</h2>	
+					<h3>Login</h3>	
 				</div>
 				<table>
 					<tr>				
@@ -47,7 +46,8 @@ pageEncoding="ISO-8859-1"%>
 				</table>
 				<br/>
 			</form:form>	
-						
 			</div>
-	</div>
+			</div>
+	
 </body>
+</div>

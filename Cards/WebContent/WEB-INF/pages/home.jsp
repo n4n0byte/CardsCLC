@@ -10,6 +10,8 @@
 		<li><a href="/displayCards">View Cards</a></li>
 	</ul>
 	<br/>
+	
+<center>
 	<h2>Login Response</h2>
 	<table>
 	<tr>
@@ -44,3 +46,4 @@
 			</td>
 		</tr>
 	</table>
+</center>

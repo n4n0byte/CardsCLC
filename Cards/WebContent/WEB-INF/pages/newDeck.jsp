@@ -8,7 +8,8 @@
 		<li><a href="/newCard">Create Cards</a></li>
 		<li><a href="/displayCards">View Cards</a></li>
 	</ul> <br/>
-	<h3>Create New Deck</h3>
+<div align="center">	
+	<h2>Create New Deck</h2>
 	<form:form method="POST" modelAttribute="deck" action="createDeck">
 		<table>
 			<tr>
@@ -28,3 +29,4 @@
 		<br/>
 		<form:errors path="*"/>
 	</form:form>
+</div>

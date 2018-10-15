@@ -8,6 +8,7 @@
 		<li><a href="/newCard">Create Cards</a></li>
 		<li><a href="/displayCards">View Cards</a></li>
 	</ul> <br/>
+<div align="center">
 <h2>List of Decks</h2>
 	<table>
 		<tr>
@@ -29,3 +30,4 @@
 			</td>
 		</tr>
 	</table>
+</div>
