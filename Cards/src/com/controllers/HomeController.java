@@ -1,18 +1,13 @@
 package com.controllers;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.models.Card;
-import com.models.Deck;
 import com.models.User;
 import com.services.interfaces.IDeckBusinessService;
 
@@ -34,15 +29,15 @@ public class HomeController {
 	}
 	
 	@GetMapping("newCard")
-	public String addNewCard(Deck deck, ModelMap map) {
+	public String addNewCard(HttpServletRequest request, ModelMap map) {
 		map.addAttribute("card", new Card());
-		map.addAttribute("deckTitle",deck.getTitle());
 		return "newCard";
 	}
 	
-	@GetMapping("newDeck")
-	public String addNewDeck () {
+	@GetMapping("newDeck/{title}")
+	public String addNewDeck (ModelMap map, @PathVariable String title) {
 		
+		map.addAttribute("card", new Card());
 		return "newDeck";
 	}
 	
