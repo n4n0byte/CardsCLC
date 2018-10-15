@@ -1,5 +1,5 @@
 @charset "ISO-8859-1";
-
+/*
 *{
 	padding: 0;
 	padding: 0;
@@ -10,43 +10,34 @@
   --login-grid-cols: 3;
   --login-grid-nav-cols: 5;
 }
-
-#loginGridContainer {
-	margin: 0;
-	display: grid;
-	width: 100vw;
-	height: 100vh;
-	grid-template-columns: repeat(3,1fr);
-	grid-template-rows: repeat(3,1fr);
-	grid-template-areas: 
-		"navbar navbar navbar"
-		". login . "
-		". . .";
+*/
+ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #d9d9d9;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
-
-#loginGridContainer > #login{
-	grid-area: login;
-	background-color: green;
-	justify-self: center;
-	align-self: center;
-	padding: 9vh 0 0 0;
+li{
+	float:left;
 }
-
-#loginGridContainer > #navbar{
-	grid-area: navbar;	
-	background-color: wheat;
-	padding: 0;
+a{
+	text-align:center;
+	display:inline;
+	background-color:#d9d9d9;
+	display:block;
+	padding: 14px 16px;
 }
-
-
-#loginGridContainer > #title{
-	grid-area: title;
-	background-color: blue;
-	padding: 0px;
+li a:hover{
+	background-color:#00ffff;
+	color:white;
+	
 }
-
 body{
-	background-color:white;
+	background-color:#ff33cc;
 	font-family: georgia; 
 	font-size:100%;
 	}
