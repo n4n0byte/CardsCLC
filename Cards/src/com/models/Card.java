@@ -1,5 +1,6 @@
 package com.models;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -19,19 +20,22 @@ public class Card {
 	
 	int id;
 	
-//	@NotBlank
-//	@NotEmpty
-//	@Size(min = 1, max = 20, message = "Must be between 1 and 10 characters")    
-//	@NotNull
+	@NotBlank
+	@NotEmpty
+	@Size(min = 1, max = 20, message = "Must be between 1 and 10 characters")    
+	@NotNull
 	private String title;
 	
-//	@NotBlank
-//	@NotEmpty
-//	@Size(min = 1, max = 40, message = "Must be between 1 and 40 characters")    
-//	@NotNull
+	@NotBlank
+	@NotEmpty
+	@Size(min = 1, max = 40, message = "Must be between 1 and 40 characters")    
+	@NotNull
 	private String description;
 	
+	@Min(0)
 	private int health;
+	
+	@Min(0)
 	private int damage;
 
 	
@@ -44,8 +48,7 @@ public class Card {
 		this.damage = damage;
 	}
 
-	public Card() {
-	}
+	public Card() {}
 
 	public int getId() {
 		return id;

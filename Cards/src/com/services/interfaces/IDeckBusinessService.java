@@ -17,17 +17,15 @@ public interface IDeckBusinessService {
 	 * @return
 	 */
 	public List<Deck> findAllDecksByUsername(String username);
-	
-	public List<Deck> findAllDecksByUserId(int username);
+	public List<Deck> findAllDecksByUserId(int id);
 	public void updateDeck(Deck deck);
 	public boolean deleteDeckById(int id);
-	public boolean deleteDeck(Deck card);
+	public boolean deleteDeck(Deck deck);
 	public boolean addCardToDeckWithDeckId(Card card, int deckId);
-	public Deck getDeckByUserId(int id);
-	public Deck findDeckById(int id);
+	public List<Deck> getDeckByUserId(int id);
+	public Deck findDeckByDeckId(int id);
 	public boolean addDeck(Deck deck);
 	public List<Card> getAllCardsFromUser(User id);
 	void addCardToDeck(Card card, String deckTitle);
-	List<Deck> getAllDecksByUser(User user);
 
 }

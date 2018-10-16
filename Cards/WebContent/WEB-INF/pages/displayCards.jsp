@@ -4,8 +4,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 	<ul>
 		<li><a href="/Card/home">Home</a></li>
-		<li><a href="/Card/diplayDecks">View Decks</a></li>
-		<li><a href="/Card/displayCards">View Cards</a></li>
 	</ul> <br/>
 <div align="center"></div>
 <h2>List of Cards</h2>

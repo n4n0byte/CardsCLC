@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.models.Card;
+import com.models.CardWithDeckTitle;
 import com.models.Deck;
 import com.models.User;
 import com.services.interfaces.IDeckBusinessService;
@@ -29,23 +30,24 @@ public class HomeController {
 	@GetMapping("home")
 	public String home(ModelMap modelMap, HttpServletRequest request) {
 		User user = (User)request.getSession().getAttribute("user");
-		modelMap.addAttribute("decks",IDeckBusinessService.getAllDecksByUser(user));
+		modelMap.addAttribute("decks", IDeckBusinessService.findAllDecksByUsername(user.getUsername()));
 		return "home";
 	}
 	
-	@GetMapping("newCard/{deckTitle}")
-	public String addNewCard(@PathVariable("deckTitle") String title, Card card, ModelMap map) {
+	@GetMapping("/newCard/{deckTitle}")
+	public ModelAndView addNewCard(@PathVariable("deckTitle") String title, Card card, ModelMap map) {
 
-		System.out.println(title);
-		map.addAttribute("card", new Card());
-		map.addAttribute("title",title);
+		System.out.println("DECK NAME: " + title);
+		ModelAndView res = new ModelAndView();
 		
-		return "newCard";
+		res.addObject("cardWithDeckTitle", new CardWithDeckTitle(card, title));
+		res.setViewName("newCard");
+		return res;
 	}
 	
 	@GetMapping("newDeck")
 	public String addNewDeck (Deck deck,ModelMap map) {
-		map.addAttribute("deck",new Deck());
+		map.addAttribute("deck", new Deck());
 		map.addAttribute("message", "Added Deck");
 		return "newDeck";
 	}
