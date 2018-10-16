@@ -3,23 +3,13 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	
 <ul>
-	<li><a href="/Card/home">Home</a></li>
+	<li><a href="/Card">Log Out</a></li>
 </ul>
 
 <br/>
 
 <div align="center">
-	<h2>Login Response</h2>
-	<table>
-		<tr>
-			<td><label> Welcome ${user.username}</label></td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<a href="/Card">Log Out</a>
-			</td>
-		</tr>
-	</table>
+	<h2>Welcome ${user.username}</h2>
 	<h3>List of Decks</h3>
 	<table>
 		<tr>

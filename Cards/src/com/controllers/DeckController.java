@@ -25,7 +25,7 @@ public class DeckController {
 	@PostMapping("createDeck")
 	public String addDeck(@Valid @ModelAttribute("deck")Deck deck, ModelMap modelMap, BindingResult result) {
 		
-		//validate only username and password
+		//validate only title and description
 		if (FieldChecker.hasError(result, "title", "description")) {
 			modelMap.put("message", "Validation Error");
 			return "addDeck";
