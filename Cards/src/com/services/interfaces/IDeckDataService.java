@@ -8,7 +8,7 @@ import com.models.Deck;
 
 /**
  *
- * @author Ali Cooper
+ * @author Ali Cooper, Anthony Natvidad
  *
  */
 public interface IDeckDataService {
