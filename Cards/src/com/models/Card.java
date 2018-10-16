@@ -7,13 +7,10 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import lombok.Builder;
-import lombok.ToString;
-
 /**
  * 
  * @author Ali Cooper
- *
+ * Card model class
  */
 public class Card {
 	
