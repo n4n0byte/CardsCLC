@@ -14,14 +14,17 @@ import com.models.Deck;
 public interface IDeckDataService {
 	
 	public Deck findDeckById(int id);
+	
 	public List<Deck> findAllDecksByUsername(String username);
+	public boolean addDeck(Deck deck);
 	public List<Deck> findAllDecksByUserId(int username);
 	public void updateDeck(Deck deck);
 	public boolean deleteDeckById(int id);
 	public boolean deleteDeck(Deck card);
 	public boolean addCardToDeckWithDeckId(Card card, int deckId);
+	public boolean addCardToDeckWithDeckTitle(Card card, String deckTitle);
 	public Card findCardById(int id);
-	public Card findCardByUserId(int id);
 	public Card findCardByTitle(String title);
+	public List<Card> findCardsByUserId(int userId);
 
 }

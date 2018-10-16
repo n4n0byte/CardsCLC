@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Primary;
 import com.services.implementations.MockCredentialsBusinessService;
 import com.services.implementations.MockCredentialsDataService;
 import com.services.implementations.MockDeckBusinessService;
+import com.services.implementations.MockDeckDataService;
 import com.services.interfaces.ICredentialsBusinessService;
 import com.services.interfaces.ICredentialsDataService;
 import com.services.interfaces.IDeckBusinessService;
@@ -37,5 +38,12 @@ public class Services {
 	public IDeckBusinessService iDeckBusinessService() {
 		return new MockDeckBusinessService();
 	}
+	
+	@Bean
+	@Primary
+	public IDeckDataService iDeckBusinessService1() {
+		return new MockDeckDataService();
+	}
+	
 		
 }

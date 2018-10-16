@@ -19,7 +19,7 @@ public class MockCredentialsBusinessService implements ICredentialsBusinessServi
 	
 	@Autowired
 	public void setCredentialsService(ICredentialsDataService credentialsService) {
-		System.out.println("INJECTING CREDENTIAL DATA SERVICE");
+		System.out.println("INJECTING CREDENTIALS DATA SERVICE");
 		this.credentialsService = credentialsService;
 	}
 	
@@ -28,7 +28,7 @@ public class MockCredentialsBusinessService implements ICredentialsBusinessServi
 	 */
 	@Override
 	public boolean isRegistered(User user) {
-		return true;
+		return credentialsService.isRegistered(user);
 	}	
 	
 	/**
@@ -36,7 +36,7 @@ public class MockCredentialsBusinessService implements ICredentialsBusinessServi
 	 */
 	@Override
 	public boolean tryRegisterUser(User user) {
-		return false;
+		return credentialsService.tryRegisterUser(user);
 	}
 	
 	/**
@@ -44,7 +44,7 @@ public class MockCredentialsBusinessService implements ICredentialsBusinessServi
 	 */
 	@Override
 	public boolean isValidCredentials(User user) {
-		return true;
+		return credentialsService.isValidCredentials(user);
 	}
 
 	

@@ -1,35 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<ul>
-		<li><a href="/Card/Home">Home</a></li>
-		<li><a href="/Card/diplayDecks">View Decks</a></li>
-		<li><a href="/Card/displayCards">View Cards</a></li>
-	</ul> <br/>
-	<div align="center">
-	<h2>Create New Card</h2>
-	<form:form method="POST" modelAttribute="card" action="makeDeck">
+<ul>
+	<li><a href="/Card/home">Home</a></li>
+</ul>
+		
+<div align="center">	
+	<h2>Add Card To Deck</h2>
+	<form:form method="POST" modelAttribute="cardWithDeckTitle" action="/Card/addCard">
+		
 		<table>
 			<tr>
-				<td><form:label path="title">Card Title:</form:label></td>
-				<td><form:input path="title"/></td>
-				<td><form:input path="title" minlength="3" maxlength="10" required="required"/></td>				
+				<td><form:label path="card.title">Title:</form:label></td>
+				<td><form:errors path="card.title"/></td>								
+				<td><form:input path="card.title"/></td>			
 			</tr>
 			<tr>
-				<td><form:label path="description">Description:</form:label></td>
-				<td><form:input path="description"/></td>
-				<td><form:input path="description" minlength="3" maxlength="10" required="required"/></td>
-				
+				<td><form:label path="card.description">Description:</form:label></td>
+				<td><form:errors path="card.description"/></td>
+				<td><form:input path="card.description"/></td>				
 			</tr>
 			<tr>
-				<td><form:label path="health">Health:</form:label></td>
-				<td><form:input path="health"/></td>
+				<td><form:label path="card.health">Health:</form:label></td>
+				<td><form:errors path="card.health"/></td>
+				<td><form:input path="card.health"/></td>				
 			</tr>
 			<tr>
-				<td><form:label path="damage">Damage:</form:label></td>
-				<td><form:input path="damage"/></td>
-			</tr>
+				<td><form:label path="card.damage">Damage:</form:label></td>
+				<td><form:errors path="card.damage"/></td>
+				<td><form:input path="card.damage"/></td>				
+			</tr>			
 			<tr>
 				<td colspan="2">
 					<input type="submit" value="Submit"/>
@@ -37,6 +36,7 @@
 			</tr>
 		</table>
 		<br/>
-		<form:errors path="*"/>
+		<form:hidden path="deckTitle" />
+		<form:errors path="*" />
 	</form:form>
 </div>
