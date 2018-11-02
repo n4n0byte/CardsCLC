@@ -22,21 +22,35 @@ public class HomeController {
 	
 	IDeckBusinessService IDeckBusinessService;
 	/*Implents the IDeckBusinessService allowing us to add cards to a deck or create a new deck by going through the businesslogic of the application*/
+	/**
+	 * 
+	 * @param iDeckBusinessService
+	 */
 	@Autowired
 	public void setIDeckBusinessService(IDeckBusinessService iDeckBusinessService) {
 		IDeckBusinessService = iDeckBusinessService;
 	}
 	/*Displays the current decks the user has made by returning an ArrayList of decks*/
+	/**
+	 * 
+	 * @param modelMap
+	 * @param request
+	 * @return
+	 */
 	@GetMapping("home")
 	public String home(ModelMap modelMap, HttpServletRequest request) {
 		User user = (User)request.getSession().getAttribute("user");
 		modelMap.addAttribute("decks", IDeckBusinessService.findAllDecksByUsername(user.getUsername()));
 		return "home";
 	}
-	/*Takes you to the add Card to deck view page
-	 * Uri is dependent on which deck is clicked
-	 * Deck is updated
-	 * */
+	/*Takes you to the add Card to deck view page Uri is dependent on which deck is clicked Deck is updated */
+	/**
+	 * 
+	 * @param title
+	 * @param card
+	 * @param map
+	 * @return
+	 */
 	@GetMapping("/newCard/{deckTitle}")
 	public ModelAndView addNewCard(@PathVariable("deckTitle") String title, Card card, ModelMap map) {
 
@@ -50,6 +64,12 @@ public class HomeController {
 	/*Takes you to the newDeck view page
 	 * To make deck you enter Title and Description
 	 * */
+	/**
+	 * 
+	 * @param deck
+	 * @param map
+	 * @return
+	 */
 	@GetMapping("newDeck")
 	public String addNewDeck (Deck deck,ModelMap map) {
 		map.addAttribute("deck", new Deck());

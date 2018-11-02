@@ -11,14 +11,14 @@ import com.services.interfaces.IDeckDataService;
 public class MockDeckBusinessService implements IDeckBusinessService {
 	
 	IDeckDataService iDeckDataService;
-	
+	/*sets the iDeckDataService*/
 	@Autowired
 	public void setiDeckDataService(IDeckDataService iDeckDataService) {
 		this.iDeckDataService = iDeckDataService;
 	}
-
-
-		
+	/**
+	 *	
+	 */
 	@Override
 	public void addCardToDeck(Card card, String deckTitle) {
 		

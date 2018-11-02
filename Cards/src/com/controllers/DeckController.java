@@ -16,12 +16,21 @@ import com.utils.FieldChecker;
 public class DeckController {
 
 	IDeckBusinessService IDeckBusinessService;
-	
+	/**
+	 * 
+	 * @param iDeckBusinessService
+	 */
 	@Autowired
 	public void setIDeckBusinessService(IDeckBusinessService iDeckBusinessService) {
 		IDeckBusinessService = iDeckBusinessService;
 	}
-
+	/**
+	 * 
+	 * @param deck
+	 * @param modelMap
+	 * @param result
+	 * @return
+	 */
 	@PostMapping("createDeck")
 	public String addDeck(@Valid @ModelAttribute("deck")Deck deck, ModelMap modelMap, BindingResult result) {
 		
@@ -36,7 +45,13 @@ public class DeckController {
 		modelMap.put("message", "Successfully Added Deck");
 		return "redirect:/home";
 	}	
-	
+	/**
+	 * 
+	 * @param cardWithDeckTitle
+	 * @param modelMap
+	 * @param result
+	 * @return
+	 */
 	@PostMapping("addCard")
 	public String addCard(@ModelAttribute("cardWithDeckTitle")CardWithDeckTitle cardWithDeckTitle, ModelMap modelMap, BindingResult result) {
 		
