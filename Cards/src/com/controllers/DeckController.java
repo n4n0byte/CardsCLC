@@ -7,6 +7,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.models.CardWithDeckTitle;
 import com.models.Deck;
 import com.services.interfaces.IDeckBusinessService;
@@ -32,8 +34,8 @@ public class DeckController {
 	 * @return
 	 */
 	@PostMapping("createDeck")
-	public String addDeck(@Valid @ModelAttribute("deck")Deck deck, ModelMap modelMap, BindingResult result) {
-		
+	public String addDeck(@Valid @ModelAttribute("deck")Deck deck, ModelMap modelMap, BindingResult result,final RedirectAttributes redirectAttrs) {
+		 redirectAttrs.addFlashAttribute("AttributeName", deck);
 		//validate only title and description
 		if (FieldChecker.hasError(result, "title", "description")) {
 			modelMap.put("message", "Validation Error");

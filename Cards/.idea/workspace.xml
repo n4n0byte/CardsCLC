@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ac51843e-46cb-4291-9788-329f3a767701" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/pages/displayCards.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/pages/displayCards.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/pages/newDeck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/pages/newDeck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/services/interfaces/IDeckBusinessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/services/interfaces/IDeckBusinessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/services/interfaces/IDeckDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/services/interfaces/IDeckDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/Card/Card/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/Card/Card/pom.properties" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/classes/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1741943569">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="JavaScript-modules-diagram/C:/Users/AC/git/CardsCLC/Cards/src/com/services/implementations;C:/Users/AC/git/CardsCLC/Cards/src/com/services/interfaces;" value="1" />
+          <entry key="MockCredentialsBusinessService" value="1" />
+          <entry key="controllers" value="1" />
+          <entry key="models" value="1" />
+          <entry key="services" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="UML" value="5" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="uml://JAVA/com.services.implementations.MockCredentialsBusinessService">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>com.services.implementations.MockCredentialsBusinessService</OriginalElement>
+              <nodes>
+                <node x="0.0" y="794.0">com.services.interfaces.ICredentialsBusinessService</node>
+                <node x="259.0" y="794.0">com.services.interfaces.ICredentialsDataService</node>
+                <node x="104.0" y="939.0">com.services.implementations.MockCredentialsBusinessService</node>
+                <node x="114.33333333333337" y="0.0">com.services.interfaces.IDeckDataService</node>
+                <node x="414.0" y="962.0">com.services.implementations.MockCredentialsDataService</node>
+                <node x="373.00000000000006" y="399.0">com.services.implementations.MockDeckBusinessService</node>
+                <node x="0.0" y="343.0">com.services.implementations.MockDeckDataService</node>
+                <node x="477.33333333333337" y="11.0">com.services.interfaces.IDeckBusinessService</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="com.services.implementations.MockCredentialsBusinessService" target="com.services.interfaces.ICredentialsDataService">
+                  <point x="0.0" y="-70.5" />
+                  <point x="249.0" y="914.0" />
+                  <point x="298.8333333333333" y="914.0" />
+                  <point x="-79.66666666666669" y="47.5" />
+                </edge>
+                <edge source="com.services.implementations.MockDeckBusinessService" target="com.services.interfaces.IDeckDataService">
+                  <point x="-104.33333333333331" y="-147.0" />
+                  <point x="425.16666666666674" y="323.0" />
+                  <point x="354.4333333333334" y="323.0" />
+                  <point x="68.60000000000002" y="146.5" />
+                </edge>
+                <edge source="com.services.implementations.MockDeckDataService" target="com.services.interfaces.IDeckDataService">
+                  <point x="-114.33333333333331" y="-203.0" />
+                  <point x="57.166666666666686" y="323.0" />
+                  <point x="148.63333333333338" y="323.0" />
+                  <point x="-137.2" y="146.5" />
+                </edge>
+                <edge source="com.services.implementations.MockCredentialsDataService" target="com.services.interfaces.ICredentialsDataService">
+                  <point x="0.0" y="-47.5" />
+                  <point x="533.5" y="914.0" />
+                  <point x="458.1666666666667" y="914.0" />
+                  <point x="79.66666666666669" y="47.5" />
+                </edge>
+                <edge source="com.services.implementations.MockDeckBusinessService" target="com.services.interfaces.IDeckBusinessService">
+                  <point x="104.33333333333331" y="-147.0" />
+                  <point x="0.0" y="135.5" />
+                </edge>
+                <edge source="com.services.implementations.MockCredentialsBusinessService" target="com.services.interfaces.ICredentialsBusinessService">
+                  <point x="-96.66666666666669" y="-70.5" />
+                  <point x="152.33333333333331" y="914.0" />
+                  <point x="119.5" y="914.0" />
+                  <point x="0.0" y="47.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="361.5" y="807.0" />
+              <SelectedNodes>
+                <node>com.services.implementations.MockCredentialsBusinessService</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Fields</Category>
+                <Category>Constructors</Category>
+                <Category>Methods</Category>
+                <Category>Inner Classes</Category>
+                <Category>Properties</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-295" />
+    <option name="y" value="-65" />
+    <option name="width" value="3235" />
+    <option name="height" value="1835" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Cards" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cards" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cards" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cards" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cards" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cards" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cards" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cards" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cards" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cards" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cards" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cards" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cards" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cards" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="implementations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cards" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cards" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539672578344" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac51843e-46cb-4291-9788-329f3a767701" name="Default Changelist" comment="" />
+      <created>1539672338336</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1539672338336</updated>
+      <workItem from="1539672343414" duration="308000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="308000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24939272" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Flutter Inspector" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Flutter Outline" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="uml://JAVA/com.controllers">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.controllers</OriginalElement>
+          <nodes>
+            <node x="0.0" y="0.0">com.controllers.HomeController</node>
+            <node x="0.0" y="304.0">com.controllers.DeckController</node>
+            <node x="0.0" y="445.0">com.controllers.RegistrationController</node>
+            <node x="0.0" y="163.0">com.controllers.LoginController</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="214.5" y="270.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Constructors</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.models">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.models</OriginalElement>
+          <nodes>
+            <node x="512.0" y="0.0">com.models.User</node>
+            <node x="0.0" y="455.0">com.models.Deck</node>
+            <node x="106.375" y="0.0">com.models.Card</node>
+            <node x="228.0" y="554.0">com.models.CardWithDeckTitle</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="com.models.Deck" target="com.models.Card">
+              <point x="-52.0" y="-202.5" />
+              <point x="52.0" y="430.0" />
+              <point x="135.25" y="430.0" />
+              <point x="-86.625" y="202.5" />
+            </edge>
+            <edge source="com.models.CardWithDeckTitle" target="com.models.Card">
+              <point x="-59.75" y="-103.5" />
+              <point x="287.75" y="430.0" />
+              <point x="250.75" y="430.0" />
+              <point x="28.875" y="202.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="401.5" y="273.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.services">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.services</OriginalElement>
+          <nodes>
+            <node x="0.0" y="79.0">com.services.implementations</node>
+            <node x="19.5" y="0.0">com.services.interfaces</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="com.services.implementations" target="com.services.interfaces">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="84.0" y="54.0" />
+          <SelectedNodes>
+            <node>com.services.interfaces</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/AC/git/CardsCLC/Cards/src/com/services/implementations;C:/Users/AC/git/CardsCLC/Cards/src/com/services/interfaces;">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/com/services/implementations;C:/Users/AC/git/CardsCLC/Cards/src/com/services/interfaces;</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="436.9999999999999" y="214.00000000000017" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.services.implementations.MockCredentialsBusinessService">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.services.implementations.MockCredentialsBusinessService</OriginalElement>
+          <nodes>
+            <node x="0.0" y="794.0">com.services.interfaces.ICredentialsBusinessService</node>
+            <node x="259.0" y="794.0">com.services.interfaces.ICredentialsDataService</node>
+            <node x="104.0" y="939.0">com.services.implementations.MockCredentialsBusinessService</node>
+            <node x="114.33333333333337" y="0.0">com.services.interfaces.IDeckDataService</node>
+            <node x="414.0" y="962.0">com.services.implementations.MockCredentialsDataService</node>
+            <node x="373.00000000000006" y="399.0">com.services.implementations.MockDeckBusinessService</node>
+            <node x="0.0" y="343.0">com.services.implementations.MockDeckDataService</node>
+            <node x="477.33333333333337" y="11.0">com.services.interfaces.IDeckBusinessService</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="com.services.implementations.MockCredentialsBusinessService" target="com.services.interfaces.ICredentialsDataService">
+              <point x="0.0" y="-70.5" />
+              <point x="249.0" y="914.0" />
+              <point x="298.8333333333333" y="914.0" />
+              <point x="-79.66666666666669" y="47.5" />
+            </edge>
+            <edge source="com.services.implementations.MockDeckBusinessService" target="com.services.interfaces.IDeckDataService">
+              <point x="-104.33333333333331" y="-147.0" />
+              <point x="425.16666666666674" y="323.0" />
+              <point x="354.4333333333334" y="323.0" />
+              <point x="68.60000000000002" y="146.5" />
+            </edge>
+            <edge source="com.services.implementations.MockDeckDataService" target="com.services.interfaces.IDeckDataService">
+              <point x="-114.33333333333331" y="-203.0" />
+              <point x="57.166666666666686" y="323.0" />
+              <point x="148.63333333333338" y="323.0" />
+              <point x="-137.2" y="146.5" />
+            </edge>
+            <edge source="com.services.implementations.MockCredentialsDataService" target="com.services.interfaces.ICredentialsDataService">
+              <point x="0.0" y="-47.5" />
+              <point x="533.5" y="914.0" />
+              <point x="458.1666666666667" y="914.0" />
+              <point x="79.66666666666669" y="47.5" />
+            </edge>
+            <edge source="com.services.implementations.MockDeckBusinessService" target="com.services.interfaces.IDeckBusinessService">
+              <point x="104.33333333333331" y="-147.0" />
+              <point x="0.0" y="135.5" />
+            </edge>
+            <edge source="com.services.implementations.MockCredentialsBusinessService" target="com.services.interfaces.ICredentialsBusinessService">
+              <point x="-96.66666666666669" y="-70.5" />
+              <point x="152.33333333333331" y="914.0" />
+              <point x="119.5" y="914.0" />
+              <point x="0.0" y="47.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="361.5" y="807.0" />
+          <SelectedNodes>
+            <node>com.services.implementations.MockCredentialsBusinessService</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Inner Classes</Category>
+            <Category>Properties</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

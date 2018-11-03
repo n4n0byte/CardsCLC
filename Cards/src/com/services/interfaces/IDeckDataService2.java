@@ -11,7 +11,7 @@ import com.models.Deck;
  * @author Ali Cooper, Anthony Natvidad
  *
  */
-public interface IDeckDataService {
+public interface IDeckDataService2 {
 	
 	public Deck findDeckById(int id);
 	
