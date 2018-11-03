@@ -9,21 +9,23 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.models.Card;
 import com.models.CardWithDeckTitle;
 import com.models.Deck;
 import com.models.User;
-import com.services.interfaces.IDeckBusinessService;
+import com.services.interfaces.DeckBusinessServiceInterface;
 
 @Controller
 public class HomeController {
 	
-	IDeckBusinessService IDeckBusinessService;
+	DeckBusinessServiceInterface IDeckBusinessService;
 	/*Implents the IDeckBusinessService allowing us to add cards to a deck or create a new deck by going through the businesslogic of the application*/
 	@Autowired
-	public void setIDeckBusinessService(IDeckBusinessService iDeckBusinessService) {
+	public void setIDeckBusinessService(DeckBusinessServiceInterface iDeckBusinessService) {
 		IDeckBusinessService = iDeckBusinessService;
 	}
 	/*Displays the current decks the user has made by returning an ArrayList of decks*/
@@ -38,8 +40,7 @@ public class HomeController {
 	 * Deck is updated
 	 * */
 	@GetMapping("/newCard/{deckTitle}")
-	public ModelAndView addNewCard(@PathVariable("deckTitle") String title, Card card, ModelMap map) {
-
+	public ModelAndView addNewCard(@PathVariable("deckTitle") String title, Card card, ModelMap map, RedirectAttributes attrs) {
 		System.out.println("DECK NAME: " + title);
 		ModelAndView res = new ModelAndView();
 		

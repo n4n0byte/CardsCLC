@@ -3,15 +3,14 @@ package com.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-
 import com.services.implementations.MockCredentialsBusinessService;
 import com.services.implementations.MockCredentialsDataService;
 import com.services.implementations.MockDeckBusinessService;
 import com.services.implementations.MockDeckDataService;
-import com.services.interfaces.ICredentialsBusinessService;
-import com.services.interfaces.ICredentialsDataService;
-import com.services.interfaces.IDeckBusinessService;
-import com.services.interfaces.IDeckDataService;
+import com.services.interfaces.CredentialsBusinessServiceInterface;
+import com.services.interfaces.CredentialsDataServiceInterface;
+import com.services.interfaces.DeckBusinessServiceInterface;
+import com.services.interfaces.DeckDataServiceInterface;
 
 /**
  * 
@@ -23,27 +22,26 @@ public class Services {
 	
 	@Bean
     @Primary
-	public ICredentialsBusinessService loginBusinessService() {
+	public CredentialsBusinessServiceInterface loginBusinessService() {
 		return new MockCredentialsBusinessService();
 	}
 	
 	@Bean
 	@Primary
-	public ICredentialsDataService loginDataService() {
+	public CredentialsDataServiceInterface loginDataService() {
 		return new MockCredentialsDataService();
 	}
 	
 	@Bean
 	@Primary
-	public IDeckBusinessService iDeckBusinessService() {
+	public DeckBusinessServiceInterface iDeckBusinessService() {
 		return new MockDeckBusinessService();
 	}
 	
 	@Bean
 	@Primary
-	public IDeckDataService iDeckBusinessService1() {
+	public DeckDataServiceInterface iDeckBusinessService1() {
 		return new MockDeckDataService();
 	}
-	
-		
+			
 }

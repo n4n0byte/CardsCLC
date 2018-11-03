@@ -1,5 +1,6 @@
 package com.controllers;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,23 +8,27 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.models.CardWithDeckTitle;
 import com.models.Deck;
-import com.services.interfaces.IDeckBusinessService;
+import com.models.User;
+import com.services.interfaces.DeckBusinessServiceInterface;
 import com.utils.FieldChecker;
 
 @Controller
 public class DeckController {
 
-	IDeckBusinessService IDeckBusinessService;
+	DeckBusinessServiceInterface IDeckBusinessService;
 	
 	@Autowired
-	public void setIDeckBusinessService(IDeckBusinessService iDeckBusinessService) {
+	public void setIDeckBusinessService(DeckBusinessServiceInterface iDeckBusinessService) {
 		IDeckBusinessService = iDeckBusinessService;
 	}
 
 	@PostMapping("createDeck")
-	public String addDeck(@Valid @ModelAttribute("deck")Deck deck, ModelMap modelMap, BindingResult result) {
+	public String addDeck(@Valid @ModelAttribute("deck")Deck deck, ModelMap modelMap, BindingResult result, RedirectAttributes attrs, HttpServletRequest sess) {
 		
 		//validate only title and description
 		if (FieldChecker.hasError(result, "title", "description")) {
@@ -34,7 +39,10 @@ public class DeckController {
 		IDeckBusinessService.addDeck(deck);
 		
 		modelMap.put("message", "Successfully Added Deck");
-		return "redirect:/home";
+		User user = (User) sess.getAttribute("user");
+		attrs.addFlashAttribute("decks", IDeckBusinessService.findAllDecksByUsername(user.getUsername()));
+
+		return "home";
 	}	
 	
 	@PostMapping("addCard")

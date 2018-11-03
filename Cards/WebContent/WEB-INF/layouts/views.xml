@@ -25,6 +25,13 @@
 	<definition name="displayCards" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/displayCards.jsp" />
 	</definition>
+	<definition name="calculator" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/calculator.jsp" />
+	</definition>
+	<definition name="result" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/result.jsp" />
+	</definition>
+	
  <!--
   <definition name="*" extends="DefaultTemplate" >
   	<put-attribute name="body" value="/WEB-INF/pages/{1}.jsp"/>

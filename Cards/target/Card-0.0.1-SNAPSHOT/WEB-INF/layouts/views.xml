@@ -7,11 +7,31 @@
     	<put-attribute name="body" value="/WEB-INF/pages/registrationForm.jsp" />
 	</definition>
 	<definition name="login" extends="DefaultTemplate">
+    	<put-attribute name="header" value="/WEB-INF/pages/loginHeader.jsp" />		
     	<put-attribute name="body" value="/WEB-INF/pages/loginForm.jsp" />
 	</definition>
 	<definition name="home" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/home.jsp" />
 	</definition>
+	<definition name="addDeck" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/home.jsp" />
+	</definition>
+	<definition name="newCard" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/newCard.jsp" />
+	</definition>
+	<definition name="newDeck" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/newDeck.jsp" />
+	</definition>
+	<definition name="displayCards" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/displayCards.jsp" />
+	</definition>
+	<definition name="calculator" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/calculator.jsp" />
+	</definition>
+	<definition name="result" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/result.jsp" />
+	</definition>
+	
  <!--
   <definition name="*" extends="DefaultTemplate" >
   	<put-attribute name="body" value="/WEB-INF/pages/{1}.jsp"/>

@@ -7,15 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.models.Card;
 import com.models.Deck;
-import com.services.interfaces.IDeckDataService;
+import com.services.interfaces.DeckDataServiceInterface;
 
-public class MockDeckDataService implements IDeckDataService{
+public class MockDeckDataService implements DeckDataServiceInterface{
 
-	IDeckDataService service;
+	DeckDataServiceInterface service;
 	
 	
 	@Autowired
-	public void setService(IDeckDataService service) {
+	public void setService(DeckDataServiceInterface service) {
 		this.service = service;
 	}
 

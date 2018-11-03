@@ -3,8 +3,16 @@ pageEncoding="ISO-8859-1"%>
 
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
+<ul>
+	<li><a href="/Card">Login</a></li>
+</ul>
+
+<br/>
+<br/>
+<br/>
+
 <form:form method="POST" modelAttribute="user" action="register">
-		
+<div align="center">	
 		<table>
 			<tr>				
 				<td>${message}</td>
@@ -34,12 +42,8 @@ pageEncoding="ISO-8859-1"%>
 					<input type="submit" value="Register"/>
 				</td>
 			</tr>
-			<tr>
-			<td colspan="2">
-				<a href="/Card">Login Page</a>
-			</td>
-			</tr>
 		</table>
 		<br/>
 		<form:errors path="*"/>
 	</form:form>
+</div>
