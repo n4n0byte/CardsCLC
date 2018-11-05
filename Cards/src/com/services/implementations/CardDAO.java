@@ -61,10 +61,15 @@ public class CardDAO implements CardDAOInterface{
 
 	@Override
 	public void addModel(Card model) {
-		// TODO Auto-generated method stub
-		
+		jdbcTemplateObject.update("INSERT INTO carddb.cards (deckId, title, description, health, damage) VALUES (?, ?, ?, ?, ?)",
+	    		model.getDeckId(),
+	    		model.getTitle(),
+	    		model.getDescription(),
+	    		model.getHealth(),
+	    		model.getDamage()
+		);
 	}
-
+	
 	@Override
 	public List<Card> findCardsByDeckId(int deckId) {
 		String sql = "SELECT * FROM carddb.cards where deckId = " + deckId;
@@ -76,11 +81,6 @@ public class CardDAO implements CardDAOInterface{
 		}
 		
 		return results;
-	}
-
-	@Override
-	public Card findCardById(int id) {
-		return null;
 	}
 
 

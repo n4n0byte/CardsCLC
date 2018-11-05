@@ -31,13 +31,12 @@ public interface DeckBusinessServiceInterface{
 	public List<Deck> findAllDecksByUserId(int id);
 	public void updateDeck(Deck deck);
 	public boolean deleteDeckById(int id);
-	public boolean deleteDeck(Deck deck);
-	public boolean addCardToDeckWithDeckId(Card card, int deckId);
 	public List<Deck> getDeckByUserId(int id);
 	public List<Card> getAllCardsFromUser(User id);
 	public void addDeck(Deck deck);
-	public void addCardToDeckWithDeckId(Card card, String deckTitle);
-	public void addCardToDeck(Card card, String deckTitle);
-	public void findDeckByDeckId(int deckId);
+	public Deck findDeckByDeckId(int deckId);
+	public boolean deleteDeckByTitle(String title);
+	public void addCardToDeckWithDeckId(Card card, int deckId);
+	public void addCardToDeckWithDeckTitle(Card card, String deckTitle);
 
 }

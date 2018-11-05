@@ -1,28 +1,26 @@
 package com.services.implementations;
 
-import java.util.Collections;
+
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
 import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-
 import com.mappers.DeckMapper;
-import com.models.Card;
 import com.models.Deck;
 import com.services.interfaces.CardDAOInterface;
 import com.services.interfaces.DeckDAOInterface;
 
+/**
+ * 
+ * @author Ali Cooper
+ *	Data Access Object used for crud operations
+ *	on Deck objects
+ *
+ */
 public class DeckDAO implements DeckDAOInterface {
 	
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
-	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	private CardDAOInterface cardDAO;
 	
    	@Autowired
@@ -30,7 +28,6 @@ public class DeckDAO implements DeckDAOInterface {
    		System.out.println("INJECTING DATA SOURCE");
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
-		this.namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(this.dataSource);
 	}
 
    	
@@ -42,26 +39,54 @@ public class DeckDAO implements DeckDAOInterface {
 	}
 
 	@Override
-	public Deck getById(int id) {
-		// TODO Auto-generated method stub
+	public Deck getById(int id) {			
+		List<Deck> decks  = jdbcTemplateObject.query("select * from carddb.decks where id = ? limit 1", new Object[]{id}, new DeckMapper());
+		if (decks.size() > 0) {
+			decks.get(0).setCards(cardDAO.findCardsByDeckId(decks.get(0).getDeckId()));
+			return decks.get(0);		
+		}
+		
 		return null;
 	}
 
 	@Override
+	public Deck getByTitle(String title) {			
+		List<Deck> decks  = jdbcTemplateObject.query("select * from carddb.decks where title = ? limit 1", new Object[]{title}, new DeckMapper());
+		if (decks.size() > 0) {
+			decks.get(0).setCards(cardDAO.findCardsByDeckId(decks.get(0).getDeckId()));
+			return decks.get(0);		
+		}
+		
+		return null;
+	}
+
+	
+	@Override
 	public boolean deleteById(int id) {
 		
-		int rowsDeleted = jdbcTemplateObject.update("delete carddb.decks where id = ?", id);
+		int rowsDeleted = jdbcTemplateObject.update("delete from carddb.decks where id = ?", id);
 		if (rowsDeleted > 0) return true;
 		
 		return false;
 	}
+	
+	@Override
+	public boolean deleteByTitle(String title) {
+		
+		int rowsDeleted = jdbcTemplateObject.update("delete from carddb.decks where title = ?", title);
+		if (rowsDeleted > 0) return true;
+		
+		return false;
+		
+	}
 
 	@Override
 	public boolean updateByModelById(Deck input, int id) {
-		  jdbcTemplateObject.update("UPDATE carddb.decks userId = ?, description = ?, title = ?",
-	    			input.getUserId(),
-	    			input.getDescription(), 
-	    			input.getTitle()
+		
+		jdbcTemplateObject.update("UPDATE carddb.decks set description = ?, title = ? where userId = ?",
+			input.getDescription(), 
+			input.getTitle(),
+			id
 		);
 		return false;
 	}
@@ -77,20 +102,6 @@ public class DeckDAO implements DeckDAOInterface {
 	    		
 	}
 
-
-	@Override
-	public boolean addCardToDeckWithDeckId(Card card, int deckId) {
-		 jdbcTemplateObject.update("INSERT INTO carddb.cards (deckId, title, description, health, damage) VALUES (?, ?, ?, ?, ?)",
-	    		deckId,
-	    		card.getTitle(),
-	    		card.getDescription(),
-	    		card.getHealth(),
-	    		card.getDamage()
-		);
-		return false;
-	}
-
-
 	@Override
 	public List<Deck> findAllDecksByUserId(int id) {
 		
@@ -104,6 +115,9 @@ public class DeckDAO implements DeckDAOInterface {
 		return results;
 	}
 
+	/**
+	 * 
+	 */
 	@Override
 	public List<Deck> findAll() {
 		

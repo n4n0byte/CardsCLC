@@ -14,6 +14,7 @@ import com.models.Deck;
 public interface DeckDAOInterface extends GenericDAOInterface<Deck>{
 	
 	public List<Deck> findAllDecksByUserId(int id);
-	public boolean addCardToDeckWithDeckId(Card card, int deckId);
+	public boolean deleteByTitle(String title);
+	Deck getByTitle(String title);
 
 }

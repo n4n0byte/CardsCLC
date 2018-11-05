@@ -19,6 +19,7 @@ public class CardMapper implements RowMapper<Card> {
 				arg0.getInt("health"), 
 				arg0.getInt("damage"));
 		
+		card.setDeckId(arg0.getInt("deckId"));
 		
 		System.out.println(card);
 		return card;

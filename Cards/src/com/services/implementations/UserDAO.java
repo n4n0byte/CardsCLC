@@ -71,9 +71,7 @@ public class UserDAO implements UserDAOInterface{
 	public User findByUsername(String username) {
 		String sql = "SELECT * from carddb.users where username = ?";
 		List<User> results = jdbcTemplateObject.query(sql, new Object[] {username} ,new UserMapper());
-		
 		if (results.size() > 0) return results.get(0);
-		
 		return null;
 	}
 

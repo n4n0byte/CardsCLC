@@ -35,7 +35,9 @@ public class Card {
 	@Min(0)
 	private int damage;
 
+	private int deckId;	
 	
+
 	public Card(int id, String title, String description, int health, int damage) {
 		super();
 		this.id = id;
@@ -47,6 +49,16 @@ public class Card {
 
 	public Card() {}
 
+	
+	public int getDeckId() {
+		return deckId;
+	}
+
+	public void setDeckId(int deckId) {
+		this.deckId = deckId;
+	}
+
+	
 	public int getId() {
 		return id;
 	}

@@ -57,6 +57,7 @@ public class HomeController {
 		res.setViewName("newCard");
 		return res;
 	}
+	
 	/*Takes you to the newDeck view page
 	 * To make deck you enter Title and Description
 	 * */

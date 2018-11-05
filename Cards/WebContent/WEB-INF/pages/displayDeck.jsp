@@ -6,24 +6,25 @@
 		<li><a href="/Card/home">Home</a></li>		
 	</ul> <br/>
 <div align="center">
-<h2>List of Decks</h2>
+<h2>List of Cards in Deck: ${deck.title} </h2>
 	<table>
 		<tr>
-			<th><label>First Name</label></th>
-			<th><label>Last Name</label></th>
+			<th><label>Title</label></th>
+			<th><label>Description</label></th>
+			<th><label>Damage</label></th>
+			<th><label>Health</label></th>
 		</tr>
-		<c:forEach var="deck" items="${decks}">
+		<c:forEach var="card" items="${deck.cards}">
 			<tr>
-				<td><label>${decks.title}</label></td>
-				<td><label>${decks.description}</label></td>
-				<c:forEach var="card" items="${decks}">
-					<td><label>${decks.cards}</label><td>
-				</c:forEach>
+				<td><label>${card.title}</label></td>
+				<td><label>${card.description}</label></td>
+				<td><label>${card.damage}</label></td>
+				<td><label>${card.health}</label></td>
 			</tr>
 		</c:forEach>
 		<tr>
 			<td colspan="2">
-			<a href="add">Add a User</a>
+			<a href="add">Add a Card</a>
 			</td>
 		</tr>
 	</table>

@@ -8,6 +8,4 @@ public interface CardDAOInterface extends GenericDAOInterface<Card> {
 	
 	public List<Card> findCardsByDeckId(int deckId);
 	
-	public Card findCardById(int id);
-	
 }

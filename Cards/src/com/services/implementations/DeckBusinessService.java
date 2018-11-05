@@ -7,13 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.models.Card;
 import com.models.Deck;
 import com.models.User;
+import com.services.interfaces.CardDAOInterface;
 import com.services.interfaces.DeckBusinessServiceInterface;
 import com.services.interfaces.DeckDAOInterface;
 
 public class DeckBusinessService implements DeckBusinessServiceInterface {
 	
 	DeckDAOInterface iDeckDataService;
+	CardDAOInterface cardSvc;
 	
+	
+	@Autowired
+	public void setCardSvc(CardDAOInterface cardSvc) {
+		this.cardSvc = cardSvc;
+	}
+
+
 	@Autowired
 	public void setiDeckDataService(DeckDAOInterface iDeckDataService) {
 		this.iDeckDataService = iDeckDataService;
@@ -37,7 +46,7 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 
 	@Override
 	public void updateDeck(Deck deck) {
-		iDeckDataService.updateByModelById(deck, deck.getDeckId());
+		iDeckDataService.updateByModelById(deck, deck.getUserId());
 	}
 
 	@Override
@@ -46,8 +55,9 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	}
 
 	@Override
-	public boolean addCardToDeckWithDeckId(Card card, int deckId) {
-		return iDeckDataService.addCardToDeckWithDeckId(card, deckId);		
+	public void addCardToDeckWithDeckId(Card card, int deckId) {
+		card.setDeckId(deckId);
+		cardSvc.addModel(card);	
 	}
 
 
@@ -56,15 +66,11 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	public List<Deck> findAllDecksByUsername(String username) {
 		return null;
 	}
-
-
-
+	
 	@Override
-	public boolean deleteDeck(Deck deck) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean deleteDeckByTitle(String title) {
+		return iDeckDataService.deleteByTitle(title);
 	}
-
 
 
 	@Override
@@ -81,24 +87,17 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	}
 
 
+
 	@Override
-	public void addCardToDeckWithDeckId(Card card, String deckTitle) {
-		// TODO Auto-generated method stub
-		
+	public void addCardToDeckWithDeckTitle(Card card, String deckTitle) {
+		card.setDeckId(iDeckDataService.getByTitle(deckTitle).getDeckId());
+		cardSvc.addModel(card);
 	}
 
 
 	@Override
-	public void addCardToDeck(Card card, String deckTitle) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void findDeckByDeckId(int deckId) {
-		// TODO Auto-generated method stub
-		
+	public Deck findDeckByDeckId(int deckId) {
+		return iDeckDataService.getById(deckId);
 	}
 
 

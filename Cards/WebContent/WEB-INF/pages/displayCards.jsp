@@ -22,11 +22,6 @@
 				<td><label>${cards.health}</label></td>
 				<td><label>${cards.damage}</label></td>
 			</tr>
-		</c:forEach>
-		<tr>
-			<td colspan="2">
-			<a href="add">Add a User</a>
-			</td>
-		</tr>
+		</c:forEach>		
 	</table>
 	</div>

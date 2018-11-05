@@ -4,7 +4,6 @@
 	
 <ul>
 	<li><a href="/Card">Log Out</a></li>
-	<li><a href="/Card/findById">FindById</a></li>
 	<li><a href="/Card/updateDeck">Update</a></li>
 </ul>
 
@@ -21,7 +20,7 @@
 		</tr>
 		<c:forEach var="deck" items="${decks}">
 			<tr>
-				<td><label><a href="/displayDeck">${deck.title}</label></td>
+				<td><label><a href="/Card/displayDeck/${deck.deckId}">${deck.title}</a></label></td>
 				<td><label>${deck.description}</label></td>
 				<td>
 					<label><a href="/Card/newCard/${deck.title}">Add</a></label>
