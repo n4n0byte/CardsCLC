@@ -2,20 +2,21 @@ package com.services.implementations;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.models.Card;
 import com.models.Deck;
-import com.services.interfaces.DeckDataServiceInterface;
+import com.services.interfaces.DeckDAOInterface;
 
-public class MockDeckDataService implements DeckDataServiceInterface{
+public class MockDeckDataService implements DeckDAOInterface{
 
-	DeckDataServiceInterface service;
+	DeckDAOInterface service;
 	
 	
 	@Autowired
-	public void setService(DeckDataServiceInterface service) {
+	public void setService(DeckDAOInterface service) {
 		this.service = service;
 	}
 
@@ -43,55 +44,6 @@ public class MockDeckDataService implements DeckDataServiceInterface{
 		
 	}
 
-	
-	@Override
-	public Deck findDeckById(int id) {
-		
-		for (Deck deck : decks) {
-			if (deck.getDeckId() == id) return deck;
-		}
-		return null;
-	}
-
-	@Override
-	public List<Deck> findAllDecksByUsername(String username) {
-		return decks;
-	}
-
-	@Override
-	public List<Deck> findAllDecksByUserId(int userId) {
-		int size = decks.size();
-		int count = 0;
-		List<Deck> deckVal = new ArrayList<Deck>();
-		for(int i=1; i<size;i++) {
-			if(true) {
-				deckVal.add(decks.get(i));
-				count++;
-			}		
-		}
-		if(count==0) {
-			return null;
-		}
-		return deckVal;
-	}
-
-	@Override
-	public void updateDeck(Deck deck) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean deleteDeckById(int id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean deleteDeck(Deck card) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	public boolean addCardToDeckWithDeckId(Card card, int deckId) {
@@ -101,55 +53,49 @@ public class MockDeckDataService implements DeckDataServiceInterface{
 		return false;
 	}
 
+
+
+
 	@Override
-	public Card findCardById(int id) {
-		for(Deck deck : decks) {
-			for(Card card : deck.getCards()) {
-				if (card.getId() == id) return card;
-			}
-		}
+	public boolean deleteById(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public void addModel(Deck model) {
+		decks.add(model);
+	}
+
+
+	@Override
+	public boolean updateByModelById(Deck input, int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	@Override
+	public List<Deck> findAllDecksByUserId(int id) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 
 	@Override
-	public Card findCardByTitle(String title) {
-		for(Deck deck : decks) {
-			for(Card card : deck.getCards()) {
-				if (card.getTitle().equals(title)) return card;
-			}
-		}
+	public List<Deck> findAll() {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 
 	@Override
-	public boolean addCardToDeckWithDeckTitle(Card card, String deckTitle) {
-		for(Deck deck : decks) {
-			if (deck.getTitle().equals(deckTitle)) {
-				deck.addCard(new Card(4, card.getTitle(),card.getDescription(),card.getHealth(),card.getDamage()));
-			}
-		}		
-		return true;
+	public Deck getById(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-
-	@Override
-	public boolean addDeck(Deck deck) {
-		decks.add(deck);
-		return true;
-	}
-
-	@Override
-	public List<Card> findCardsByUserId(int userId) {
-		List<Card> cards = new ArrayList<>();
-		for(Deck deck : decks) {
-			if (deck.getUserId() == userId) {
-				cards.addAll(deck.getCards());
-			}
-		}		
-		return cards;
-	}
 
 	
 	

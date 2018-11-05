@@ -5,12 +5,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import com.services.implementations.MockCredentialsBusinessService;
 import com.services.implementations.MockCredentialsDataService;
-import com.services.implementations.MockDeckBusinessService;
+import com.models.Deck;
+import com.services.implementations.DeckBusinessService;
+import com.services.implementations.DeckDAO;
 import com.services.implementations.MockDeckDataService;
 import com.services.interfaces.CredentialsBusinessServiceInterface;
 import com.services.interfaces.CredentialsDataServiceInterface;
 import com.services.interfaces.DeckBusinessServiceInterface;
-import com.services.interfaces.DeckDataServiceInterface;
+import com.services.interfaces.DeckDAOInterface;
 
 /**
  * 
@@ -35,13 +37,14 @@ public class Services {
 	@Bean
 	@Primary
 	public DeckBusinessServiceInterface iDeckBusinessService() {
-		return new MockDeckBusinessService();
+		return new DeckBusinessService();
 	}
 	
 	@Bean
 	@Primary
-	public DeckDataServiceInterface iDeckBusinessService1() {
-		return new MockDeckDataService();
+	public DeckDAOInterface deckDAOService() { 
+		DeckDAOInterface deckDAO = new DeckDAO();
+		return deckDAO;
 	}
 			
 }

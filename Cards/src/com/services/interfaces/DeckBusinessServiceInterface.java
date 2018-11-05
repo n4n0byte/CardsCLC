@@ -13,7 +13,7 @@ import com.models.User;
  * @author Ali Cooper, Anthony Natvidad
  *
  */
-public interface DeckBusinessServiceInterface {
+public interface DeckBusinessServiceInterface{
 	
 	/**
 	 * returns all decks given the username
@@ -34,9 +34,9 @@ public interface DeckBusinessServiceInterface {
 	public boolean deleteDeck(Deck deck);
 	public boolean addCardToDeckWithDeckId(Card card, int deckId);
 	public List<Deck> getDeckByUserId(int id);
-	public Deck findDeckByDeckId(int id);
-	public boolean addDeck(Deck deck);
 	public List<Card> getAllCardsFromUser(User id);
-	void addCardToDeck(Card card, String deckTitle);
+	public void addDeck(Deck deck);
+
+	public void addCardToDeckWithDeckId(Card card, String deckTitle);
 
 }

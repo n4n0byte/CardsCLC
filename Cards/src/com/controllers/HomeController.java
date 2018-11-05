@@ -1,15 +1,12 @@
 package com.controllers;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -28,6 +25,7 @@ public class HomeController {
 	public void setIDeckBusinessService(DeckBusinessServiceInterface iDeckBusinessService) {
 		IDeckBusinessService = iDeckBusinessService;
 	}
+	
 	/*Displays the current decks the user has made by returning an ArrayList of decks*/
 	@GetMapping("home")
 	public String home(ModelMap modelMap, HttpServletRequest request) {
@@ -35,12 +33,14 @@ public class HomeController {
 		modelMap.addAttribute("decks", IDeckBusinessService.findAllDecksByUsername(user.getUsername()));
 		return "home";
 	}
+	
 	/*Takes you to the add Card to deck view page
 	 * Uri is dependent on which deck is clicked
 	 * Deck is updated
 	 * */
 	@GetMapping("/newCard/{deckTitle}")
 	public ModelAndView addNewCard(@PathVariable("deckTitle") String title, Card card, ModelMap map, RedirectAttributes attrs) {
+
 		System.out.println("DECK NAME: " + title);
 		ModelAndView res = new ModelAndView();
 		

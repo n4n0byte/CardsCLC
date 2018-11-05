@@ -57,7 +57,7 @@ public class DeckController {
 		}
 		
 		modelMap.put("message", "Successfully Added Card");
-		IDeckBusinessService.addCardToDeck(cardWithDeckTitle.getCard(), cardWithDeckTitle.getDeckTitle());
+		IDeckBusinessService.addCardToDeckWithDeckId(cardWithDeckTitle.getCard(), cardWithDeckTitle.getDeckTitle());
 		
 		return "redirect:/home";
 		
