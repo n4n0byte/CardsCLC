@@ -29,12 +29,15 @@ public class DeckController {
 	public void setIDeckBusinessService(DeckBusinessServiceInterface iDeckBusinessService) {
 		IDeckBusinessService = iDeckBusinessService;
 	}
+	
 	@PostMapping("newDeck")
 	public String newDeck(@Valid @ModelAttribute("deck")Deck deck,ModelMap modelMap, BindingResult result, HttpServletRequest sess) {
 		if (FieldChecker.hasError(result, "title", "description")) {
 			modelMap.put("message", "Validation Error");
 			return "newDeck";
 		}
+		User user = (User) sess.getSession().getAttribute("user");
+		deck.setUserId(user.getId());
 		IDeckBusinessService.addDeck(deck);
 		return "redirect:/home";
 	}
