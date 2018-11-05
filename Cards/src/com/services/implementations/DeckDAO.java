@@ -36,6 +36,8 @@ public class DeckDAO implements DeckDAOInterface {
    	
    	@Autowired
 	public void setCardDAO(CardDAOInterface cardDAO) {
+   		System.out.println("INJECTING CARD DAO~!");
+   		
 		this.cardDAO = cardDAO;
 	}
 
@@ -90,10 +92,11 @@ public class DeckDAO implements DeckDAOInterface {
 				
 		List<Deck> results = jdbcTemplateObject.query(sql, new DeckMapper());
 		
-		for (Deck deck : results) {
-			
+		for (int i = 0; i < results.size(); i++) {
+			System.out.println("ITER");
 		}
 		
+		cardDAO.findAll();
 		return results;
 	}
 

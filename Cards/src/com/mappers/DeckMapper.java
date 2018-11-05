@@ -13,9 +13,10 @@ public class DeckMapper implements RowMapper<Deck>{
 	@Override
 	public Deck mapRow(ResultSet arg0, int arg1) throws SQLException {
 		Deck deck = new Deck();
-		deck.setTitle(arg0.getString("title"));
-		deck.setDescription(arg0.getString("description"));
-		deck.setUserId(arg0.getInt("userId"));
+		deck.setTitle(arg0.getString(4));
+		deck.setDescription(arg0.getString(3));
+		deck.setUserId(arg0.getInt(2));
+		deck.setDeckId(arg0.getInt(1));
 		return deck;
 	}
 	

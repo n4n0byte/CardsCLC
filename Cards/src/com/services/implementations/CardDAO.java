@@ -19,15 +19,22 @@ public class CardDAO implements CardDAOInterface{
 	
    	@Autowired
 	public void setDataSource(DataSource dataSource) {
-   		System.out.println("INJECTING DATA SOURCE");
+   		System.out.println("INJECTING DATA SOURCE FROM CARD");
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}
 	
 	@Override
 	public List<Card> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "SELECT * FROM carddb.cards";
+		
+		List<Card> results = jdbcTemplateObject.query(sql, new CardMapper());
+		
+		for( Card c : results) {
+			System.out.println(c);
+		}
+		System.out.println(results + " WORKED");
+		return results;
 	}
 
 	@Override
@@ -56,11 +63,14 @@ public class CardDAO implements CardDAOInterface{
 
 	@Override
 	public List<Card> findCardsByDeckId(int deckId) {
-		
-		String sql = "SELECT * FROM carddb.decks where deckId = " + deckId;
+		System.out.println(deckId + " DECK ID IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
+		String sql = "SELECT * FROM carddb.cards where deckId = " + deckId;
 		
 		List<Card> results = jdbcTemplateObject.query(sql, new CardMapper());
 		
+		for( Card c : results) {
+			System.out.println(c);
+		}
 		
 		return results;
 	}
