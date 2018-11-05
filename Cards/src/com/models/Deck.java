@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -18,11 +19,13 @@ public class Deck {
 	@NotBlank
 	@NotEmpty
 	@NotNull
+	@Size(min = 1, max = 100, message = "Must be between 1 and 100 characters")    
 	private String title;
 	
 	@NotBlank
 	@NotEmpty
 	@NotNull
+	@Size(min = 1, max = 100, message = "Must be between 1 and 100 characters")    
 	private String description;
 	
 	
@@ -32,6 +35,14 @@ public class Deck {
 
 	int userId;
 	
+	
+	
+	@Override
+	public String toString() {
+		return "Deck [title=" + title + ", description=" + description + ", cards=" + cards + ", deckId=" + deckId
+				+ ", userId=" + userId + "]";
+	}
+
 	public Deck() {
 		cards = new ArrayList<>();
 	}
