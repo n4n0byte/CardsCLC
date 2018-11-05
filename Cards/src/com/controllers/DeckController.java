@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.models.CardWithDeckTitle;
@@ -26,14 +28,14 @@ public class DeckController {
 	public void setIDeckBusinessService(DeckBusinessServiceInterface iDeckBusinessService) {
 		IDeckBusinessService = iDeckBusinessService;
 	}
-
-	@PostMapping("createDeck")
-	public String addDeck(@Valid @ModelAttribute("deck")Deck deck, ModelMap modelMap, BindingResult result, RedirectAttributes attrs, HttpServletRequest sess) {
+	
+	@PostMapping("displayDeck")
+	public String displayDeck(@Valid @ModelAttribute("deck")Deck deck, ModelMap modelMap, BindingResult result, RedirectAttributes attrs, HttpServletRequest sess) {
 		
 		//validate only title and description
 		if (FieldChecker.hasError(result, "title", "description")) {
 			modelMap.put("message", "Validation Error");
-			return "addDeck";
+			return "displayDeck";
 		}
 		
 		IDeckBusinessService.addDeck(deck);
@@ -42,7 +44,7 @@ public class DeckController {
 		User user = (User) sess.getAttribute("user");
 		attrs.addFlashAttribute("decks", IDeckBusinessService.findAllDecksByUsername(user.getUsername()));
 
-		return "home";
+		return "displayDeck";
 	}	
 	
 	@PostMapping("addCard")
@@ -57,10 +59,73 @@ public class DeckController {
 		}
 		
 		modelMap.put("message", "Successfully Added Card");
-		IDeckBusinessService.addCardToDeckWithDeckId(cardWithDeckTitle.getCard(), cardWithDeckTitle.getDeckTitle());
+		IDeckBusinessService.addCardToDeck(cardWithDeckTitle.getCard(), cardWithDeckTitle.getDeckTitle());
 		
 		return "redirect:/home";
 		
-	}
+	}	
 	
+	@GetMapping("updateDeck")
+	public ModelAndView updateDeck(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result, RedirectAttributes attrs) {
+		
+		
+		return new ModelAndView("updateDeck","Deck",new Deck());
+		
+	}
+	@PostMapping("updateResponose")
+	public String updateResponse(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result) {
+		
+		//validate only title and description
+		if (FieldChecker.hasError(result, "title", "description")) {
+			modelMap.put("message", "Validation Error");
+			return "updateResponse.jsp";
+		}
+		
+		modelMap.put("message", "Successfully updated Deck");
+		IDeckBusinessService.updateDeck(deck);
+		return "redirect:/home";
+		
+	}	
+	
+	@GetMapping("deleteDeck")
+	public ModelAndView deleteDeck(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result,RedirectAttributes attrs) {
+
+		
+		return new ModelAndView("deleteDeck","Deck",new Deck());
+		
+	}
+	@PostMapping("deleteResponose")
+	public String deleteResponse(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result) {
+		
+		//validate only title and description
+		if (FieldChecker.hasError(result, "title", "description")) {
+			modelMap.put("message", "Validation Error");
+			return "deleteResponse.jsp";
+		}
+		
+		modelMap.put("message", "Successfully updated Deck");
+		IDeckBusinessService.deleteDeck(deck);
+		return "redirect:/home";
+		
+	}	
+	@GetMapping("findById")
+	public ModelAndView findById(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result,RedirectAttributes attrs) {
+		IDeckBusinessService.findDeckByDeckId(deck.getDeckId());
+		return new ModelAndView("deleteDeck","Deck",new Deck());
+		
+	}
+	@PostMapping("displayfindById")
+	public String displayfindById(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result) {
+		
+		//validate only title and description
+		if (FieldChecker.hasError(result, "title", "description")) {
+			modelMap.put("message", "Validation Error");
+			return "displayFindByid.jsp";
+		}
+		
+		modelMap.put("message", "Successfully updated Deck");
+		IDeckBusinessService.updateDeck(deck);
+		return "redirect:/home";
+		
+	}	
 }
