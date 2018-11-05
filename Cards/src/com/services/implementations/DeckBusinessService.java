@@ -54,7 +54,6 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 
 	@Override
 	public List<Deck> findAllDecksByUsername(String username) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -78,6 +77,7 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 
 	@Override
 	public void addDeck(Deck deck) {
+		iDeckDataService.addModel(deck);
 	}
 
 

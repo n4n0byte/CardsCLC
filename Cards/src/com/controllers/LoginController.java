@@ -1,7 +1,5 @@
 package com.controllers;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -14,10 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.models.Card;
-import com.models.Deck;
 import com.models.User;
-import com.services.implementations.DeckDAO;
 import com.services.interfaces.CredentialsBusinessServiceInterface;
 import com.services.interfaces.DeckDAOInterface;
 import com.utils.FieldChecker;
@@ -31,13 +26,7 @@ import com.utils.FieldChecker;
 public class LoginController {
 	
 	private CredentialsBusinessServiceInterface credentialsService;
-	private DeckDAOInterface deckDao;
-	
-	
-	@Autowired
-	public void setDeckDao(DeckDAOInterface deckDao) {
-		this.deckDao = deckDao;
-	}
+
 
 	@Autowired
 	public void setLoginService(CredentialsBusinessServiceInterface businessService) {
@@ -52,13 +41,7 @@ public class LoginController {
 	 */
 	@GetMapping("/")
 	public ModelAndView login() {
-		Deck deck = new Deck();
-		List<Deck> de = deckDao.findAllDecksByUserId(1);
-		
-		for (Deck d : de) {
-			System.out.println(d);
-		}
-		
+				
 		return new ModelAndView("login", "user", new User());
 	}
 	
@@ -85,7 +68,7 @@ public class LoginController {
 			return "login";
 		}
 			
-		request.getSession().setAttribute("user", user);
+		request.getSession().setAttribute("user", credentialsService.getUserFromUsername(user.getUsername()));
 		return "redirect:/home";
 	}
 	

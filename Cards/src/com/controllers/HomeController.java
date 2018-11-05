@@ -1,5 +1,7 @@
 package com.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +32,14 @@ public class HomeController {
 	@GetMapping("home")
 	public String home(ModelMap modelMap, HttpServletRequest request) {
 		User user = (User)request.getSession().getAttribute("user");
-		modelMap.addAttribute("decks", IDeckBusinessService.findAllDecksByUsername(user.getUsername()));
+		
+		List<Deck> decks = IDeckBusinessService.findAllDecksByUserId(user.getId());
+		System.out.println(user);
+		for (Deck c : decks) {
+			System.out.println(c);
+		}
+		
+		modelMap.addAttribute("decks", decks);
 		return "home";
 	}
 	

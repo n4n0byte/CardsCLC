@@ -53,5 +53,10 @@ public class CredentialsBusinessService implements CredentialsBusinessServiceInt
 				
 		return false;
 	}
+	
+	@Override
+	public User getUserFromUsername(String username) {
+		return userDAO.findByUsername(username);
+	}
 
 }

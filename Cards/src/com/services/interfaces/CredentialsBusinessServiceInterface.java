@@ -26,5 +26,12 @@ public interface CredentialsBusinessServiceInterface {
 	 * @return bool 
 	 */
 	public boolean isValidCredentials(User user);
+
+	/**
+	 * tries to return user from username
+	 * @param username
+	 * @return
+	 */
+	User getUserFromUsername(String username);
 		
 }
