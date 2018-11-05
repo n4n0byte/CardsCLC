@@ -53,7 +53,7 @@ public class LoginController {
 	@GetMapping("/")
 	public ModelAndView login() {
 		Deck deck = new Deck();
-		List<Deck> de = deckDao.findAll();
+		List<Deck> de = deckDao.findAllDecksByUserId(1);
 		
 		for (Deck d : de) {
 			System.out.println(d);

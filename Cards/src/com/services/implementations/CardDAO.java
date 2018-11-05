@@ -33,14 +33,18 @@ public class CardDAO implements CardDAOInterface{
 		for( Card c : results) {
 			System.out.println(c);
 		}
-		System.out.println(results + " WORKED");
+
 		return results;
 	}
 
 	@Override
 	public Card getById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		String sql = "SELECT * FROM carddb.cards where id = ?";
+		
+		Card results = jdbcTemplateObject.queryForObject(sql, new Object[] {id}, new CardMapper());
+		
+		return results;
 	}
 
 	@Override
@@ -63,7 +67,6 @@ public class CardDAO implements CardDAOInterface{
 
 	@Override
 	public List<Card> findCardsByDeckId(int deckId) {
-		System.out.println(deckId + " DECK ID IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII");
 		String sql = "SELECT * FROM carddb.cards where deckId = " + deckId;
 		
 		List<Card> results = jdbcTemplateObject.query(sql, new CardMapper());
@@ -77,7 +80,6 @@ public class CardDAO implements CardDAOInterface{
 
 	@Override
 	public Card findCardById(int id) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

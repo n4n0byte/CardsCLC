@@ -36,7 +36,8 @@ public interface DeckBusinessServiceInterface{
 	public List<Deck> getDeckByUserId(int id);
 	public List<Card> getAllCardsFromUser(User id);
 	public void addDeck(Deck deck);
-
 	public void addCardToDeckWithDeckId(Card card, String deckTitle);
+	public void addCardToDeck(Card card, String deckTitle);
+	public void findDeckByDeckId(int deckId);
 
 }

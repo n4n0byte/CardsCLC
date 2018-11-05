@@ -88,5 +88,19 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	}
 
 
+	@Override
+	public void addCardToDeck(Card card, String deckTitle) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void findDeckByDeckId(int deckId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 }

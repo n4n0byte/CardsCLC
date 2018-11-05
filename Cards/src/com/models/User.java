@@ -42,6 +42,14 @@ public class User {
 	@NotNull
 	private String password;
 	
+	
+	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username
+				+ ", email=" + email + ", password=" + password + "]";
+	}
+
 	public User() {
 		this(-1,"","","","","");
 	}

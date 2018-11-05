@@ -5,7 +5,6 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.models.Card;
 import com.models.Deck;
 
 public class DeckMapper implements RowMapper<Deck>{

@@ -49,19 +49,25 @@ public class DeckDAO implements DeckDAOInterface {
 
 	@Override
 	public boolean deleteById(int id) {
-		// TODO Auto-generated method stub
+		
+		int rowsDeleted = jdbcTemplateObject.update("delete carddb.decks where id = ?", id);
+		if (rowsDeleted > 0) return true;
+		
 		return false;
 	}
 
 	@Override
 	public boolean updateByModelById(Deck input, int id) {
-		// TODO Auto-generated method stub
+		  jdbcTemplateObject.update("UPDATE carddb.decks userId = ?, description = ?, title = ?",
+	    			input.getUserId(),
+	    			input.getDescription(), 
+	    			input.getTitle()
+		);
 		return false;
 	}
 
 	@Override
 	public void addModel(Deck model) {
-		System.out.println("ADDING DECK");
 	
 	    jdbcTemplateObject.update("INSERT INTO carddb.decks (userId, description, title) VALUES (?, ?, ?)",
 	    			model.getUserId(),
@@ -89,14 +95,12 @@ public class DeckDAO implements DeckDAOInterface {
 	public List<Deck> findAllDecksByUserId(int id) {
 		
 		String sql = "SELECT id, userId, description, title FROM carddb.decks where userId = " + id;
-				
 		List<Deck> results = jdbcTemplateObject.query(sql, new DeckMapper());
 		
 		for (int i = 0; i < results.size(); i++) {
-			System.out.println("ITER");
+			results.get(i).setCards(cardDAO.findCardsByDeckId(results.get(i).getDeckId()));
 		}
 		
-		cardDAO.findAll();
 		return results;
 	}
 
@@ -105,13 +109,14 @@ public class DeckDAO implements DeckDAOInterface {
 		
 		String sql = "SELECT * FROM carddb.decks";
 		
-		List<Deck> res = jdbcTemplateObject.query(sql, new DeckMapper());	
+		List<Deck> results = jdbcTemplateObject.query(sql, new DeckMapper());	
 		
-		for (Deck d : res) {
+		for (Deck d : results) {
+			d.setCards(cardDAO.findCardsByDeckId(d.getDeckId()));
 			System.out.println(d);
 		}
 		
-		return res;
+		return results;
 		
 	}
 

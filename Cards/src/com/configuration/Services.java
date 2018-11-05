@@ -3,18 +3,16 @@ package com.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import com.services.implementations.MockCredentialsBusinessService;
-import com.services.implementations.MockCredentialsDataService;
-import com.models.Deck;
 import com.services.implementations.CardDAO;
+import com.services.implementations.CredentialsBusinessService;
 import com.services.implementations.DeckBusinessService;
 import com.services.implementations.DeckDAO;
-import com.services.implementations.MockDeckDataService;
+import com.services.implementations.UserDAO;
 import com.services.interfaces.CardDAOInterface;
 import com.services.interfaces.CredentialsBusinessServiceInterface;
-import com.services.interfaces.CredentialsDataServiceInterface;
 import com.services.interfaces.DeckBusinessServiceInterface;
 import com.services.interfaces.DeckDAOInterface;
+import com.services.interfaces.UserDAOInterface;
 
 /**
  * 
@@ -24,16 +22,11 @@ import com.services.interfaces.DeckDAOInterface;
 @Configuration
 public class Services {
 	
-	@Bean
-    @Primary
-	public CredentialsBusinessServiceInterface loginBusinessService() {
-		return new MockCredentialsBusinessService();
-	}
-	
+
 	@Bean
 	@Primary
-	public CredentialsDataServiceInterface loginDataService() {
-		return new MockCredentialsDataService();
+	public UserDAOInterface loginDataService() {
+		return new UserDAO();
 	}
 	
 	@Bean
@@ -57,6 +50,11 @@ public class Services {
 		return deckDAO;
 	}
 	
+	@Bean
+	@Primary
+	public CredentialsBusinessServiceInterface credentialsBusinessServiceInterface() {
+		return new CredentialsBusinessService();
+	}
 	
 			
 }

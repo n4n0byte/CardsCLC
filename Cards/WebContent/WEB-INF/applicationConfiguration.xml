@@ -35,8 +35,13 @@
       <property name = "dataSource" ref = "dataSource" />    
    </bean>
 
-	<bean id = "cardkDAO" 
+	<bean id = "cardDAO" 
       class = "com.services.implementations.CardDAO">
+      <property name = "dataSource" ref = "dataSource" />    
+   </bean>
+
+	<bean id = "userDAO" 
+      class = "com.services.implementations.UserDAO">
       <property name = "dataSource" ref = "dataSource" />    
    </bean>
 
