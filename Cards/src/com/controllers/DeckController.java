@@ -28,6 +28,7 @@ public class DeckController {
 	public void setIDeckBusinessService(DeckBusinessServiceInterface iDeckBusinessService) {
 		IDeckBusinessService = iDeckBusinessService;
 	}
+	
 	@PostMapping("displayDeck")
 	public String displayDeck(@Valid @ModelAttribute("deck")Deck deck, ModelMap modelMap, BindingResult result, RedirectAttributes attrs, HttpServletRequest sess) {
 		
@@ -46,24 +47,6 @@ public class DeckController {
 		return "displayDeck";
 	}	
 	
-	@GetMapping("createDeck")
-	public String addDeck(@Valid @ModelAttribute("deck")Deck deck, ModelMap modelMap, BindingResult result, RedirectAttributes attrs, HttpServletRequest sess) {
-		
-		//validate only title and description
-		if (FieldChecker.hasError(result, "title", "description")) {
-			modelMap.put("message", "Validation Error");
-			return "newDeck";
-		}
-		
-		IDeckBusinessService.addDeck(deck);
-		
-		modelMap.put("message", "Successfully Added Deck");
-		User user = (User) sess.getAttribute("user");
-		attrs.addFlashAttribute("decks", IDeckBusinessService.findAllDecksByUsername(user.getUsername()));
-
-		return "newDeck";
-	}	
-	
 	@PostMapping("addCard")
 	public String addCard(@ModelAttribute("cardWithDeckTitle")CardWithDeckTitle cardWithDeckTitle, ModelMap modelMap, BindingResult result) {
 		
@@ -80,7 +63,8 @@ public class DeckController {
 		
 		return "redirect:/home";
 		
-	}
+	}	
+	
 	@GetMapping("updateDeck")
 	public ModelAndView updateDeck(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result, RedirectAttributes attrs) {
 		
@@ -88,6 +72,20 @@ public class DeckController {
 		return new ModelAndView("updateDeck","Deck",new Deck());
 		
 	}
+	@PostMapping("updateResponose")
+	public String updateResponse(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result) {
+		
+		//validate only title and description
+		if (FieldChecker.hasError(result, "title", "description")) {
+			modelMap.put("message", "Validation Error");
+			return "updateResponse.jsp";
+		}
+		
+		modelMap.put("message", "Successfully updated Deck");
+		IDeckBusinessService.updateDeck(deck);
+		return "redirect:/home";
+		
+	}	
 	
 	@GetMapping("deleteDeck")
 	public ModelAndView deleteDeck(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result,RedirectAttributes attrs) {
@@ -96,11 +94,38 @@ public class DeckController {
 		return new ModelAndView("deleteDeck","Deck",new Deck());
 		
 	}
-	@GetMapping("findById")
-	public ModelAndView findById(@ModelAttribute("User")User user, ModelMap modelMap, BindingResult result,RedirectAttributes attrs) {
+	@PostMapping("deleteResponose")
+	public String deleteResponse(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result) {
 		
+		//validate only title and description
+		if (FieldChecker.hasError(result, "title", "description")) {
+			modelMap.put("message", "Validation Error");
+			return "deleteResponse.jsp";
+		}
+		
+		modelMap.put("message", "Successfully updated Deck");
+		IDeckBusinessService.deleteDeck(deck);
+		return "redirect:/home";
+		
+	}	
+	@GetMapping("findById")
+	public ModelAndView findById(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result,RedirectAttributes attrs) {
+		IDeckBusinessService.findDeckByDeckId(deck.getDeckId());
 		return new ModelAndView("deleteDeck","Deck",new Deck());
 		
 	}
-	
+	@PostMapping("displayfindById")
+	public String displayfindById(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result) {
+		
+		//validate only title and description
+		if (FieldChecker.hasError(result, "title", "description")) {
+			modelMap.put("message", "Validation Error");
+			return "displayFindByid.jsp";
+		}
+		
+		modelMap.put("message", "Successfully updated Deck");
+		IDeckBusinessService.updateDeck(deck);
+		return "redirect:/home";
+		
+	}	
 }

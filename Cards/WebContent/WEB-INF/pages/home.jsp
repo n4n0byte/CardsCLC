@@ -6,7 +6,6 @@
 	<li><a href="/Card">Log Out</a></li>
 	<li><a href="/Card/findById">FindById</a></li>
 	<li><a href="/Card/updateDeck">Update</a></li>
-	<li><a href="/Card/createDeck">Create</a></li>
 	<li><a href="/Card/deleteDeck">Delete</a></li>
 </ul>
 

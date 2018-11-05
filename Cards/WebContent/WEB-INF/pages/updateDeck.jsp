@@ -11,7 +11,7 @@
 <body>
 <div align="center">	
 	<h2>Update New Deck</h2>
-	<form:form method="POST" modelAttribute="deck" action="updateDeck">
+	<form:form method="POST" modelAttribute="Deck" action="updateDeck">
 		<table>
 			<tr>
 				<td><form:label path="title">Title:</form:label></td>
@@ -35,6 +35,9 @@
 			<tr>
 				<td colspan="2">
 					<input type="submit" value="Submit"/>
+				</td>
+				<td>
+					<a href="/Card/home">Go Back</a>
 				</td>
 			</tr>
 		</table>
