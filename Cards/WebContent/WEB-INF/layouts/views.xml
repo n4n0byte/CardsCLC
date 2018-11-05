@@ -34,11 +34,17 @@
 		<definition name="deleteDeck" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/deleteDeck.jsp" />
 	</definition>
-		<definition name="createDeck" extends="DefaultTemplate">
-    	<put-attribute name="body" value="/WEB-INF/pages/createDeck.jsp" />
-	</definition>
 		<definition name="findById" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/findById.jsp" />
+	</definition>
+	<definition name="updateResponse" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/updateResponse.jsp" />
+	</definition>
+		<definition name="deleteResponse" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/deleteResponse.jsp" />
+	</definition>
+		<definition name="displayFindById" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/displayFindById.jsp" />
 	</definition>
 	<definition name="calculator" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/calculator.jsp" />

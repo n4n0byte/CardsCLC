@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form:form method="POST" modelAttribute="User" action="findById">
+	<form:form method="POST" modelAttribute="Deck" action="findById">
 		<table>
 			<tr>
 				<td><form:label path="title">Title:</form:label></td>

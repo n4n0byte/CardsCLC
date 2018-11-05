@@ -9,6 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<script>
+function confirm(){
+	confirmation
+}
+</script>
 	<form:form method="POST" modelAttribute="Deck" action="deleteDeck">
 		<table>
 			<tr>

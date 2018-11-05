@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
@@ -65,14 +66,14 @@ public class DeckController {
 		
 	}	
 	
-	@GetMapping("updateDeck")
+	@GetMapping("updateDeck/{deckTitle}")
 	public ModelAndView updateDeck(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result, RedirectAttributes attrs) {
 		
 		
 		return new ModelAndView("updateDeck","Deck",new Deck());
 		
 	}
-	@PostMapping("updateResponose")
+	@PostMapping("updateResponse")
 	public String updateResponse(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result) {
 		
 		//validate only title and description
@@ -87,31 +88,20 @@ public class DeckController {
 		
 	}	
 	
-	@GetMapping("deleteDeck")
-	public ModelAndView deleteDeck(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result,RedirectAttributes attrs) {
-
-		
-		return new ModelAndView("deleteDeck","Deck",new Deck());
-		
-	}
-	@PostMapping("deleteResponose")
-	public String deleteResponse(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result) {
-		
-		//validate only title and description
-		if (FieldChecker.hasError(result, "title", "description")) {
-			modelMap.put("message", "Validation Error");
-			return "deleteResponse.jsp";
-		}
-		
-		modelMap.put("message", "Successfully updated Deck");
+	@GetMapping("deleteDeck/{deckTitle}")
+	public String deleteDeck(@PathVariable("deckTitle") String title, ModelMap modelMap) {
+		Deck deck = new Deck();
+		deck.setTitle(title);
 		IDeckBusinessService.deleteDeck(deck);
+		
 		return "redirect:/home";
 		
-	}	
+	}
+	
 	@GetMapping("findById")
 	public ModelAndView findById(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result,RedirectAttributes attrs) {
 		IDeckBusinessService.findDeckByDeckId(deck.getDeckId());
-		return new ModelAndView("deleteDeck","Deck",new Deck());
+		return new ModelAndView("","Deck",new Deck());
 		
 	}
 	@PostMapping("displayfindById")
