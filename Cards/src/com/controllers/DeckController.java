@@ -29,7 +29,15 @@ public class DeckController {
 	public void setIDeckBusinessService(DeckBusinessServiceInterface iDeckBusinessService) {
 		IDeckBusinessService = iDeckBusinessService;
 	}
-	
+	@PostMapping("newDeck")
+	public String newDeck(@Valid @ModelAttribute("deck")Deck deck,ModelMap modelMap, BindingResult result, HttpServletRequest sess) {
+		if (FieldChecker.hasError(result, "title", "description")) {
+			modelMap.put("message", "Validation Error");
+			return "newDeck";
+		}
+		IDeckBusinessService.addDeck(deck);
+		return "redirect:/home";
+	}
 	@PostMapping("displayDeck")
 	public String displayDeck(@Valid @ModelAttribute("deck")Deck deck, ModelMap modelMap, BindingResult result, RedirectAttributes attrs, HttpServletRequest sess) {
 		
