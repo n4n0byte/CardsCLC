@@ -24,6 +24,7 @@ public class CredentialsBusinessService implements CredentialsBusinessServiceInt
 		return true;
 	}
 
+	
 	@Override
 	public boolean tryRegisterUser(User user) {
 		
