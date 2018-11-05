@@ -13,7 +13,7 @@ import com.models.User;
  * @author Ali Cooper, Anthony Natvidad
  *
  */
-public interface IDeckBusinessService {
+public interface DeckBusinessServiceInterface {
 	
 	/**
 	 * returns all decks given the username

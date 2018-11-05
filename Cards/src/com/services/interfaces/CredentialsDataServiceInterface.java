@@ -2,7 +2,12 @@ package com.services.interfaces;
 
 import com.models.User;
 
-public interface ICredentialsBusinessService {
+/**
+ * Interface forcredentials data service
+ * @author AC
+ *
+ */
+public interface CredentialsDataServiceInterface {
 	
 	/**
 	 * checks to see if user is registered
@@ -26,5 +31,6 @@ public interface ICredentialsBusinessService {
 	 * @return bool 
 	 */
 	public boolean isValidCredentials(User user);
-		
+	
+	
 }

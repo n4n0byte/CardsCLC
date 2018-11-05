@@ -3,8 +3,8 @@ package com.services.implementations;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.models.User;
-import com.services.interfaces.ICredentialsBusinessService;
-import com.services.interfaces.ICredentialsDataService;
+import com.services.interfaces.CredentialsBusinessServiceInterface;
+import com.services.interfaces.CredentialsDataServiceInterface;
 
 /**
  * 
@@ -12,13 +12,13 @@ import com.services.interfaces.ICredentialsDataService;
  * TODO add docs
  *
  */
-public class MockCredentialsBusinessService implements ICredentialsBusinessService{
+public class MockCredentialsBusinessService implements CredentialsBusinessServiceInterface{
 	
 	// TODO add data service
-	private ICredentialsDataService credentialsService;
+	private CredentialsDataServiceInterface credentialsService;
 	
 	@Autowired
-	public void setCredentialsService(ICredentialsDataService credentialsService) {
+	public void setCredentialsService(CredentialsDataServiceInterface credentialsService) {
 		System.out.println("INJECTING CREDENTIALS DATA SERVICE");
 		this.credentialsService = credentialsService;
 	}

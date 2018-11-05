@@ -11,7 +11,7 @@
 <body>
 <div align="center">	
 	<h2>Update New Deck</h2>
-	<form:form method="POST" modelAttribute="deck" action="createDeck">
+	<form:form method="POST" modelAttribute="deck" action="updateDeck">
 		<table>
 			<tr>
 				<td><form:label path="title">Title:</form:label></td>

@@ -5,20 +5,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.models.Card;
 import com.models.Deck;
 import com.models.User;
-import com.services.interfaces.IDeckBusinessService;
-import com.services.interfaces.IDeckDataService;
+import com.services.interfaces.DeckBusinessServiceInterface;
+import com.services.interfaces.DeckDataServiceInterface;
 
-public class MockDeckBusinessService implements IDeckBusinessService {
+public class MockDeckBusinessService implements DeckBusinessServiceInterface {
 	
-	IDeckDataService iDeckDataService;
-	/*sets the iDeckDataService*/
+	DeckDataServiceInterface iDeckDataService;
+	
 	@Autowired
-	public void setiDeckDataService(IDeckDataService iDeckDataService) {
+	public void setiDeckDataService(DeckDataServiceInterface iDeckDataService) {
 		this.iDeckDataService = iDeckDataService;
 	}
-	/**
-	 *	
-	 */
+
+
+		
 	@Override
 	public void addCardToDeck(Card card, String deckTitle) {
 		

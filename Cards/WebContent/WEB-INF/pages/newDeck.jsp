@@ -11,7 +11,7 @@
 <br>
 <div align="center">	
 	<h2>Create New Deck</h2>
-	<form:form method="POST" modelAttribute="deck" action="createDeck">
+	<form:form method="POST" modelAttribute="Deck" action="createDeck">
 		<table>
 			<tr>
 				<td><form:label path="title">Title:</form:label></td>
@@ -32,4 +32,5 @@
 		<br/>
 		<form:errors path="*"/>
 	</form:form>
+	
 </div>

@@ -25,6 +25,28 @@
 	<definition name="displayCards" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/displayCards.jsp" />
 	</definition>
+	<definition name="displayDeck" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/displayDeck.jsp" />
+	</definition>
+		<definition name="updateDeck" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/updateDeck.jsp" />
+	</definition>
+		<definition name="deleteDeck" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/deleteDeck.jsp" />
+	</definition>
+		<definition name="createDeck" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/createDeck.jsp" />
+	</definition>
+		<definition name="findById" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/findById.jsp" />
+	</definition>
+	<definition name="calculator" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/calculator.jsp" />
+	</definition>
+	<definition name="result" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/result.jsp" />
+	</definition>
+	
  <!--
   <definition name="*" extends="DefaultTemplate" >
   	<put-attribute name="body" value="/WEB-INF/pages/{1}.jsp"/>

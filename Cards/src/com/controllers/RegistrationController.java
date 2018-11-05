@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.models.User;
-import com.services.interfaces.ICredentialsBusinessService;
+import com.services.interfaces.CredentialsBusinessServiceInterface;
 import com.utils.FieldChecker;
 
 
@@ -25,14 +25,14 @@ import com.utils.FieldChecker;
 @Controller
 public class RegistrationController {
 	
-private ICredentialsBusinessService credentialsService;
+private CredentialsBusinessServiceInterface credentialsService;
 	
 	/**
 	 * injects Credentials service
 	 * @param businessService
 	 */
 	@Autowired
-	public void setLoginService(ICredentialsBusinessService businessService) {
+	public void setLoginService(CredentialsBusinessServiceInterface businessService) {
 		this.credentialsService = businessService;
 	}
 	

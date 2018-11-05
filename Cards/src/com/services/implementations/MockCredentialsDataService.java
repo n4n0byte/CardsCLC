@@ -1,9 +1,9 @@
 package com.services.implementations;
 
 import com.models.User;
-import com.services.interfaces.ICredentialsDataService;
+import com.services.interfaces.CredentialsDataServiceInterface;
 
-public class MockCredentialsDataService implements ICredentialsDataService{
+public class MockCredentialsDataService implements CredentialsDataServiceInterface{
 
 	@Override
 	public boolean isRegistered(User user) {
