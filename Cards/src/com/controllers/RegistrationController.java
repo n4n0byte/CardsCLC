@@ -67,7 +67,7 @@ private CredentialsBusinessServiceInterface credentialsService;
 		
 		// try to register user, will return false
 		// if user is already registered
-		if (credentialsService.tryRegisterUser(user)) {
+		if (!credentialsService.tryRegisterUser(user)) {
 			map.addAttribute("message", "You are already registered, please login");
 		} else {
 			map.addAttribute("message", "You have been successfully registered");

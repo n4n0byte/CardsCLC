@@ -5,9 +5,10 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
+import com.exceptions.DAOException;
 import com.mappers.CardMapper;
 import com.models.Card;
 import com.services.interfaces.CardDAOInterface;
@@ -16,20 +17,28 @@ public class CardDAO implements CardDAOInterface{
 
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
-	
-   	@Autowired
+
+	@Autowired
 	public void setDataSource(DataSource dataSource) {
-   		System.out.println("INJECTING DATA SOURCE FROM CARD");
+		System.out.println("INJECTING DATA SOURCE FROM CARD");
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}
-	
+
 	@Override
 	public List<Card> findAll() {
 		String sql = "SELECT * FROM carddb.cards";
-		
-		List<Card> results = jdbcTemplateObject.query(sql, new CardMapper());
-		
+
+		List<Card> results = null;
+
+		try {
+			results  = jdbcTemplateObject.query(sql, new CardMapper());
+		} catch(DataAccessException e) {
+			throw new DAOException(e.getMessage(), e);
+		}catch (Exception e) {
+			throw new DAOException(e.getMessage(), e);
+		}
+
 		for( Card c : results) {
 			System.out.println(c);
 		}
@@ -39,47 +48,67 @@ public class CardDAO implements CardDAOInterface{
 
 	@Override
 	public Card getById(int id) {
-		
+
 		String sql = "SELECT * FROM carddb.cards where id = ?";
-		
-		Card results = jdbcTemplateObject.queryForObject(sql, new Object[] {id}, new CardMapper());
-		
+
+		Card results = null;
+
+		try {
+			results  = jdbcTemplateObject.queryForObject(sql, new Object[] {id}, new CardMapper());
+		} catch(DataAccessException e) {
+			throw new DAOException(e.getMessage()+"\n"+e.getStackTrace(), e);
+		}catch (Exception e) {
+			throw new DAOException(e.getMessage(), e);
+		}
+
 		return results;
 	}
 
 	@Override
 	public boolean deleteById(int id) {
-		// TODO Auto-generated method stub
+		// TODO stub for next milestone's functionality
 		return false;
 	}
 
 	@Override
 	public boolean updateByModelById(Card input, int id) {
-		// TODO Auto-generated method stub
+		// TODO stub for next milestone functionality
 		return false;
 	}
 
+
 	@Override
 	public void addModel(Card model) {
-		jdbcTemplateObject.update("INSERT INTO carddb.cards (deckId, title, description, health, damage) VALUES (?, ?, ?, ?, ?)",
-	    		model.getDeckId(),
-	    		model.getTitle(),
-	    		model.getDescription(),
-	    		model.getHealth(),
-	    		model.getDamage()
-		);
+
+		try {
+			jdbcTemplateObject.update("INSERT INTO carddb.cards (deckId, title, description, health, damage) VALUES (?, ?, ?, ?, ?)",
+				model.getDeckId(),
+				model.getTitle(),
+				model.getDescription(),
+				model.getHealth(),
+				model.getDamage()
+			);
+		} catch (DataAccessException e) {
+			throw new DAOException(e.getMessage()+"\n"+e.getStackTrace(), e);
+		} catch (Exception e) {
+			throw new DAOException(e.getMessage(), e);
+		}
 	}
-	
+
 	@Override
 	public List<Card> findCardsByDeckId(int deckId) {
 		String sql = "SELECT * FROM carddb.cards where deckId = " + deckId;
-		
-		List<Card> results = jdbcTemplateObject.query(sql, new CardMapper());
-		
-		for( Card c : results) {
-			System.out.println(c);
+
+		List<Card> results = null;
+
+		try {
+			results = jdbcTemplateObject.query(sql, new CardMapper());
+		}catch (DataAccessException e) {
+			throw new DAOException(e.getMessage()+"\n"+e.getStackTrace(), e);
+		}catch (Exception e) {
+			throw new DAOException(e.getMessage(), e);
 		}
-		
+
 		return results;
 	}
 

@@ -29,12 +29,11 @@ public class CredentialsBusinessService implements CredentialsBusinessServiceInt
 	public boolean tryRegisterUser(User user) {
 		
 		User usr = userDAO.findByUsername(user.getUsername());
-		System.out.println(usr);
+		System.out.println(usr + "DAO USER");
 		if(usr == null) {
 			userDAO.addModel(user);
 			return true;
 		}
-
 		
 		return false;
 	}
