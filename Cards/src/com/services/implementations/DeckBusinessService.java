@@ -30,7 +30,7 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	@Autowired
 	public void setiDeckDataService(DeckDAOInterface iDeckDataService) {
 		this.iDeckDataService = iDeckDataService;
-	}
+	};
 
 	/**
 	 * calls the DeckDOA to find decks made by a single user		
@@ -55,12 +55,19 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	public void updateDeck(Deck deck) {
 		iDeckDataService.updateByModelById(deck, deck.getUserId());
 	}
-
+	
+	/**
+	 * deletes deck by deck id
+	 */
 	@Override
 	public boolean deleteDeckById(int id) {
 		return iDeckDataService.deleteById(id);
 	}
 
+	/**
+	 * adds cards to deck using decks id
+	 * calls Card DOA
+	 */
 	@Override
 	public void addCardToDeckWithDeckId(Card card, int deckId) {
 		card.setDeckId(deckId);
