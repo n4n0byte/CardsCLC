@@ -22,7 +22,10 @@ public class DeckDAO implements DeckDAOInterface {
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
 	private CardDAOInterface cardDAO;
-	
+	/**
+	 * Creates connection to database
+	 * @param dataSource
+	 */
    	@Autowired
 	public void setDataSource(DataSource dataSource) {
    		System.out.println("INJECTING DATA SOURCE");
@@ -30,14 +33,20 @@ public class DeckDAO implements DeckDAOInterface {
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}
 
-   	
+   	/**
+   	 * sets the implementation of the CardDOA
+   	 * @param cardDAO
+   	 */
    	@Autowired
 	public void setCardDAO(CardDAOInterface cardDAO) {
    		System.out.println("INJECTING CARD DAO~!");
    		
 		this.cardDAO = cardDAO;
 	}
-
+   	
+   	/**
+   	 * Returns a Decks by its deck id
+   	 */
 	@Override
 	public Deck getById(int id) {			
 		List<Deck> decks  = jdbcTemplateObject.query("select * from carddb.decks where id = ? limit 1", new Object[]{id}, new DeckMapper());
@@ -48,7 +57,10 @@ public class DeckDAO implements DeckDAOInterface {
 		
 		return null;
 	}
-
+	
+	/**
+	 * Returns a Deck by its title
+	 */
 	@Override
 	public Deck getByTitle(String title) {			
 		List<Deck> decks  = jdbcTemplateObject.query("select * from carddb.decks where title = ? limit 1", new Object[]{title}, new DeckMapper());
@@ -60,7 +72,10 @@ public class DeckDAO implements DeckDAOInterface {
 		return null;
 	}
 
-	
+	/**
+	 * Delete operation of CRUD for deck
+	 * deletes a deck by its deck id
+	 */
 	@Override
 	public boolean deleteById(int id) {
 		
@@ -70,6 +85,10 @@ public class DeckDAO implements DeckDAOInterface {
 		return false;
 	}
 	
+	/**
+	 * Delete operation of CRUD for deck
+	 * Deletes a deck by its deck title
+	 */
 	@Override
 	public boolean deleteByTitle(String title) {
 		
@@ -80,6 +99,10 @@ public class DeckDAO implements DeckDAOInterface {
 		
 	}
 
+	/**
+	 * update operation of CRUD for deck
+	 * updates ad deck based on that decks id
+	 */
 	@Override
 	public boolean updateByModelById(Deck input, int id) {
 		
@@ -91,6 +114,10 @@ public class DeckDAO implements DeckDAOInterface {
 		return false;
 	}
 
+	/**
+	 * Create operation of CRUD for deck
+	 * Creates a deck in the database
+	 */
 	@Override
 	public void addModel(Deck model) {
 	
@@ -101,7 +128,10 @@ public class DeckDAO implements DeckDAOInterface {
 		);
 	    		
 	}
-
+	
+	/**
+	 * Returns a list of decks made by the same user
+	 */
 	@Override
 	public List<Deck> findAllDecksByUserId(int id) {
 		

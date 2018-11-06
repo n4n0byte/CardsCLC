@@ -7,16 +7,23 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.mappers.DeckMapper;
 import com.mappers.UserMapper;
 import com.models.User;
 import com.services.interfaces.UserDAOInterface;
-
+/**
+ * 
+ * @author Ali Cooper & Anthony Natividad
+ * User Data Access Object that handles CRUD operations for User
+ */
 public class UserDAO implements UserDAOInterface{
 
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
 	
+	/**
+	 * creates connection to database
+	 * @param dataSource
+	 */
    	@Autowired
 	public void setDataSource(DataSource dataSource) {
    		System.out.println("INJECTING DATA SOURCE FROM UserDAO");
@@ -24,7 +31,9 @@ public class UserDAO implements UserDAOInterface{
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}
 	
-	
+	/**
+	 * Returns a list of all users in the database
+	 */
 	@Override
 	public List<User> findAll() {
 		String sql = "SELECT * from users";
@@ -32,6 +41,9 @@ public class UserDAO implements UserDAOInterface{
 		return results;
 	}
 
+	/**
+	 * Finds a user based on that users id
+	 */
 	@Override
 	public User getById(int id) {
 		String sql = "SELECT * from users where id = ?";
@@ -41,6 +53,7 @@ public class UserDAO implements UserDAOInterface{
 		
 		return null;
 	}
+	
 
 	@Override
 	public boolean deleteById(int id) {
@@ -52,6 +65,9 @@ public class UserDAO implements UserDAOInterface{
 		return false;
 	}
 
+	/**
+	 * Creates a user in the database
+	 */
 	@Override
 	public void addModel(User model) {
 		
@@ -66,7 +82,9 @@ public class UserDAO implements UserDAOInterface{
 		
 	}
 
-
+	/**
+	 * Finds a user based on that user username
+	 */
 	@Override
 	public User findByUsername(String username) {
 		String sql = "SELECT * from carddb.users where username = ?";

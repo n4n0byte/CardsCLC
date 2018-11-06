@@ -17,7 +17,12 @@ import com.models.CardWithDeckTitle;
 import com.models.Deck;
 import com.models.User;
 import com.services.interfaces.DeckBusinessServiceInterface;
-
+/**
+ * 
+ * @author Anthony Natividad
+ * Handles get mapping for home page after user logs in
+ * Implements DeckBusinessService
+ */
 @Controller
 public class HomeController {
 	
