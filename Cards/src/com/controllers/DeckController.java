@@ -18,7 +18,12 @@ import com.models.Deck;
 import com.models.User;
 import com.services.interfaces.DeckBusinessServiceInterface;
 import com.utils.FieldChecker;
-
+/**
+ * 
+ * @author Ali Cooper & Anthony Natividad
+ * Handles all get and post mapping methods for deck modules in view pages
+ * Implements DeckBusinessService
+ */
 @Controller
 public class DeckController {
 

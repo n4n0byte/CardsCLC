@@ -1,6 +1,5 @@
 package com.services.implementations;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -11,6 +10,11 @@ import com.services.interfaces.CardDAOInterface;
 import com.services.interfaces.DeckBusinessServiceInterface;
 import com.services.interfaces.DeckDAOInterface;
 
+/**
+ * 
+ * @author Ali Cooper & Anthony Natividad
+ * Deck Business Service implements Deck and Card DOAs
+ */
 public class DeckBusinessService implements DeckBusinessServiceInterface {
 	
 	DeckDAOInterface iDeckDataService;
@@ -26,9 +30,11 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	@Autowired
 	public void setiDeckDataService(DeckDAOInterface iDeckDataService) {
 		this.iDeckDataService = iDeckDataService;
-	}
+	};
 
-			
+	/**
+	 * calls the DeckDOA to find decks made by a single user		
+	 */
 	@Override
 	public List<Deck> getDeckByUserId(int id) {
 		
@@ -36,24 +42,32 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 		
 	}
 
-	
 	@Override
 	public List<Deck> findAllDecksByUserId(int id) {
 		return iDeckDataService.findAllDecksByUserId(id);
 	}
 	
 	
-
+	/**
+	 * Calls DAO for deck to update a deck
+	 */
 	@Override
 	public void updateDeck(Deck deck) {
 		iDeckDataService.updateByModelById(deck, deck.getUserId());
 	}
-
+	
+	/**
+	 * deletes deck by deck id
+	 */
 	@Override
 	public boolean deleteDeckById(int id) {
 		return iDeckDataService.deleteById(id);
 	}
 
+	/**
+	 * adds cards to deck using decks id
+	 * calls Card DOA
+	 */
 	@Override
 	public void addCardToDeckWithDeckId(Card card, int deckId) {
 		card.setDeckId(deckId);

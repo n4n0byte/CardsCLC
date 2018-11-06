@@ -52,6 +52,9 @@
 	<definition name="result" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/result.jsp" />
 	</definition>
+	<definition name="errorPage" extends="DefaultTemplate">
+    	<put-attribute name="body" value="/WEB-INF/pages/errorPage.jsp" />
+	</definition>
 	
  <!--
   <definition name="*" extends="DefaultTemplate" >
