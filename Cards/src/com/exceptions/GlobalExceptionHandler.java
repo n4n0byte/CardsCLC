@@ -10,20 +10,9 @@ public class GlobalExceptionHandler {
 	  public ModelAndView dataAccessObjectError(final DAOException e) {
 		  
 		  ModelAndView mv = new ModelAndView("errorPage");
-		  mv.addObject("error", e.getMessage());
+		  mv.addObject("error", e.getStackTrace());
 		  mv.addObject("errorCode", Integer.valueOf(500));
 		  
 	    return mv;
 	  }
-	  
-	  @ExceptionHandler(NullPointerException.class)
-	  public ModelAndView nullPtrError(final DAOException e) {
-		  
-		  ModelAndView mv = new ModelAndView("errorPage");
-		  mv.addObject("error", e.getMessage());
-		  mv.addObject("errorCode", Integer.valueOf(500));
-		  
-	    return mv;
-	  }
-	
 }
