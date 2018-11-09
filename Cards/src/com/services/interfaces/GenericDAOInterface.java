@@ -10,4 +10,5 @@ public interface GenericDAOInterface<Model> {
 	boolean updateByModelById(Model input, int id);
 	void addModel(Model model);
 	
+	
 }

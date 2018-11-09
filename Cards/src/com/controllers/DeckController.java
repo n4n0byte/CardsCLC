@@ -87,6 +87,7 @@ public class DeckController {
 		return new ModelAndView("updateDeck","Deck",new Deck());
 		
 	}
+	
 	@PostMapping("updateResponse")
 	public String updateResponse(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result, HttpServletRequest req) {
 		
@@ -98,7 +99,7 @@ public class DeckController {
 		
 		modelMap.put("message", "Successfully updated Deck");
 		System.out.println("DECKDECKDECK " + deck);
-		User usr = (User) req.getAttribute("user");
+			User usr = (User) req.getSession().getAttribute("user");
 		deck.setUserId(usr.getId());
 		deckSvc.updateDeck(deck);
 		return "redirect:/home";
