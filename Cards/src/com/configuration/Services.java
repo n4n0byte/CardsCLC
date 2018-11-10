@@ -3,6 +3,10 @@ package com.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+
+import com.models.Card;
+import com.models.Deck;
+import com.models.User;
 import com.services.implementations.CardDAO;
 import com.services.implementations.CredentialsBusinessService;
 import com.services.implementations.DeckBusinessService;
@@ -12,6 +16,7 @@ import com.services.interfaces.CardDAOInterface;
 import com.services.interfaces.CredentialsBusinessServiceInterface;
 import com.services.interfaces.DeckBusinessServiceInterface;
 import com.services.interfaces.DeckDAOInterface;
+import com.services.interfaces.GenericDAOInterface;
 import com.services.interfaces.UserDAOInterface;
 
 /**
@@ -25,8 +30,10 @@ public class Services {
 
 	@Bean
 	@Primary
-	public UserDAOInterface loginDataService() {
-		return new UserDAO();
+	public  GenericDAOInterface<User> userDAOService() { 
+		GenericDAOInterface<User> userDAO = new UserDAO();
+		
+		return userDAO;
 	}
 	
 	@Bean
@@ -37,15 +44,17 @@ public class Services {
 		
 	@Bean
 	@Primary
-	public CardDAOInterface cardDAOService() {
-		return new CardDAO();
+	public  GenericDAOInterface<Card> cardDAOService() { 
+		GenericDAOInterface<Card> cardDAO = new CardDAO();
+		
+		return cardDAO;
 	}
 	
 	
 	@Bean
 	@Primary
-	public DeckDAOInterface deckDAOService() { 
-		DeckDAOInterface deckDAO = new DeckDAO();
+	public GenericDAOInterface<Deck> deckDAOService() { 
+		GenericDAOInterface<Deck> deckDAO = new DeckDAO();
 		
 		return deckDAO;
 	}

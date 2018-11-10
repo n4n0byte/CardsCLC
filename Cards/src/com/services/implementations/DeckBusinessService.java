@@ -9,6 +9,7 @@ import com.models.User;
 import com.services.interfaces.CardDAOInterface;
 import com.services.interfaces.DeckBusinessServiceInterface;
 import com.services.interfaces.DeckDAOInterface;
+import com.services.interfaces.GenericDAOInterface;
 
 /**
  * 
@@ -17,8 +18,8 @@ import com.services.interfaces.DeckDAOInterface;
  */
 public class DeckBusinessService implements DeckBusinessServiceInterface {
 	
-	DeckDAOInterface iDeckDataService;
-	CardDAOInterface cardSvc;
+	GenericDAOInterface<Deck> iDeckDataService;
+	GenericDAOInterface<Card> cardSvc;
 	
 	
 	@Autowired
@@ -35,16 +36,10 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	/**
 	 * calls the DeckDOA to find decks made by a single user		
 	 */
-	@Override
-	public List<Deck> getDeckByUserId(int id) {
-		
-		return iDeckDataService.findAllDecksByUserId(id);
-		
-	}
 
 	@Override
 	public List<Deck> findAllDecksByUserId(int id) {
-		return iDeckDataService.findAllDecksByUserId(id);
+		return iDeckDataService.findAllByModelId(id);
 	}
 	
 	
@@ -83,7 +78,7 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	
 	@Override
 	public boolean deleteDeckByTitle(String title) {
-		return iDeckDataService.deleteByTitle(title);
+		return iDeckDataService.deleteByName(title);
 	}
 
 
@@ -104,7 +99,7 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 
 	@Override
 	public void addCardToDeckWithDeckTitle(Card card, String deckTitle) {
-		card.setDeckId(iDeckDataService.getByTitle(deckTitle).getDeckId());
+		card.setDeckId(iDeckDataService.findByName(deckTitle).getDeckId());
 		cardSvc.addModel(card);
 	}
 
@@ -112,6 +107,13 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	@Override
 	public Deck findDeckByDeckId(int deckId) {
 		return iDeckDataService.getById(deckId);
+	}
+
+
+	@Override
+	public List<Deck> getDeckByUserId(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
