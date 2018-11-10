@@ -20,7 +20,6 @@ public class CardDAO implements CardDAOInterface{
 
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
-		System.out.println("INJECTING DATA SOURCE FROM CARD");
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}

@@ -45,6 +45,7 @@ public class UserDAO implements UserDAOInterface {
 		String sql = "SELECT * from users where id = ?";
 		
 		List<User> results = null;
+
 		try {
 			results = jdbcTemplateObject.query(sql, new Object[] { id }, new UserMapper());
 		} catch (DataAccessException e) {
@@ -55,8 +56,8 @@ public class UserDAO implements UserDAOInterface {
 
 		if (results.size() > 0)
 			return results.get(0);
-
-		return null;
+		
+		throw new DAOException("not found", new Exception());
 	}
 
 	@Override

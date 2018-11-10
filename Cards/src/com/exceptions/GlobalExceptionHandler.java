@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @ControllerAdvice(basePackages = "com.controllers")
 public class GlobalExceptionHandler {	
 	
-	@ExceptionHandler(Exception.class)
+	@ExceptionHandler(Throwable.class)
 	public ModelAndView dataAccessObjectError(final Exception e) {
 
 		ModelAndView mv = new ModelAndView("errorPage");
