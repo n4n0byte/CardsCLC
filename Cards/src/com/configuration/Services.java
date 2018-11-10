@@ -12,12 +12,9 @@ import com.services.implementations.CredentialsBusinessService;
 import com.services.implementations.DeckBusinessService;
 import com.services.implementations.DeckDAO;
 import com.services.implementations.UserDAO;
-import com.services.interfaces.CardDAOInterface;
 import com.services.interfaces.CredentialsBusinessServiceInterface;
 import com.services.interfaces.DeckBusinessServiceInterface;
-import com.services.interfaces.DeckDAOInterface;
 import com.services.interfaces.GenericDAOInterface;
-import com.services.interfaces.UserDAOInterface;
 
 /**
  * 
@@ -49,6 +46,8 @@ public class Services {
 		
 		return cardDAO;
 	}
+	
+	
 	
 	
 	@Bean

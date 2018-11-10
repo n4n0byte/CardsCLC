@@ -13,7 +13,6 @@ import com.mappers.UserMapper;
 import com.models.Card;
 import com.models.User;
 import com.services.interfaces.GenericDAOInterface;
-import com.services.interfaces.UserDAOInterface;
 
 public class UserDAO implements GenericDAOInterface<User> {
 

@@ -4,7 +4,6 @@
 	
 <ul>
 	<li><a href="/Card">Log Out</a></li>
-	<li><a href="/Card/updateDeck">Update</a></li>
 </ul>
 
 <br/>
