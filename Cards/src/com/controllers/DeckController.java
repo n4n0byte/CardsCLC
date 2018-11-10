@@ -17,6 +17,7 @@ import com.models.CardWithDeckTitle;
 import com.models.Deck;
 import com.models.User;
 import com.services.interfaces.DeckBusinessServiceInterface;
+import com.services.interfaces.GenericDAOInterface;
 import com.utils.FieldChecker;
 /**
  * 
@@ -27,10 +28,10 @@ import com.utils.FieldChecker;
 @Controller
 public class DeckController {
 
-	DeckBusinessServiceInterface deckSvc;
+	GenericDAOInterface<Deck> deckSvc;
 	
 	@Autowired
-	public void setIDeckBusinessService(DeckBusinessServiceInterface iDeckBusinessService) {
+	public void setIDeckBusinessService(GenericDAOInterface<Deck> iDeckBusinessService) {
 		deckSvc = iDeckBusinessService;
 	}
 	
@@ -42,14 +43,14 @@ public class DeckController {
 		}
 		User user = (User) sess.getSession().getAttribute("user");
 		deck.setUserId(user.getId());
-		deckSvc.addDeck(deck);
+		deckSvc.addModel(deck);
 		return "redirect:/home";
 	}
 	
 	@GetMapping("displayDeck/{deckId}")
 	public String displayDeck(@PathVariable("deckId") int deckId,ModelMap modelMap, RedirectAttributes attrs, HttpServletRequest sess) {
 				
-		Deck deck = deckSvc.findDeckByDeckId(deckId);
+		Deck deck = deckSvc.getById(deckId);
 		System.out.println(deck);
 		if (deck == null) {
 			return "redirect:home";
@@ -74,7 +75,7 @@ public class DeckController {
 		}
 		
 		modelMap.put("message", "Successfully Added Card");
-		deckSvc.addCardToDeckWithDeckTitle(cardWithDeckTitle.getCard(), cardWithDeckTitle.getDeckTitle());
+		deckSvc.addCardToModelWithModelName(cardWithDeckTitle.getCard(), cardWithDeckTitle.getDeckTitle());
 		
 		return "redirect:/home";
 		

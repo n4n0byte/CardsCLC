@@ -10,10 +10,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.exceptions.DAOException;
 import com.mappers.UserMapper;
+import com.models.Card;
 import com.models.User;
+import com.services.interfaces.GenericDAOInterface;
 import com.services.interfaces.UserDAOInterface;
 
-public class UserDAO implements UserDAOInterface {
+public class UserDAO implements GenericDAOInterface<User> {
 
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
@@ -45,7 +47,6 @@ public class UserDAO implements UserDAOInterface {
 		String sql = "SELECT * from users where id = ?";
 		
 		List<User> results = null;
-
 		try {
 			results = jdbcTemplateObject.query(sql, new Object[] { id }, new UserMapper());
 		} catch (DataAccessException e) {
@@ -56,8 +57,8 @@ public class UserDAO implements UserDAOInterface {
 
 		if (results.size() > 0)
 			return results.get(0);
-		
-		throw new DAOException("not found", new Exception());
+
+		return null;
 	}
 
 	@Override
@@ -88,7 +89,7 @@ public class UserDAO implements UserDAOInterface {
 	}
 
 	@Override
-	public User findByUsername(String username) {
+	public User findByName(String username) {
 		String sql = "SELECT * from carddb.users where username = ?";
 		List<User> results = null;
 		try {
@@ -101,6 +102,32 @@ public class UserDAO implements UserDAOInterface {
 		if (results.size() > 0)
 			return results.get(0);
 		return null;
+	}
+
+
+
+	@Override
+	public boolean updateByModelName(User input, String name) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteByName(String name) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<User> findAllByModelId(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addCardToModelWithModelName(Card input, String name) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

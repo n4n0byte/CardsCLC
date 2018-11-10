@@ -11,15 +11,18 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import com.exceptions.DAOException;
 import com.mappers.CardMapper;
 import com.models.Card;
+import com.models.Deck;
 import com.services.interfaces.CardDAOInterface;
+import com.services.interfaces.GenericDAOInterface;
 
-public class CardDAO implements CardDAOInterface{
+public class CardDAO implements GenericDAOInterface<Card>{
 
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
 
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
+		System.out.println("INJECTING DATA SOURCE FROM CARD");
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}
@@ -65,19 +68,6 @@ public class CardDAO implements CardDAOInterface{
 	}
 
 	@Override
-	public boolean deleteById(int id) {
-		// TODO stub for next milestone's functionality
-		return false;
-	}
-
-	@Override
-	public boolean updateByModelById(Card input, int id) {
-		// TODO stub for next milestone functionality
-		return false;
-	}
-
-
-	@Override
 	public void addModel(Card model) {
 
 		try {
@@ -95,9 +85,8 @@ public class CardDAO implements CardDAOInterface{
 		}
 	}
 
-	@Override
-	public List<Card> findCardsByDeckId(int deckId) {
-		String sql = "SELECT * FROM carddb.cards where deckId = " + deckId;
+	public List<Card> findAllByModelId(int id) {
+		String sql = "SELECT * FROM carddb.cards where deckId = " + id;
 
 		List<Card> results = null;
 
@@ -110,6 +99,43 @@ public class CardDAO implements CardDAOInterface{
 		}
 
 		return results;
+	}
+
+	
+	@Override
+	public boolean deleteById(int id) {
+		// TODO stub for next milestone's functionality
+		return false;
+	}
+
+	@Override
+	public boolean updateByModelById(Card input, int id) {
+		// TODO stub for next milestone functionality
+		return false;
+	}
+
+	@Override
+	public Card findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean updateByModelName(Card input, String name) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteByName(String name) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void addCardToModelWithModelName(Card input, String name) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

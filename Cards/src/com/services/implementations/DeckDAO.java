@@ -8,9 +8,12 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.exceptions.DAOException;
 import com.mappers.DeckMapper;
+import com.models.Card;
 import com.models.Deck;
+import com.models.User;
 import com.services.interfaces.CardDAOInterface;
 import com.services.interfaces.DeckDAOInterface;
+import com.services.interfaces.GenericDAOInterface;
 
 /**
  * 
@@ -18,7 +21,7 @@ import com.services.interfaces.DeckDAOInterface;
  *         objects
  *
  */
-public class DeckDAO implements DeckDAOInterface {
+public class DeckDAO implements GenericDAOInterface<Deck> {
 
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
@@ -59,7 +62,7 @@ public class DeckDAO implements DeckDAOInterface {
 	}
 
 	@Override
-	public Deck getByTitle(String title) {
+	public Deck findByName(String title) {
 		List<Deck> decks = jdbcTemplateObject.query("select * from carddb.decks where title = ? limit 1",
 				new Object[] { title }, new DeckMapper());
 		if (decks.size() > 0) {
@@ -87,7 +90,7 @@ public class DeckDAO implements DeckDAOInterface {
 	}
 
 	@Override
-	public boolean deleteByTitle(String title) {
+	public boolean deleteByName(String title) {
 
 		try {
 			int rowsDeleted = jdbcTemplateObject.update("delete from carddb.decks where title = ?", title);
@@ -136,8 +139,7 @@ public class DeckDAO implements DeckDAOInterface {
 
 	}
 
-	@Override
-	public List<Deck> findAllDecksByUserId(int id) {
+	public List<Deck> findAllByModelId(int id) {
 
 		String sql = "SELECT id, userId, description, title FROM carddb.decks where userId = " + id;
 		List<Deck> results = null;
@@ -175,6 +177,19 @@ public class DeckDAO implements DeckDAOInterface {
 		}
 		return results;
 
+	}
+
+
+	@Override
+	public boolean updateByModelName(Deck input, String name) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void addCardToModelWithModelName(Card input, String name) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
