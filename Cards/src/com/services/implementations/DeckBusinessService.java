@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.models.Card;
 import com.models.Deck;
 import com.models.User;
-import com.services.interfaces.CardDAOInterface;
 import com.services.interfaces.DeckBusinessServiceInterface;
-import com.services.interfaces.DeckDAOInterface;
 import com.services.interfaces.GenericDAOInterface;
 
 /**
@@ -23,13 +21,13 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	
 	
 	@Autowired
-	public void setCardSvc(CardDAOInterface cardSvc) {
+	public void setCardSvc(GenericDAOInterface<Card> cardSvc) {
 		this.cardSvc = cardSvc;
 	}
 
 
 	@Autowired
-	public void setiDeckDataService(DeckDAOInterface iDeckDataService) {
+	public void setiDeckDataService(GenericDAOInterface<Deck> iDeckDataService) {
 		this.iDeckDataService = iDeckDataService;
 	};
 

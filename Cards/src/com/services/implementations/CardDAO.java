@@ -12,7 +12,6 @@ import com.exceptions.DAOException;
 import com.mappers.CardMapper;
 import com.models.Card;
 import com.models.Deck;
-import com.services.interfaces.CardDAOInterface;
 import com.services.interfaces.GenericDAOInterface;
 
 public class CardDAO implements GenericDAOInterface<Card>{

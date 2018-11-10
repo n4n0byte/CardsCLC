@@ -11,8 +11,6 @@ import com.mappers.DeckMapper;
 import com.models.Card;
 import com.models.Deck;
 import com.models.User;
-import com.services.interfaces.CardDAOInterface;
-import com.services.interfaces.DeckDAOInterface;
 import com.services.interfaces.GenericDAOInterface;
 
 /**
@@ -25,7 +23,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
-	private CardDAOInterface cardDAO;
+	private GenericDAOInterface<Card> cardDAO;
 
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
@@ -35,7 +33,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 	}
 
 	@Autowired
-	public void setCardDAO(CardDAOInterface cardDAO) {
+	public void setCardDAO(GenericDAOInterface<Card> cardDAO) {
 		System.out.println("INJECTING CARD DAO~!");
 
 		this.cardDAO = cardDAO;
@@ -49,7 +47,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 			decks = jdbcTemplateObject.query("select * from carddb.decks where id = ? limit 1", new Object[] { id },
 					new DeckMapper());
 			if (decks.size() > 0) {
-				decks.get(0).setCards(cardDAO.findCardsByDeckId(decks.get(0).getDeckId()));
+				decks.get(0).setCards(cardDAO.findAllByModelId(decks.get(0).getDeckId()));
 				return decks.get(0);
 			}
 		} catch (DataAccessException e) {
@@ -66,7 +64,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 		List<Deck> decks = jdbcTemplateObject.query("select * from carddb.decks where title = ? limit 1",
 				new Object[] { title }, new DeckMapper());
 		if (decks.size() > 0) {
-			decks.get(0).setCards(cardDAO.findCardsByDeckId(decks.get(0).getDeckId()));
+			decks.get(0).setCards(cardDAO.findAllByModelId(decks.get(0).getDeckId()));
 			return decks.get(0);
 		}
 
@@ -147,7 +145,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 		try {
 			results = jdbcTemplateObject.query(sql, new DeckMapper());
 			for (int i = 0; i < results.size(); i++) {
-				results.get(i).setCards(cardDAO.findCardsByDeckId(results.get(i).getDeckId()));
+				results.get(i).setCards(cardDAO.findAllByModelId(results.get(i).getDeckId()));
 			}
 		} catch (DataAccessException e) {
 			throw new DAOException(e.getMessage() + "\n" + e.getStackTrace(), e);
@@ -167,7 +165,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 			results = jdbcTemplateObject.query(sql, new DeckMapper());
 
 			for (Deck d : results) {
-				d.setCards(cardDAO.findCardsByDeckId(d.getDeckId()));
+				d.setCards(cardDAO.findAllByModelId(d.getDeckId()));
 			}
 
 		} catch (DataAccessException e) {
