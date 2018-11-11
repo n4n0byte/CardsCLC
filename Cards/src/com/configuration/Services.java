@@ -33,11 +33,6 @@ public class Services {
 		return userDAO;
 	}
 	
-	@Bean
-	@Primary
-	public DeckBusinessServiceInterface iDeckBusinessService() {
-		return new DeckBusinessService();
-	}
 		
 	@Bean
 	@Primary
@@ -64,5 +59,10 @@ public class Services {
 		return new CredentialsBusinessService();
 	}
 	
-			
+	@Bean
+	@Primary
+	public DeckBusinessServiceInterface businessServiceInterface() {
+		return new DeckBusinessService();
+	}
+
 }

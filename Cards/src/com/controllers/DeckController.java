@@ -16,6 +16,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.models.CardWithDeckTitle;
 import com.models.Deck;
 import com.models.User;
+import com.services.implementations.DeckBusinessService;
+import com.services.interfaces.DeckBusinessServiceInterface;
 import com.services.interfaces.GenericDAOInterface;
 import com.utils.FieldChecker;
 /**
@@ -27,10 +29,10 @@ import com.utils.FieldChecker;
 @Controller
 public class DeckController {
 
-	GenericDAOInterface<Deck> deckSvc;
+	DeckBusinessServiceInterface deckSvc;
 	
 	@Autowired
-	public void setIDeckBusinessService(GenericDAOInterface<Deck> iDeckBusinessService) {
+	public void setIDeckBusinessService(DeckBusinessServiceInterface iDeckBusinessService) {
 		deckSvc = iDeckBusinessService;
 	}
 	
@@ -42,14 +44,14 @@ public class DeckController {
 		}
 		User user = (User) sess.getSession().getAttribute("user");
 		deck.setUserId(user.getId());
-		deckSvc.addModel(deck);
+		deckSvc.addDeck(deck);
 		return "redirect:/home";
 	}
 	
 	@GetMapping("displayDeck/{deckId}")
 	public String displayDeck(@PathVariable("deckId") int deckId,ModelMap modelMap, RedirectAttributes attrs, HttpServletRequest sess) {
 				
-		Deck deck = deckSvc.getById(deckId);
+		Deck deck = deckSvc.findDeckByDeckId(deckId);
 		System.out.println(deck);
 		if (deck == null) {
 			return "redirect:home";
@@ -74,7 +76,7 @@ public class DeckController {
 		}
 		
 		modelMap.put("message", "Successfully Added Card");
-		deckSvc.addCardToModelWithModelName(cardWithDeckTitle.getCard(), cardWithDeckTitle.getDeckTitle());
+		deckSvc.addCardToDeckWithDeckTitle(cardWithDeckTitle.getCard(), cardWithDeckTitle.getDeckTitle());
 		
 		return "redirect:/home";
 		
@@ -101,24 +103,18 @@ public class DeckController {
 		System.out.println("DECKDECKDECK " + deck);
 			User usr = (User) req.getSession().getAttribute("user");
 		deck.setUserId(usr.getId());
-		deckSvc.updateByModelName(deck,deck.getTitle());
+		deckSvc.updateDeck(deck);
 		return "redirect:/home";
 		
 	}	
 	
 	@GetMapping("deleteDeck/{deckTitle}")
 	public String deleteDeck(@PathVariable("deckTitle") String title, ModelMap modelMap) {
-		deckSvc.deleteByName(title);
+		deckSvc.deleteDeckByTitle(title);
 		return "redirect:/home";
 		
 	}
 	
-	@GetMapping("findById")
-	public ModelAndView findById(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result,RedirectAttributes attrs) {
-		deckSvc.findByName(deck.getTitle());
-		return new ModelAndView("","Deck",new Deck());
-		
-	}
 	@PostMapping("displayfindById")
 	public String displayfindById(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result) {
 		
@@ -129,7 +125,8 @@ public class DeckController {
 		}
 		
 		modelMap.put("message", "Successfully updated Deck");
-		deckSvc.updateByModelName(deck, deck.getTitle());
+//		deckSvc.updateByModelName(deck, deck.getTitle());
+		deckSvc.updateDeck(deck);
 		return "redirect:/home";
 		
 	}	

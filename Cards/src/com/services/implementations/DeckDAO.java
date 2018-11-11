@@ -188,8 +188,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 	@Override
 	public void addCardToModelWithModelName(Card model, String name) {
 		try {
-			jdbcTemplateObject.update("INSERT INTO carddb.cards (deckId) VALUES (?)",name+"WHERE title='"+
-					model.getTitle()+"");
+//			jdbcTemplateObject.update("INSERT INTO carddb.cards (deckId,title,description,health,damage) VALUES (?,?,?,?,?)",name+"WHERE deckId=);
 
 		} catch (DataAccessException e) {
 			throw new DAOException(e.getMessage() + "\n" + e.getStackTrace(), e);
