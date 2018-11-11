@@ -8,12 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b786b41-3ab7-4429-8fef-429dd63cdfb7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Class Diagrams/Controllers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagrams/Exceptions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagrams/Interfaces.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagrams/Mappers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagrams/Models.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Class Diagrams/ServicesCardDAO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/controllers/DeckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/controllers/DeckController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/applicationConfiguration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/applicationConfiguration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/configuration/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/configuration/Services.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/controllers/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/controllers/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/controllers/RegistrationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/layouts/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/layouts/views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/Card/Card/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/Card/Card/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/Card/Card/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/Card/Card/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,10 +34,12 @@
     <session id="1741943569">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.31" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -63,7 +73,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/controllers/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
+            <state relative-caret-position="597">
               <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
             </state>
           </provider>
@@ -115,8 +125,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -304,16 +314,18 @@
       <updated>1540573453029</updated>
       <workItem from="1540573454307" duration="1375000" />
       <workItem from="1541467300050" duration="1207000" />
+      <workItem from="1541929911020" duration="88000" />
+      <workItem from="1541941145109" duration="8000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2582000" />
+    <option name="totallyTimeSpent" value="2678000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
+    <frame x="-6" y="-6" width="1293" height="733" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49673203" visible="true" weight="0.2534413" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49386504" visible="true" weight="0.26153848" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -322,7 +334,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="EJB" order="7" sideWeight="0.50121653" side_tool="true" weight="0.24939272" />
       <window_info id="JavaEE:App" order="8" side_tool="true" />
-      <window_info id="Web" order="9" sideWeight="0.503268" side_tool="true" visible="true" weight="0.2534413" />
+      <window_info id="Web" order="9" sideWeight="0.506135" side_tool="true" visible="true" weight="0.26153848" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39052287" />
@@ -359,13 +371,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/controllers/Calculate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/controllers/Calculate.java" />
     <entry file="file://$PROJECT_DIR$/src/com/controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -421,11 +427,11 @@
             <node>com.controllers.RegistrationController</node>
           </SelectedNodes>
           <Categories>
-            <Category>Methods</Category>
+            <Category>Fields</Category>
             <Category>Constructors</Category>
+            <Category>Methods</Category>
             <Category>Properties</Category>
             <Category>Inner Classes</Category>
-            <Category>Fields</Category>
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
@@ -452,6 +458,7 @@
           <Categories>
             <Category>All</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
           <VISIBILITY>Details</VISIBILITY>
         </state>
       </provider>
@@ -472,7 +479,7 @@
               <point x="0.0" y="37.0" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="87.5" y="51.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="88.0" y="52.0" />
           <SelectedNodes>
             <node>com.exceptions.GlobalExceptionHandler</node>
           </SelectedNodes>
@@ -499,7 +506,7 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="58.0" y="88.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="58.0" y="89.0" />
           <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
@@ -534,7 +541,7 @@
               <point x="0.0" y="14.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="74.0" y="93.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="74.0" y="94.0" />
           <SelectedNodes>
             <node>com.mappers.UserMapper</node>
           </SelectedNodes>
@@ -599,6 +606,7 @@
           <Categories>
             <Category>All</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
           <VISIBILITY>Details</VISIBILITY>
         </state>
       </provider>
@@ -672,11 +680,11 @@
             <node>com.services.interfaces.CardDAOInterface</node>
           </SelectedNodes>
           <Categories>
-            <Category>Inner Classes</Category>
-            <Category>Properties</Category>
-            <Category>Methods</Category>
             <Category>Fields</Category>
             <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
@@ -774,7 +782,7 @@
               <point x="0.0" y="14.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.6297814207650273" x="722.0" y="136.5" />
+          <settings layout="Hierarchic Group" zoom="0.6297814207650273" x="722.0" y="137.0" />
           <SelectedNodes>
             <node>com.services.interfaces.DeckDAOInterface</node>
           </SelectedNodes>
@@ -805,7 +813,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/controllers/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
+        <state relative-caret-position="597">
           <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
         </state>
       </provider>
