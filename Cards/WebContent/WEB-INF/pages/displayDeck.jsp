@@ -22,10 +22,5 @@
 				<td><label>${card.health}</label></td>
 			</tr>
 		</c:forEach>
-		<tr>
-			<td colspan="2">
-			<a href="add">Add a Card</a>
-			</td>
-		</tr>
 	</table>
 </div>
