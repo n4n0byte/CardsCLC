@@ -1,7 +1,9 @@
 package com.services.implementations;
 
 import java.util.List;
+
 import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,7 +12,6 @@ import com.exceptions.DAOException;
 import com.mappers.DeckMapper;
 import com.models.Card;
 import com.models.Deck;
-import com.models.User;
 import com.services.interfaces.GenericDAOInterface;
 
 /**
@@ -185,8 +186,16 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 	}
 
 	@Override
-	public void addCardToModelWithModelName(Card input, String name) {
-		// TODO Auto-generated method stub
+	public void addCardToModelWithModelName(Card model, String name) {
+		try {
+			jdbcTemplateObject.update("INSERT INTO carddb.cards (deckId) VALUES (?)",name+"WHERE title='"+
+					model.getTitle()+"");
+
+		} catch (DataAccessException e) {
+			throw new DAOException(e.getMessage() + "\n" + e.getStackTrace(), e);
+		} catch (Exception e) {
+			throw new DAOException(e.getMessage(), e);
+		}
 		
 	}
 

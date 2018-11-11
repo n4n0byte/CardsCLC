@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.models.Card;
 import com.models.CardWithDeckTitle;
 import com.models.Deck;
 import com.models.User;
@@ -102,21 +103,21 @@ public class DeckController {
 		System.out.println("DECKDECKDECK " + deck);
 			User usr = (User) req.getSession().getAttribute("user");
 		deck.setUserId(usr.getId());
-		deckSvc.updateDeck(deck);
+		deckSvc.updateByModelName(deck,deck.getTitle());
 		return "redirect:/home";
 		
 	}	
 	
 	@GetMapping("deleteDeck/{deckTitle}")
 	public String deleteDeck(@PathVariable("deckTitle") String title, ModelMap modelMap) {
-		deckSvc.deleteDeckByTitle(title);
+		deckSvc.deleteByName(title);
 		return "redirect:/home";
 		
 	}
 	
 	@GetMapping("findById")
 	public ModelAndView findById(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result,RedirectAttributes attrs) {
-		deckSvc.findDeckByDeckId(deck.getDeckId());
+		deckSvc.findByName(deck.getTitle());
 		return new ModelAndView("","Deck",new Deck());
 		
 	}
@@ -130,7 +131,7 @@ public class DeckController {
 		}
 		
 		modelMap.put("message", "Successfully updated Deck");
-		deckSvc.updateDeck(deck);
+		deckSvc.updateByModelName(deck, deck.getTitle());
 		return "redirect:/home";
 		
 	}	

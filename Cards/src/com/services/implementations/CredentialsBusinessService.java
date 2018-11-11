@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.models.User;
 import com.services.interfaces.CredentialsBusinessServiceInterface;
-import com.services.interfaces.UserDAOInterface;
+import com.services.interfaces.GenericDAOInterface;
 /**
  * 
  * @author Ali Cooper
@@ -14,10 +14,10 @@ import com.services.interfaces.UserDAOInterface;
  */
 public class CredentialsBusinessService implements CredentialsBusinessServiceInterface {
 
-	private UserDAOInterface userDAO;
+	private GenericDAOInterface<User> userDAO;
 
 	@Autowired
-	public void setUserDAO(UserDAOInterface userDAO) {
+	public void setUserDAO(GenericDAOInterface<User> userDAO) {
 		this.userDAO = userDAO;
 	}
 	/**
@@ -26,7 +26,7 @@ public class CredentialsBusinessService implements CredentialsBusinessServiceInt
 	@Override
 	public boolean isRegistered(User user) {
 		
-		User usr = userDAO.findByUsername(user.getUsername());
+		User usr = userDAO.findByName(user.getUsername());
 		System.out.println(usr + "PRINT: USER REGISTERED");
 		
 		return true;
@@ -38,7 +38,7 @@ public class CredentialsBusinessService implements CredentialsBusinessServiceInt
 	@Override
 	public boolean tryRegisterUser(User user) {
 		
-		User usr = userDAO.findByUsername(user.getUsername());
+		User usr = userDAO.findByName(user.getUsername());
 		System.out.println(usr);
 		if(usr == null) {
 			userDAO.addModel(user);
@@ -54,7 +54,7 @@ public class CredentialsBusinessService implements CredentialsBusinessServiceInt
 	 */
 	@Override
 	public boolean isValidCredentials(User user) {
-		User usr = userDAO.findByUsername(user.getUsername());
+		User usr = userDAO.findByName(user.getUsername());
 		System.out.println(usr);
 		System.out.println(user);
 		if(usr == null) return false;
@@ -72,7 +72,7 @@ public class CredentialsBusinessService implements CredentialsBusinessServiceInt
 	 */
 	@Override
 	public User getUserFromUsername(String username) {
-		return userDAO.findByUsername(username);
+		return userDAO.findByName(username);
 	}
 
 }

@@ -4,7 +4,6 @@
 	
 <ul>
 	<li><a href="/Card">Log Out</a></li>
-	<li><a href="/Card/updateDeck">Update</a></li>
 </ul>
 
 <br/>
@@ -26,7 +25,7 @@
 					<label><a href="/Card/newCard/${deck.title}">Add</a></label>
 				</td>
 				<td>
-					<label><a href="/Card/deleteDeck/${deck.title}">Delete</a></label>
+					<label><a onclick="return confirm('are you sure?');" href="/Card/deleteDeck/${deck.title}">Delete</a></label>
 				</td>
 				<td>
 					<label><a href="/Card/updateDeck/${deck.title}">Update</a></label>
