@@ -13,7 +13,12 @@ import com.mappers.UserMapper;
 import com.models.Card;
 import com.models.User;
 import com.services.interfaces.GenericDAOInterface;
-
+/**
+ * 
+ * @author Anthony Natividad and Ali Cooper
+ * CardDAO has all CRUD operations for our Card model
+ * however only few are used and are used for authentification purposes
+ */
 public class UserDAO implements GenericDAOInterface<User> {
 
 	private DataSource dataSource;
@@ -24,7 +29,6 @@ public class UserDAO implements GenericDAOInterface<User> {
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}
-
 	@Override
 	public List<User> findAll() {
 		String sql = "SELECT * from users";

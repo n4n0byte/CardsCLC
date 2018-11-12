@@ -12,7 +12,12 @@ import com.exceptions.DAOException;
 import com.mappers.CardMapper;
 import com.models.Card;
 import com.services.interfaces.GenericDAOInterface;
-
+/**
+ * 
+ * @author Anthony Natividad and Ali Cooper
+ * CardDAO has all CRUD operations for our Card model
+ *
+ */
 public class CardDAO implements GenericDAOInterface<Card>{
 
 	private DataSource dataSource;

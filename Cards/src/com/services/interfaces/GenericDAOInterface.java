@@ -3,7 +3,12 @@ package com.services.interfaces;
 import java.util.List;
 
 import com.models.Card;
-
+/**
+ * 
+ * @author Anthony Natividad
+ * Generic interface for all DAO objects
+ * @param <Model>
+ */
 public interface GenericDAOInterface<Model> {
 	
 	List<Model> findAll();
