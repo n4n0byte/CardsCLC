@@ -8,20 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b786b41-3ab7-4429-8fef-429dd63cdfb7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/controllers/DeckController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/controllers/DeckController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/pages/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/pages/loginForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.annotation.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.ejb.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.jms.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.persistence.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.resource.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.servlet.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.servlet.jsp.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.transaction.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/services/implementations/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/services/implementations/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/applicationConfiguration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/applicationConfiguration.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/configuration/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/configuration/Services.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/controllers/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/controllers/RegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/classes/com/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/layouts/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/layouts/views.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/pages/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Card-0.0.1-SNAPSHOT/WEB-INF/pages/loginForm.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/Card/Card/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/Card/Card/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/Card/Card/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/Card/Card/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,18 +35,20 @@
     <session id="1741943569">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.31" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="CardDAO" value="1" />
+          <entry key="CardDAO" value="2" />
           <entry key="CardDAOInterface" value="1" />
+          <entry key="CredentialsBusinessServiceInterface" value="2" />
           <entry key="DeckController" value="1" />
           <entry key="JavaScript-modules-diagram/C:/Users/AC/git/CardsCLC/Cards/src/com/exceptions" value="1" />
           <entry key="JavaScript-modules-diagram/C:/Users/AC/git/CardsCLC/Cards/src/com/services/implementations;C:/Users/AC/git/CardsCLC/Cards/src/com/services/interfaces;" value="1" />
@@ -54,13 +57,13 @@
           <entry key="java" value="9" />
           <entry key="mappers" value="1" />
           <entry key="models" value="1" />
-          <entry key="services" value="1" />
+          <entry key="services" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="9" />
-          <entry key="UML" value="10" />
+          <entry key="UML" value="14" />
         </counts>
       </usages-collector>
     </session>
@@ -71,10 +74,33 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/controllers/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+        <entry file="uml://JAVA/com.services.interfaces.CredentialsBusinessServiceInterface">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>com.services.interfaces.CredentialsBusinessServiceInterface</OriginalElement>
+              <nodes>
+                <node x="392.0" y="316.0">com.services.interfaces.CredentialsBusinessServiceInterface</node>
+                <node x="0.0" y="316.0">com.services.interfaces.GenericDAOInterface</node>
+                <node x="0.0" y="0.0">com.services.interfaces.DeckBusinessServiceInterface</node>
+              </nodes>
+              <notes />
+              <edges />
+              <settings layout="Hierarchic Group" zoom="1.0" x="230.0" y="286.0" />
+              <SelectedNodes>
+                <node>com.services.interfaces.CredentialsBusinessServiceInterface</node>
+                <node>com.services.interfaces.GenericDAOInterface</node>
+                <node>com.services.interfaces.DeckBusinessServiceInterface</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Inner Classes</Category>
+                <Category>Properties</Category>
+                <Category>Methods</Category>
+                <Category>Constructors</Category>
+                <Category>Fields</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -124,9 +150,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,6 +225,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -316,16 +342,18 @@
       <workItem from="1541467300050" duration="1207000" />
       <workItem from="1541929911020" duration="88000" />
       <workItem from="1541941145109" duration="8000" />
+      <workItem from="1541979378799" duration="136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2678000" />
+    <option name="totallyTimeSpent" value="2814000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="733" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49386504" visible="true" weight="0.26153848" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4923313" visible="true" weight="0.26639676" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -334,7 +362,8 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="EJB" order="7" sideWeight="0.50121653" side_tool="true" weight="0.24939272" />
       <window_info id="JavaEE:App" order="8" side_tool="true" />
-      <window_info id="Web" order="9" sideWeight="0.506135" side_tool="true" visible="true" weight="0.26153848" />
+      <window_info id="Web" order="9" sideWeight="0.50766873" side_tool="true" visible="true" weight="0.26639676" />
+      <window_info anchor="bottom" id="Sequence" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.39052287" />
@@ -611,38 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/com.services">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>com.services</OriginalElement>
-          <nodes>
-            <node x="0.0" y="79.0">com.services.implementations</node>
-            <node x="19.5" y="0.0">com.services.interfaces</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="com.services.implementations" target="com.services.interfaces">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="84.0" y="54.0" />
-          <SelectedNodes>
-            <node>com.services.interfaces</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-            <Category>Properties</Category>
-            <Category>Inner Classes</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/com.services.interfaces.CardDAOInterface">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -691,109 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/com.services.implementations.CardDAO">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>com.services.implementations.CardDAO</OriginalElement>
-          <nodes>
-            <node x="0.0" y="79.0">com.services.interfaces.CredentialsBusinessServiceInterface</node>
-            <node x="712.189393939394" y="0.0">com.services.interfaces.GenericDAOInterface</node>
-            <node x="617.239393939394" y="189.0">com.services.implementations.DeckBusinessService</node>
-            <node x="344.239393939394" y="189.0">com.services.implementations.UserDAO</node>
-            <node x="718.528787878788" y="79.0">com.services.interfaces.DeckDAOInterface</node>
-            <node x="995.028787878788" y="79.0">com.services.interfaces.CardDAOInterface</node>
-            <node x="255.0000000000001" y="79.0">com.services.interfaces.UserDAOInterface</node>
-            <node x="448.61212121212134" y="79.0">com.services.interfaces.DeckBusinessServiceInterface</node>
-            <node x="110.23939393939395" y="200.0">com.services.implementations.CredentialsBusinessService</node>
-            <node x="896.239393939394" y="178.0">com.services.implementations.DeckDAO</node>
-            <node x="1169.239393939394" y="189.0">com.services.implementations.CardDAO</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="com.services.interfaces.DeckDAOInterface" target="com.services.interfaces.GenericDAOInterface">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="com.services.implementations.DeckBusinessService" target="com.services.interfaces.CardDAOInterface">
-              <point x="103.60000000000002" y="-36.5" />
-              <point x="850.3393939393941" y="148.0" />
-              <point x="1038.228787878788" y="148.0" />
-              <point x="-28.799999999999955" y="14.5" />
-            </edge>
-            <edge source="com.services.interfaces.CardDAOInterface" target="com.services.interfaces.GenericDAOInterface">
-              <point x="0.0" y="-14.5" />
-              <point x="1067.028787878788" y="54.0" />
-              <point x="844.689393939394" y="54.0" />
-              <point x="53.0" y="14.5" />
-            </edge>
-            <edge source="com.services.implementations.CredentialsBusinessService" target="com.services.interfaces.UserDAOInterface">
-              <point x="71.33333333333326" y="-25.5" />
-              <point x="288.5727272727272" y="158.0" />
-              <point x="326.5000000000001" y="158.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="com.services.implementations.CardDAO" target="com.services.interfaces.CardDAOInterface">
-              <point x="0.0" y="-36.5" />
-              <point x="1295.739393939394" y="158.0" />
-              <point x="1124.628787878788" y="158.0" />
-              <point x="57.60000000000002" y="14.5" />
-            </edge>
-            <edge source="com.services.implementations.DeckDAO" target="com.services.interfaces.DeckDAOInterface">
-              <point x="-84.33333333333331" y="-47.5" />
-              <point x="938.4060606060607" y="128.0" />
-              <point x="839.3621212121213" y="128.0" />
-              <point x="48.33333333333337" y="14.5" />
-            </edge>
-            <edge source="com.services.implementations.DeckBusinessService" target="com.services.interfaces.DeckBusinessServiceInterface">
-              <point x="-103.60000000000002" y="-36.5" />
-              <point x="643.139393939394" y="158.0" />
-              <point x="549.6121212121213" y="158.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="com.services.implementations.DeckBusinessService" target="com.services.interfaces.DeckDAOInterface">
-              <point x="-51.80000000000001" y="-36.5" />
-              <point x="694.939393939394" y="148.0" />
-              <point x="742.6954545454546" y="148.0" />
-              <point x="-48.33333333333334" y="14.5" />
-            </edge>
-            <edge source="com.services.implementations.DeckDAO" target="com.services.interfaces.CardDAOInterface">
-              <point x="84.33333333333337" y="-47.5" />
-              <point x="1107.0727272727274" y="158.0" />
-              <point x="1095.8287878787878" y="158.0" />
-              <point x="28.799999999999955" y="14.5" />
-            </edge>
-            <edge source="com.services.implementations.UserDAO" target="com.services.interfaces.UserDAOInterface">
-              <point x="0.0" y="-36.5" />
-              <point x="470.739393939394" y="158.0" />
-              <point x="374.16666666666686" y="158.0" />
-              <point x="47.66666666666674" y="14.5" />
-            </edge>
-            <edge source="com.services.interfaces.UserDAOInterface" target="com.services.interfaces.GenericDAOInterface">
-              <point x="0.0" y="-14.5" />
-              <point x="326.5000000000001" y="54.0" />
-              <point x="738.689393939394" y="54.0" />
-              <point x="-53.0" y="14.5" />
-            </edge>
-            <edge source="com.services.implementations.CredentialsBusinessService" target="com.services.interfaces.CredentialsBusinessServiceInterface">
-              <point x="-71.33333333333326" y="-25.5" />
-              <point x="145.9060606060607" y="158.0" />
-              <point x="117.5" y="158.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.6297814207650273" x="722.0" y="137.0" />
-          <SelectedNodes>
-            <node>com.services.interfaces.DeckDAOInterface</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Fields</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/configuration/Resources.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -815,6 +709,120 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="597">
           <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.services">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.services</OriginalElement>
+          <nodes>
+            <node x="0.0" y="79.0">com.services.implementations</node>
+            <node x="19.5" y="0.0">com.services.interfaces</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="com.services.implementations" target="com.services.interfaces">
+              <point x="-56.0" y="-14.5" />
+              <point x="28.0" y="54.0" />
+              <point x="41.0" y="54.0" />
+              <point x="-43.0" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="84.0" y="54.0" />
+          <SelectedNodes>
+            <node>com.services.interfaces</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+            <Category>Constructors</Category>
+            <Category>Inner Classes</Category>
+            <Category>Properties</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.services.implementations.CardDAO">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.services.implementations.CardDAO</OriginalElement>
+          <nodes>
+            <node x="0.0" y="153.0">com.services.interfaces.CredentialsBusinessServiceInterface</node>
+            <node x="23.0" y="385.0">com.services.implementations.DeckBusinessService</node>
+            <node x="87.0" y="0.0">com.services.interfaces.GenericDAOInterface</node>
+            <node x="0.0" y="79.0">com.services.implementations.UserDAO</node>
+            <node x="0.0" y="306.0">com.services.interfaces.DeckBusinessServiceInterface</node>
+            <node x="23.0" y="232.0">com.services.implementations.CredentialsBusinessService</node>
+            <node x="117.0" y="79.0">com.services.implementations.DeckDAO</node>
+            <node x="236.0" y="79.0">com.services.implementations.CardDAO</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="com.services.implementations.DeckDAO" target="com.services.interfaces.GenericDAOInterface">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="com.services.implementations.DeckBusinessService" target="com.services.interfaces.DeckBusinessServiceInterface">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="com.services.implementations.CardDAO" target="com.services.interfaces.GenericDAOInterface">
+              <point x="0.0" y="-14.5" />
+              <point x="285.0" y="54.0" />
+              <point x="219.5" y="54.0" />
+              <point x="53.0" y="14.5" />
+            </edge>
+            <edge source="com.services.implementations.UserDAO" target="com.services.interfaces.GenericDAOInterface">
+              <point x="0.0" y="-14.5" />
+              <point x="48.5" y="54.0" />
+              <point x="113.5" y="54.0" />
+              <point x="-53.0" y="14.5" />
+            </edge>
+            <edge source="com.services.implementations.CredentialsBusinessService" target="com.services.interfaces.CredentialsBusinessServiceInterface">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="167.0" y="207.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.services.interfaces.CredentialsBusinessServiceInterface">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.services.interfaces.CredentialsBusinessServiceInterface</OriginalElement>
+          <nodes>
+            <node x="392.0" y="316.0">com.services.interfaces.CredentialsBusinessServiceInterface</node>
+            <node x="0.0" y="316.0">com.services.interfaces.GenericDAOInterface</node>
+            <node x="0.0" y="0.0">com.services.interfaces.DeckBusinessServiceInterface</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="230.0" y="286.0" />
+          <SelectedNodes>
+            <node>com.services.interfaces.CredentialsBusinessServiceInterface</node>
+            <node>com.services.interfaces.GenericDAOInterface</node>
+            <node>com.services.interfaces.DeckBusinessServiceInterface</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Inner Classes</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
+            <Category>Constructors</Category>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>

@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import com.exceptions.DAOException;
 import com.mappers.CardMapper;
 import com.models.Card;
+import com.models.SearchCriteria;
 import com.services.interfaces.GenericDAOInterface;
 
 public class CardDAO implements GenericDAOInterface<Card>{
@@ -24,7 +25,7 @@ public class CardDAO implements GenericDAOInterface<Card>{
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}
-
+	
 	@Override
 	public List<Card> findAll() {
 		String sql = "SELECT * FROM carddb.cards";
@@ -39,11 +40,7 @@ public class CardDAO implements GenericDAOInterface<Card>{
 		}catch (Exception e) {
 			throw new DAOException(e.getMessage(), e);
 		}
-
-		for( Card c : results) {
-			System.out.println(c);
-		}
-
+		
 		return results;
 	}
 

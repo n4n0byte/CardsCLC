@@ -28,8 +28,8 @@ pageEncoding="ISO-8859-1"%>
 		</tr>
 		<tr>
 			<td><form:label path="password">Password:</form:label></td>
-			<td><form:errors path="password"/></td>
-			<td><form:input path="password"  minlength="3" maxlength="10" required="required" /></td>
+			<td><form:errors path="password" type="password" /></td>
+			<td><form:password path="password"  minlength="3" maxlength="10" required="required" /></td>
 		</tr>
 		
 		<tr>
