@@ -57,7 +57,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 		List<Deck> decks = null;
 
 		try {
-			decks = jdbcTemplateObject.query("select * from carddb.decks where id = ? limit 1", new Object[] { id },
+			decks = jdbcTemplateObject.query("select * from carddb.decks where id = BINARY ? limit 1", new Object[] { id },
 					new DeckMapper());
 			if (decks.size() > 0) {
 				decks.get(0).setCards(cardDAO.findAllById(decks.get(0).getDeckId()));
@@ -77,7 +77,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 	 */
 	@Override
 	public Deck findByName(String title) {
-		List<Deck> decks = jdbcTemplateObject.query("select * from carddb.decks where title = ? limit 1",
+		List<Deck> decks = jdbcTemplateObject.query("select * from carddb.decks where title = BINARY ? limit 1",
 				new Object[] { title }, new DeckMapper());
 		if (decks.size() > 0) {
 			decks.get(0).setCards(cardDAO.findAllById(decks.get(0).getDeckId()));
@@ -113,7 +113,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 	public boolean deleteByName(String title) {
 
 		try {
-			int rowsDeleted = jdbcTemplateObject.update("delete from carddb.decks where title = ?", title);
+			int rowsDeleted = jdbcTemplateObject.update("delete from carddb.decks where title = BINARY ?", title);
 			if (rowsDeleted > 0)
 				return true;
 		} catch (DataAccessException e) {

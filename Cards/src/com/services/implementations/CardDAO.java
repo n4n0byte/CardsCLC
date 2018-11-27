@@ -148,7 +148,7 @@ public class CardDAO implements GenericDAOInterface<Card>{
 	}
 	
 	/**
-	 * 
+	 * Not used for card
 	 */
 	@Override
 	public boolean updateByName(Card input, String name) {
