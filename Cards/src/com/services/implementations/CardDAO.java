@@ -23,6 +23,10 @@ public class CardDAO implements GenericDAOInterface<Card>{
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
 
+	/**
+	 * sets data source and instantiates Jdbc template
+	 * @param dataSource
+	 */
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
 		System.out.println("INJECTING DATA SOURCE FROM CARD");
@@ -30,6 +34,9 @@ public class CardDAO implements GenericDAOInterface<Card>{
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}
 
+	/**
+	 * returns a list of all cards in database
+	 */
 	@Override
 	public List<Card> findAll() {
 		String sql = "SELECT * FROM carddb.cards";
@@ -52,6 +59,9 @@ public class CardDAO implements GenericDAOInterface<Card>{
 		return results;
 	}
 
+	/**
+	 * returns  a card with ID as the condition
+	 */
 	@Override
 	public Card getById(int id) {
 
@@ -69,9 +79,12 @@ public class CardDAO implements GenericDAOInterface<Card>{
 
 		return results;
 	}
-
+	
+	/**
+	 * Creates a card in the database
+	 */
 	@Override
-	public void addModel(Card model) {
+	public void add(Card model) {
 
 		try {
 			jdbcTemplateObject.update("INSERT INTO carddb.cards (deckId, title, description, health, damage) VALUES (?, ?, ?, ?, ?)",
@@ -88,7 +101,10 @@ public class CardDAO implements GenericDAOInterface<Card>{
 		}
 	}
 
-	public List<Card> findAllByModelId(int id) {
+	/**
+	 * 
+	 */
+	public List<Card> findAllById(int id) {
 		String sql = "SELECT * FROM carddb.cards where deckId = " + id;
 
 		List<Card> results = null;
@@ -104,39 +120,56 @@ public class CardDAO implements GenericDAOInterface<Card>{
 		return results;
 	}
 
-	
+	/**
+	 * Not used for Cars
+	 */
 	@Override
 	public boolean deleteById(int id) {
 		// TODO stub for next milestone's functionality
 		return false;
 	}
 
+	/**
+	 * Not used for Card
+	 */
 	@Override
-	public boolean updateByModelById(Card input, int id) {
+	public boolean updateById(Card input, int id) {
 		// TODO stub for next milestone functionality
 		return false;
 	}
 
+	/**
+	 * Not used for Card
+	 */
 	@Override
 	public Card findByName(String name) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	/**
+	 * 
+	 */
 	@Override
-	public boolean updateByModelName(Card input, String name) {
+	public boolean updateByName(Card input, String name) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
+	/**
+	 * Not used for Card
+	 */
 	@Override
 	public boolean deleteByName(String name) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
+	/**
+	 * Not used for Card
+	 */
 	@Override
-	public void addCardToModelWithModelName(Card input, String name) {
+	public void addCardWithName(Card input, String name) {
 		// TODO Auto-generated method stub
 		
 	}

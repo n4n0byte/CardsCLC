@@ -13,12 +13,12 @@ public interface GenericDAOInterface<Model> {
 	
 	List<Model> findAll();
 	Model getById(int id);
-	List<Model> findAllByModelId(int id);
+	List<Model> findAllById(int id);
 	Model findByName(String name);
-	void addModel(Model model);
-	boolean updateByModelById(Model input, int id);
-	boolean updateByModelName(Model input, String name);
+	void add(Model model);
+	boolean updateById(Model input, int id);
+	boolean updateByName(Model input, String name);
 	boolean deleteById(int id);
 	boolean deleteByName(String name);
-	void addCardToModelWithModelName(Card input, String name);
+	void addCardWithName(Card input, String name);
 }

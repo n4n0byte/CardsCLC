@@ -31,11 +31,23 @@ public class DeckController {
 
 	DeckBusinessServiceInterface deckSvc;
 	
+	/**
+	 * 
+	 * @param iDeckBusinessService
+	 */
 	@Autowired
 	public void setIDeckBusinessService(DeckBusinessServiceInterface iDeckBusinessService) {
 		deckSvc = iDeckBusinessService;
 	}
 	
+	/**
+	 * 
+	 * @param deck
+	 * @param modelMap
+	 * @param result
+	 * @param sess
+	 * @return
+	 */
 	@PostMapping("newDeck")
 	public String newDeck(@Valid @ModelAttribute("deck")Deck deck,ModelMap modelMap, BindingResult result, HttpServletRequest sess) {
 		if (FieldChecker.hasError(result, "title", "description")) {
@@ -48,6 +60,14 @@ public class DeckController {
 		return "redirect:/home";
 	}
 	
+	/**
+	 * 
+	 * @param deckId
+	 * @param modelMap
+	 * @param attrs
+	 * @param sess
+	 * @return
+	 */
 	@GetMapping("displayDeck/{deckId}")
 	public String displayDeck(@PathVariable("deckId") int deckId,ModelMap modelMap, RedirectAttributes attrs, HttpServletRequest sess) {
 				
@@ -63,7 +83,13 @@ public class DeckController {
 		return "displayDeck";
 	}	
 	
-	
+	/**
+	 * 
+	 * @param cardWithDeckTitle
+	 * @param modelMap
+	 * @param result
+	 * @return
+	 */
 	@PostMapping("addCard")
 	public String addCard(@ModelAttribute("cardWithDeckTitle")CardWithDeckTitle cardWithDeckTitle, ModelMap modelMap, BindingResult result) {
 		
@@ -82,6 +108,14 @@ public class DeckController {
 		
 	}	
 	
+	/**
+	 * 
+	 * @param deck
+	 * @param modelMap
+	 * @param result
+	 * @param attrs
+	 * @return
+	 */
 	@GetMapping("updateDeck/{deckTitle}")
 	public ModelAndView updateDeck(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result, RedirectAttributes attrs) {
 		
