@@ -19,7 +19,10 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	GenericDAOInterface<Deck> iDeckDataService;
 	GenericDAOInterface<Card> cardSvc;
 	
-	
+	/**
+	 * sets card data service
+	 * @param cardSvc
+	 */
 	@Autowired
 	public void setCardSvc(GenericDAOInterface<Card> cardSvc) {
 		this.cardSvc = cardSvc;
@@ -37,7 +40,7 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 
 	@Override
 	public List<Deck> findAllDecksByUserId(int id) {
-		return iDeckDataService.findAllByModelId(id);
+		return iDeckDataService.findAllById(id);
 	}
 	
 	
@@ -46,7 +49,7 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	 */
 	@Override
 	public void updateDeck(Deck deck) {
-		iDeckDataService.updateByModelById(deck, deck.getUserId());
+		iDeckDataService.updateById(deck, deck.getUserId());
 	}
 	
 	/**
@@ -64,7 +67,7 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	@Override
 	public void addCardToDeckWithDeckId(Card card, int deckId) {
 		card.setDeckId(deckId);
-		cardSvc.addModel(card);	
+		cardSvc.add(card);	
 	}
 
 
@@ -90,7 +93,7 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 
 	@Override
 	public void addDeck(Deck deck) {
-		iDeckDataService.addModel(deck);
+		iDeckDataService.add(deck);
 	}
 
 
@@ -98,7 +101,7 @@ public class DeckBusinessService implements DeckBusinessServiceInterface {
 	@Override
 	public void addCardToDeckWithDeckTitle(Card card, String deckTitle) {
 		card.setDeckId(iDeckDataService.findByName(deckTitle).getDeckId());
-		cardSvc.addModel(card);
+		cardSvc.add(card);
 	}
 
 

@@ -25,7 +25,12 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
 	private GenericDAOInterface<Card> cardDAO;
-
+	
+	/**
+	 * sets data source
+	 * instantiates JDBC templae object
+	 * @param dataSource
+	 */
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
 		System.out.println("INJECTING DATA SOURCE");
@@ -33,6 +38,10 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}
 
+	/**
+	 * sets Card Data Access Object
+	 * @param cardDAO
+	 */
 	@Autowired
 	public void setCardDAO(GenericDAOInterface<Card> cardDAO) {
 		System.out.println("INJECTING CARD DAO~!");
@@ -40,6 +49,9 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 		this.cardDAO = cardDAO;
 	}
 
+	/**
+	 * Returns a list of deck by the users id
+	 */
 	@Override
 	public Deck getById(int id) {
 		List<Deck> decks = null;
@@ -48,7 +60,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 			decks = jdbcTemplateObject.query("select * from carddb.decks where id = ? limit 1", new Object[] { id },
 					new DeckMapper());
 			if (decks.size() > 0) {
-				decks.get(0).setCards(cardDAO.findAllByModelId(decks.get(0).getDeckId()));
+				decks.get(0).setCards(cardDAO.findAllById(decks.get(0).getDeckId()));
 				return decks.get(0);
 			}
 		} catch (DataAccessException e) {
@@ -60,18 +72,24 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 		return null;
 	}
 
+	/**
+	 * Returns a deck by its name
+	 */
 	@Override
 	public Deck findByName(String title) {
 		List<Deck> decks = jdbcTemplateObject.query("select * from carddb.decks where title = ? limit 1",
 				new Object[] { title }, new DeckMapper());
 		if (decks.size() > 0) {
-			decks.get(0).setCards(cardDAO.findAllByModelId(decks.get(0).getDeckId()));
+			decks.get(0).setCards(cardDAO.findAllById(decks.get(0).getDeckId()));
 			return decks.get(0);
 		}
 
 		return null;
 	}
 
+	/**
+	 * Deletes a deck by its id
+	 */
 	@Override
 	public boolean deleteById(int id) {
 
@@ -88,6 +106,9 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 		return false;
 	}
 
+	/**
+	 * deletes deck by its name
+	 */
 	@Override
 	public boolean deleteByName(String title) {
 
@@ -105,8 +126,12 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 
 	}
 
+	/**
+	 * updates deck by its id
+	 * passes in a deck object
+	 */
 	@Override
-	public boolean updateByModelById(Deck input, int id) {
+	public boolean updateById(Deck input, int id) {
 
 		try {
 			int rows = jdbcTemplateObject.update("UPDATE carddb.decks set description = ?, title = ? where userId = ?",
@@ -123,8 +148,11 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 		return false;
 	}
 
+	/**
+	 * Creae api for the deck object
+	 */
 	@Override
-	public void addModel(Deck model) {
+	public void add(Deck model) {
 
 		try {
 			jdbcTemplateObject.update("INSERT INTO carddb.decks (userId, description, title) VALUES (?, ?, ?)",
@@ -138,7 +166,10 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 
 	}
 
-	public List<Deck> findAllByModelId(int id) {
+	/**
+	 * Retruns a list of decks by the users id
+	 */
+	public List<Deck> findAllById(int id) {
 
 		String sql = "SELECT id, userId, description, title FROM carddb.decks where userId = " + id;
 		List<Deck> results = null;
@@ -146,7 +177,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 		try {
 			results = jdbcTemplateObject.query(sql, new DeckMapper());
 			for (int i = 0; i < results.size(); i++) {
-				results.get(i).setCards(cardDAO.findAllByModelId(results.get(i).getDeckId()));
+				results.get(i).setCards(cardDAO.findAllById(results.get(i).getDeckId()));
 			}
 		} catch (DataAccessException e) {
 			throw new DAOException(e.getMessage() + "\n" + e.getStackTrace(), e);
@@ -156,6 +187,9 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 		return results;
 	}
 
+	/**
+	 * Returns a list of all decks in the database
+	 */
 	@Override
 	public List<Deck> findAll() {
 
@@ -166,7 +200,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 			results = jdbcTemplateObject.query(sql, new DeckMapper());
 
 			for (Deck d : results) {
-				d.setCards(cardDAO.findAllByModelId(d.getDeckId()));
+				d.setCards(cardDAO.findAllById(d.getDeckId()));
 			}
 
 		} catch (DataAccessException e) {
@@ -179,14 +213,22 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 	}
 
 
+	/**
+	 * Not used for Deck object
+	 */
 	@Override
-	public boolean updateByModelName(Deck input, String name) {
+	public boolean updateByName(Deck input, String name) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
+	/**
+	 * Passes in a card model
+	 * adds a card to an existing deck
+	 * deck is updated
+	 */
 	@Override
-	public void addCardToModelWithModelName(Card model, String name) {
+	public void addCardWithName(Card model, String name) {
 		try {
 //			jdbcTemplateObject.update("INSERT INTO carddb.cards (deckId,title,description,health,damage) VALUES (?,?,?,?,?)",name+"WHERE deckId=);
 

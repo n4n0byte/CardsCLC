@@ -13,18 +13,31 @@ import com.mappers.UserMapper;
 import com.models.Card;
 import com.models.User;
 import com.services.interfaces.GenericDAOInterface;
-
+/**
+ * 
+ * @author Anthony Natividad and Ali Cooper
+ * CardDAO has all CRUD operations for our Card model
+ * however only few are used and are used for authentification purposes
+ */
 public class UserDAO implements GenericDAOInterface<User> {
 
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
 
+	/**
+	 * sets data source
+	 * JDBC template object is instantiated
+	 * @param dataSource
+	 */
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}
-
+	
+	/**
+	 * Returns a list of all users in data base
+	 */
 	@Override
 	public List<User> findAll() {
 		String sql = "SELECT * from users";
@@ -40,6 +53,9 @@ public class UserDAO implements GenericDAOInterface<User> {
 		return results;
 	}
 
+	/**
+	 * Returns a user by the id passed
+	 */
 	@Override
 	public User getById(int id) {
 		
@@ -60,18 +76,27 @@ public class UserDAO implements GenericDAOInterface<User> {
 		return null;
 	}
 
+	/**
+	 * Not used for user
+	 */
 	@Override
 	public boolean deleteById(int id) {
 		return false;
 	}
 
+	/**
+	 * not used for user
+	 */
 	@Override
-	public boolean updateByModelById(User input, int id) {
+	public boolean updateById(User input, int id) {
 		return false;
 	}
 
+	/**
+	 * creaes a new user in the database
+	 */
 	@Override
-	public void addModel(User model) {
+	public void add(User model) {
 
 		try {
 			jdbcTemplateObject.update(
@@ -87,6 +112,9 @@ public class UserDAO implements GenericDAOInterface<User> {
 
 	}
 
+	/**
+	 * returns a user by the name of that user
+	 */
 	@Override
 	public User findByName(String username) {
 		String sql = "SELECT * from carddb.users where username = BINARY ?";
@@ -104,27 +132,38 @@ public class UserDAO implements GenericDAOInterface<User> {
 	}
 
 
-
+	/**
+	 * not used in user
+	 */
 	@Override
-	public boolean updateByModelName(User input, String name) {
+	public boolean updateByName(User input, String name) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
+	/**
+	 * not used in user
+	 */
 	@Override
 	public boolean deleteByName(String name) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
+	/**
+	 * not used in user
+	 */
 	@Override
-	public List<User> findAllByModelId(int id) {
+	public List<User> findAllById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**
+	 * not used in user
+	 */
 	@Override
-	public void addCardToModelWithModelName(Card input, String name) {
+	public void addCardWithName(Card input, String name) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -41,7 +41,7 @@ public class CredentialsBusinessService implements CredentialsBusinessServiceInt
 		User usr = userDAO.findByName(user.getUsername());
 		System.out.println(usr);
 		if(usr == null) {
-			userDAO.addModel(user);
+			userDAO.add(user);
 			return true;
 		}
 
