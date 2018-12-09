@@ -7,7 +7,8 @@
 	</ul> <br/>
 <div align="center">
 <h2>List of Decks</h2>
-	<table>
+<div class="table-responsive">
+	<table class="table">
 		<tr>
 			<th><label>First Name</label></th>
 			<th><label>Last Name</label></th>
@@ -27,4 +28,5 @@
 			</td>
 		</tr>
 	</table>
+</div>
 </div>

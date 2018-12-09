@@ -11,17 +11,18 @@
 <br>
 <div align="center">	
 	<h2>Create New Deck</h2>
-	<form:form method="POST" modelAttribute="deck" action="newDeck">
-		<table>
+	<form:form method="POST" modelAttribute="deck" action="newDeck" class="form-horizontal">
+	<div class="table-responsive">
+		<table class="table">
 			<tr>
 				<td><form:label path="title">Title:</form:label></td>
 				<td><form:errors path="title"/></td>								
-				<td><form:input path="title" minlength="3" maxlength="10" required="required" /></td>			
+				<td><form:input path="title" minlength="3" maxlength="10" required="required" class="control-label col-xs-2"/></td>			
 			</tr>
 			<tr>
 				<td><form:label path="description">Description</form:label></td>
 				<td><form:errors path="description"/></td>
-				<td><form:input path="description" minlength="3" maxlength="10" required="required" /></td>				
+				<td><form:input path="description" minlength="3" maxlength="10" required="required" class="control-label col-xs-2"/></td>				
 			</tr>
 			<tr>
 				<td colspan="2">
@@ -31,6 +32,7 @@
 		</table>
 		<br/>
 		<form:errors path="*"/>
+	</div>
 	</form:form>
 	
 </div>

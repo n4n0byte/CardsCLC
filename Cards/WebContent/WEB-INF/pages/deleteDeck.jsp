@@ -14,7 +14,8 @@ function confirm(){
 	confirmation
 }
 </script>
-	<form:form method="POST" modelAttribute="Deck" action="deleteDeck">
+	<form:form method="POST" modelAttribute="Deck" action="deleteDeck" class="form-horizontal">
+	<div class="table-responsive">
 		<table>
 			<tr>
 				<td><form:label path="title">Title:</form:label></td>
@@ -44,6 +45,7 @@ function confirm(){
 				</td>
 			</tr>
 		</table>
+	</div>
 		<br/>
 		<form:errors path="*"/>
 	</form:form>

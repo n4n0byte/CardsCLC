@@ -1,17 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-	
-<ul>
-	<li><a href="/Card">Log Out</a></li>
-</ul>
-
 <br/>
 
 <div align="center">
 	<h2>Welcome ${user.username}</h2>
 	<h3>List of Decks</h3>
-	<table>
+	<div class="table-responsive">
+	<table class="table" class="table">
 		<tr>
 			<th><label>Title</label></th>
 			<th><label>Description</label></th>
@@ -38,4 +34,5 @@
 			</td>
 		</tr>
 	</table>
+	</div>
 </div>

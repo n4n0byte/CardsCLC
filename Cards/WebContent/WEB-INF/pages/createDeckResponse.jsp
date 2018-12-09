@@ -8,7 +8,8 @@
 </head>
 <body>
 	<h2>Your updates have been made</h2>
-<table>
+<div class="table-responsive">
+<table class="table">
 	<tr>
 		<th><label>Deck Title</label></th>
 		<th><label>Deck Description</label></th>
@@ -23,5 +24,6 @@
 		</td>
 	</tr>
 	</table>
+</div>
 </body>
 </html>

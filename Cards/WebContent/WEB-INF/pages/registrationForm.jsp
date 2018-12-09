@@ -12,8 +12,8 @@ pageEncoding="ISO-8859-1"%>
 <br/>
 
 <form:form method="POST" modelAttribute="user" action="register">
-<div align="center">	
-		<table>
+<div align="center" class="table responsive">	
+		<table class="table">
 			<tr>				
 				<td>${message}</td>
 			</tr>
@@ -45,5 +45,5 @@ pageEncoding="ISO-8859-1"%>
 		</table>
 		<br/>
 		<form:errors path="*"/>
+</div>		
 	</form:form>
-</div>

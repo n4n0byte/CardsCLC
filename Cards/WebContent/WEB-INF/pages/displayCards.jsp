@@ -8,7 +8,8 @@
 	<br/>
 <div align="center"></div>
 <h2>List of Cards</h2>
-	<table>
+<div class="table-responsive">
+	<table class="table">
 		<tr>
 			<th><label>Card Title</label></th>
 			<th><label>Description</label></th>
@@ -24,4 +25,4 @@
 			</tr>
 		</c:forEach>		
 	</table>
-	</div>
+</div>
