@@ -25,8 +25,7 @@ import com.utils.FieldChecker;
 public class LoginController {
 	
 	private CredentialsBusinessServiceInterface credentialsService;
-
-
+	
 	@Autowired
 	public void setLoginService(CredentialsBusinessServiceInterface businessService) {
 		this.credentialsService = businessService;
