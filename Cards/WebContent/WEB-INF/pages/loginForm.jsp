@@ -8,7 +8,6 @@ pageEncoding="ISO-8859-1"%>
 	<li><a href="/Card/register">Register</a></li>
 </ul> 
 
-
 <div id="login">
 	
 	<div class="container">
