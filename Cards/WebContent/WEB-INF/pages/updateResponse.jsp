@@ -9,7 +9,7 @@
 <body>
 <h2>Your updates have been made</h2>
 <div class="table-responsive">
-<table class="table">
+<table class="table-hover">
 	<tr>
 		<th><label>Deck Title</label></th>
 		<th><label>Deck Description</label></th>

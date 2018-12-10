@@ -8,7 +8,7 @@
 <div align="center">
 <h2>List of Cards in Deck: ${deck.title} </h2>
 <div class="table-responsive">
-	<table class="table">
+	<table class="table-hover">
 		<tr>
 			<th><label>Title</label></th>
 			<th><label>Description</label></th>

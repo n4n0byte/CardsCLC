@@ -8,7 +8,7 @@
 <div align="center">
 <h2>List of Decks</h2>
 <div class="table-responsive">
-	<table class="table">
+	<table class="table-hover">
 		<tr>
 			<th><label>First Name</label></th>
 			<th><label>Last Name</label></th>
