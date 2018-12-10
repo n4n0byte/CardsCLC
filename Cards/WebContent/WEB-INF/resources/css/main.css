@@ -1,36 +1,6 @@
 @charset "ISO-8859-1";
 
 
-ul{
-	list-style-type: none;
-    margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
-    background-color: #d9d9d9;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-li{
-	float:left;
-}
-a{
-	text-align:center;
-	display:inline;
-	background-color:#d9d9d9;
-	display:block;
-	padding: 14px 16px;
-}
-li a:hover{
-	background-color:#00ffff;
-	color:white;
-	
-}
-body{
-	background-color:#ff33cc;
-	font-family: georgia; 
-	font-size:100%;
-	}
 h1{
 	font-family:georgia;
 	font-size:175%;
@@ -42,6 +12,10 @@ h2{
 
 .margin{
 	  margin-top : 100px;
+}
+
+.fixPadding{
+	
 }
 
 @media  screen and (max-width: 768){
