@@ -7,7 +7,8 @@
 	</ul> <br/>
 <div align="center">
 <h2>List of Cards in Deck: ${deck.title} </h2>
-	<table>
+<div class="table-responsive">
+	<table class="table">
 		<tr>
 			<th><label>Title</label></th>
 			<th><label>Description</label></th>
@@ -23,4 +24,5 @@
 			</tr>
 		</c:forEach>
 	</table>
+</div>
 </div>

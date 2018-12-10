@@ -5,6 +5,18 @@
 
 <html>
 <head>
+	<title>Card CLC</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">	
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.0/css/responsive.dataTables.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="//cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.js"></script>
+	<style type="text/css">.bs-example { margin: 20px; }></style>
+	
 	<spring:url value="/resources/css/main.css" var="mainCss" />
 	<link href="${mainCss}" rel="stylesheet" />
 	<script type="text/javascript" src="/Card/resources/external/jquery/jquery.js"></script>
@@ -16,10 +28,6 @@
 	<spring:url value="/resources/bootstrap-3.3.7-dist/js/bootstrap.js" var="bootstrapJs" />
 	<link href="${bootstrapJs}" rel="stylesheet" />
 	 -->
-	
-	
-    <title>Cards CLC</title>
-    
 </head>
 
 <body>

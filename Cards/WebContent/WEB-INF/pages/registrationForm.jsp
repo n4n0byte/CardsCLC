@@ -45,5 +45,5 @@ pageEncoding="ISO-8859-1"%>
 		</table>
 		<br/>
 		<form:errors path="*"/>
+</div>		
 	</form:form>
-</div>

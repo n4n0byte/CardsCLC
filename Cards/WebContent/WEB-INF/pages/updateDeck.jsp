@@ -11,8 +11,9 @@
 <body>
 <div align="center">	
 	<h2>Update New Deck</h2>
-	<form:form method="POST" modelAttribute="Deck" action="/Card/updateResponse">
-		<table>
+	<form:form method="POST" modelAttribute="Deck" action="/Card/updateResponse" class="form-horizontal">
+	<div class="table-responsive">
+		<table class="table">
 			<tr>
 				<td><form:label path="title">Title:</form:label></td>
 				<td><form:errors path="title"/></td>								
@@ -41,6 +42,7 @@
 				</td>
 			</tr>
 		</table>
+	</div>
 		<br/>
 		<form:errors path="*"/>
 	</form:form>
