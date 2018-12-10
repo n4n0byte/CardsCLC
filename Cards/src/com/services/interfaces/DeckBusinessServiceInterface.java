@@ -27,6 +27,7 @@ public interface DeckBusinessServiceInterface{
 	 * @return
 	 */
 	public List<Deck> findAllDecksByUserId(int id);
+	
 	public void updateDeck(Deck deck);
 	public boolean deleteDeckById(int id);
 	public List<Deck> getDeckByUserId(int id);

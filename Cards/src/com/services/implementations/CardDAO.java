@@ -33,7 +33,7 @@ public class CardDAO implements GenericDAOInterface<Card>{
 		this.dataSource = dataSource;
 		this.jdbcTemplateObject = new JdbcTemplate(this.dataSource);
 	}
-
+	
 	/**
 	 * returns a list of all cards in database
 	 */
@@ -148,7 +148,7 @@ public class CardDAO implements GenericDAOInterface<Card>{
 	}
 	
 	/**
-	 * 
+	 * Not used for card
 	 */
 	@Override
 	public boolean updateByName(Card input, String name) {

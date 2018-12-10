@@ -11,7 +11,18 @@ import com.models.Card;
  */
 public interface GenericDAOInterface<Model> {
 	
+	
+	/**
+	 * returns all models of the generic type
+	 * @return
+	 */
 	List<Model> findAll();
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
 	Model getById(int id);
 	List<Model> findAllById(int id);
 	Model findByName(String name);

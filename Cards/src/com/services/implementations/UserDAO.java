@@ -59,7 +59,7 @@ public class UserDAO implements GenericDAOInterface<User> {
 	@Override
 	public User getById(int id) {
 		
-		String sql = "SELECT * from users where id = ?";
+		String sql = "SELECT * from users where id = BINARY ?";
 		
 		List<User> results = null;
 		try {
@@ -117,7 +117,7 @@ public class UserDAO implements GenericDAOInterface<User> {
 	 */
 	@Override
 	public User findByName(String username) {
-		String sql = "SELECT * from carddb.users where username = ?";
+		String sql = "SELECT * from carddb.users where username = BINARY ?";
 		List<User> results = null;
 		try {
 			results = jdbcTemplateObject.query(sql, new Object[] { username }, new UserMapper());
