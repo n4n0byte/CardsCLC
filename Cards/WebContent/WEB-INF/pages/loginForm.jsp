@@ -24,7 +24,7 @@ pageEncoding="ISO-8859-1"%>
 		
 		<h2>
 			${message}
-		</h2>	
+		</h2>
 		
 		<div id="loginForm" class="form-group">
 			
