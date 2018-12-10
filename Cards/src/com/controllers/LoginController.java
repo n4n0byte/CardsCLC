@@ -56,7 +56,7 @@ public class LoginController {
 		map.addAttribute("user", user);
 		
 		//validate only username and password
-		if (FieldChecker.hasError(result, "username", "password")) {
+		if (result.hasErrors()) {
 			return "login";
 		}
 	
