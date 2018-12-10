@@ -11,15 +11,15 @@ pageEncoding="ISO-8859-1"%>
 <br/>
 <br/>
 
-<form:form method="POST" modelAttribute="user" action="register">
+<form:form method="POST" modelAttribute="registrationForm" action="register">
 <div align="center">	
 		<table>
 			<tr>				
 				<td>${message}</td>
 			</tr>
 			<tr>
-				<td><form:label path="username">User Name:</form:label></td>
-				<td><form:input path="username" minlength="1" maxlength="10" required="required" /></td>
+				<td><form:label path="user.username">User Name:</form:label></td>
+				<td><form:input path="user.username" minlength="1" maxlength="10" required="required" /></td>
 			</tr>
 			<tr>
 				<td><form:label path="email">Email Address:</form:label></td>
@@ -34,8 +34,8 @@ pageEncoding="ISO-8859-1"%>
 				<td><form:input path="lastName" minlength="1" maxlegnth="10" required="required" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="Password">Password:</form:label></td>
-				<td><form:input type="password" path="password" minlength="3" maxlength="10" required="required"/></td>
+				<td><form:label path="user.password">Password:</form:label></td>
+				<td><form:input type="password" path="user.password" minlength="3" maxlength="10" required="required"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.models.RegistrationForm;
 import com.models.User;
 import com.services.interfaces.CredentialsBusinessServiceInterface;
 import com.utils.FieldChecker;
@@ -43,25 +44,32 @@ private CredentialsBusinessServiceInterface credentialsService;
 	 * @return
 	 */
 	@GetMapping("/register")
-	public String registerPage(@Valid @ModelAttribute("user")User user, BindingResult result, ModelMap map) {
-		map.addAttribute("user",new User());		
+	public String registerPage(ModelMap map) {
+		RegistrationForm registrationForm = new RegistrationForm();
+		registrationForm.setUser(new User());
+		map.addAttribute("registrationForm", registrationForm);
+		map.addAttribute("user", registrationForm.getUser());
 		return "register";
 	}	
 	
 	/**
 	 * attempts to register a user
-	 * @param user
+	 * @param form
 	 * @param result
 	 * @return
 	 */
 	@PostMapping("/register")
-	public String register(@Valid @ModelAttribute("user")User user, BindingResult result, ModelMap map) {
+	public String register(@Valid @ModelAttribute("registrationForm")RegistrationForm form, BindingResult result, ModelMap map) {
 		
-		map.addAttribute("user", user);
+		map.addAttribute("user", form);
 		
-		if (FieldChecker.hasError(result, "username", "password", "email", "firstName", "lastName")) {
+		if (result.hasErrors()) {
 			return "register";
 		}
+		
+		// make a user out of the form data
+		User user = new User(form);
+		
 		
 		// try to register user, will return false
 		// if user is already registered
