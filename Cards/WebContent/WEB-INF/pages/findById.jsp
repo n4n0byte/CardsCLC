@@ -8,28 +8,41 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form:form method="POST" modelAttribute="Deck" action="findById" class="form-horizontal">
-	<div class="form-horizontal">
-		<table class="table-hover">
-			<tr>
-				<td><form:label path="title">Title:</form:label></td>
-				<td><form:errors path="title"/></td>								
-				<td><form:input path="title" minlength="3" maxlength="10" required="required" class="control-label col-xs-2"/></td>			
-			</tr>
-			<tr>
-				<td><form:label path="description">Description</form:label></td>
-				<td><form:errors path="description"/></td>
-				<td><form:input path="description" minlength="3" maxlength="10" required="required" class="control-label col-xs-2" /></td>				
-			</tr>
-			<tr>
-				<td colspan="2">
-					<input type="submit" value="Submit"/>
-				</td>
-			</tr>
-		</table>
-	</div>
-		<br/>
-		<form:errors path="*"/>
-	</form:form>
+	<form:form method="POST" class="panel panel-default margin col-sm-offset-4 col-sm-4 form-horizontal"  modelAttribute="user" action="login">	
+	
+		
+		<h2>
+			${message}
+		</h2>	
+		
+		<div id="loginForm" class="form-group">
+			
+			<div class="col-sm-12">
+				<form:input  path="title" placeholder="Title" class="form-control" minlength="3" maxlength="10" required="required"/>						
+			</div>
+			
+			<div class="col-sm-12">
+				<form:errors class="control-label" path="title"/>
+			</div>
+			
+		</div>		
+		
+		<div class="form-group">
+			<div class="col-sm-12">
+				<form:password path="description" placeholder="Description" class="form-control"  minlength="3" maxlength="10" required="required" />
+			</div>
+			<div class="col-sm-12">
+				<form:errors class="form-label" path="description"/>		
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-12">
+				<input type="submit" class="col-sm-offset-3 col-sm-6 btn btn-default" value="Submit"/>			
+			</div>
+		</div>
+		
+		
+	</form:form>	
 </body>
 </html>

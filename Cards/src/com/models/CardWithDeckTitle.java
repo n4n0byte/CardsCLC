@@ -35,6 +35,11 @@ public class CardWithDeckTitle {
 	public void setDeckTitle(String deckTitle) {
 		this.deckTitle = deckTitle;
 	}
+
+	@Override
+	public String toString() {
+		return "CardWithDeckTitle [card=" + card + ", deckTitle=" + deckTitle + "]";
+	}
 	
 	
 	
