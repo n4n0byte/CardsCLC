@@ -43,7 +43,7 @@ pageEncoding="ISO-8859-1"%>
 		
 		<div class="form-group">
 			<div class="col-sm-6">
-				<input type="submit" class="col-sm-offset-3 col-sm-6 btn btn-default" value="Login"/>			
+				<input type="submit" class="col-sm-offset-3 col-sm-6 btn btn-light" value="Login"/>			
 			</div>
 		</div>
 		
