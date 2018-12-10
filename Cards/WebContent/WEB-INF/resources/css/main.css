@@ -1,16 +1,6 @@
 @charset "ISO-8859-1";
-/*
-*{
-	padding: 0;
-	padding: 0;
-}
 
-:root {
-  --login-grid-rows: 5;
-  --login-grid-cols: 3;
-  --login-grid-nav-cols: 5;
-}
-*/
+
 ul{
 	list-style-type: none;
     margin: 0 auto;
@@ -48,4 +38,14 @@ h1{
 h2{
 	font-family:georgia;
 	font-size:175%;
+}
+
+.margin{
+	  margin-top : 100px;
+}
+
+@media  screen and (max-width: 768){
+.margin{
+  margin-top : 15%;
+}	
 }

@@ -7,40 +7,47 @@ pageEncoding="ISO-8859-1"%>
 <ul>
 	<li><a href="/Card/register">Register</a></li>
 </ul> 
-<br/>
-<br/>
-<br/>
-<br/>
 
 
-<div id="login" align="center">
-
-	<form:form method="POST" class="form-group" modelAttribute="user" action="login" align="center">	
+<div id="login">
 	
-	<table id="login">
-		<tr>				
-			<td>${message}</td>
-		</tr>
-		<tr>				
-			<td><form:label path="username">User Name:</form:label></td>
-			<td><form:errors path="username"/></td>
-			<td><form:input path="username" minlength="3" maxlength="10" required="required"/></td>
-		</tr>
-		<tr>
-			<td><form:label path="password">Password:</form:label></td>
-			<td><form:errors path="password" type="password" /></td>
-			<td><form:password path="password"  minlength="3" maxlength="10" required="required" /></td>
-		</tr>
+	<div class="container">
+	
+	<form:form method="POST" class="margin col-sm-offset-4 form-horizontal"  modelAttribute="user" action="login" align="center">	
+	
 		
-		<tr>
-			<td colspan="2">
-				<input type="submit" value="Login"/>
-			</td>
-		</tr>
+		<h2>
+			${message}
+		</h2>	
 		
-	</table>
-	<br/>
-</form:form>	
+		<div id="loginForm" class="form-group col-md-offset-5 form-horizontal">
+			
+			<div class="col-sm-6">
+				<form:input  path="username" placeholder="Username" class="form-control" minlength="3" maxlength="10" required="required"/>						
+			</div>
+			
+			<div class="col-sm-6">
+				<form:errors class="form-label" path="username"/>
+			</div>
+			
+		</div>		
+		
+		<div class="form-group">
+			<div class="col-sm-6">
+				<form:password path="password" placeholder="Password" class="form-control"  minlength="3" maxlength="10" required="required" />
+			</div>
+			<div class="col-sm-6">
+				<form:errors class="form-label" path="password"/>		
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-6">
+				<input type="submit" class="col-sm-offset-3 col-sm-6 btn btn-default" value="Login"/>			
+			</div>
+		</div>
+		
+		
+	</form:form>	
 </div>
-
-	
+</div>

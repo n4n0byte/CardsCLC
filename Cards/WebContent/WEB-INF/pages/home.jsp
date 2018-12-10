@@ -64,6 +64,9 @@
 	<h2>Welcome ${user.username}</h2>
 	<h3>List of Decks</h3>
 	<div id="deleteConfirmation"></div>
+	
+	
+	
 	<table>
 		<tr>
 			<th><label>Title</label></th>
