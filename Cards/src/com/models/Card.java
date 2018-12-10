@@ -98,6 +98,12 @@ public class Card {
 	public void setDamage(int damage) {
 		this.damage = damage;
 	}
+
+	@Override
+	public String toString() {
+		return "Card [id=" + id + ", title=" + title + ", description=" + description + ", health=" + health
+				+ ", damage=" + damage + ", deckId=" + deckId + "]";
+	}
 	
 	
 	

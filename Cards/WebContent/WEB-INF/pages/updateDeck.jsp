@@ -3,49 +3,55 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a href="/Card">Card CLC</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div align="center">	
 	<h2>Update New Deck</h2>
-	<form:form method="POST" modelAttribute="Deck" action="/Card/updateResponse" class="form-horizontal">
-	<div class="table-responsive">
-		<table class="table-hover">
-			<tr>
-				<td><form:label path="title">Title:</form:label></td>
-				<td><form:errors path="title"/></td>								
-				<td><form:input path="title" minlength="3" maxlength="10" required="required" /></td>			
-			</tr>
-			<tr>
-				<td><form:label path="description">Description</form:label></td>
-				<td><form:errors path="description"/></td>
-				<td><form:input path="description" minlength="3" maxlength="10" required="required" /></td>				
-			</tr>
-			<c:forEach var="deck" items="${decks}">
-			<tr>
-				<td><label>${decks.title}</label></td>
-				<td><label>${decks.description}</label></td>
-				<c:forEach var="card" items="${decks}">
-					<td><label>${decks.cards}</label><td>
-				</c:forEach>
-			</tr>
-		</c:forEach>
-			<tr>
-				<td colspan="2">
-					<input type="submit" value="Submit"/>
-				</td>
-				<td>
-					<a href="/Card/home">Go Back</a>
-				</td>
-			</tr>
-		</table>
-	</div>
-		<br/>
-		<form:errors path="*"/>
-	</form:form>
-</div>
-</body>
-</html>
+	<div id="updateDeck">
+	
+	<div class="container">
+	
+	<form:form method="POST" class="panel panel-default margin col-sm-offset-4 col-sm-4 form-horizontal"  modelAttribute="Deck" action="/Card/updateResponse">	
+	
+		
+		<h2>
+			${message}
+		</h2>	
+		
+		<div id="updateForm" class="form-group">
+			
+			<div class="col-sm-12">
+				<form:input  path="title" placeholder="Title" class="form-control" minlength="3" maxlength="10" required="required"/>						
+			</div>
+			
+			<div class="col-sm-12">
+				<form:errors class="control-label" path="title"/>
+			</div>
+			
+		</div>		
+		
+		<div class="form-group">
+			<div class="col-sm-12">
+				<form:input path="description" placeholder="Description" class="form-control"  minlength="3" maxlength="10" required="required" />
+			</div>
+			<div class="col-sm-12">
+				<form:errors class="form-label" path="description"/>		
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-12">
+				<input type="submit" class="col-sm-offset-3 col-sm-6 btn btn-default" value="Submit"/>			
+			</div>
+		</div>
+		</form:form>
+		</div>
+		</div>
+		</div>

@@ -1,43 +1,69 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<ul>
-	<li><a href="/Card/home">Home</a></li>
-</ul>
-		
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a href="/Card">Card CLC</a></li>
+    </ul>
+  </div>
+</nav>	
 <div align="center">	
 	<h2>Add Card To Deck</h2>
-	<form:form method="POST" modelAttribute="cardWithDeckTitle" action="/Card/addCard" class="form-horizontal">
-	<div class="table-responsive">
-		<table class="table-hover">
-			<tr>
-				<td><form:label path="card.title">Title:</form:label></td>
-				<td><form:errors path="card.title"/></td>								
-				<td><form:input path="card.title" minlength="3" maxlength="10" required="required"/></td>			
-			</tr>
-			<tr>
-				<td><form:label path="card.description">Description:</form:label></td>
-				<td><form:errors path="card.description"/></td>
-				<td><form:input path="card.description" minlength="3" maxlength="10" required="required"/></td>				
-			</tr>
-			<tr>
-				<td><form:label path="card.health">Health:</form:label></td>
-				<td><form:errors path="card.health"/></td>
-				<td><form:input path="card.health" type="number" min="0" max="9999" required="required"/></td>				
-			</tr>
-			<tr>
-				<td><form:label path="card.damage">Damage:</form:label></td>
-				<td><form:errors path="card.damage"/></td>
-				<td><form:input path="card.damage" type="number" min="0" max="9999" required="required" /></td>				
-			</tr>			
-			<tr>
-				<td colspan="2">
-					<input type="submit" value="Submit"/>
-				</td>
-			</tr>
-		</table>
-	</div>
-		<br/>
-		<form:hidden path="deckTitle" />
-		<form:errors path="*" />
-	</form:form>
+	<form:form method="POST" class="panel panel-default margin col-sm-offset-4 col-sm-4 form-horizontal"  modelAttribute="cardWithDeckTitle" action="/Card/addCard">	
+	
+		
+		<h2>
+			${message}
+		</h2>	
+		
+		<div id="cardForm" class="form-group">
+			
+			<div class="col-sm-12">
+				<form:input  path="card.title" placeholder="Title" class="form-control" minlength="3" maxlength="10" required="required"/>						
+			</div>
+			
+			<div class="col-sm-12">
+				<form:errors class="control-label" path="card.title"/>
+			</div>
+			
+		</div>		
+		
+		<div class="form-group">
+			<div class="col-sm-12">
+				<form:input path="card.description" placeholder="Description" class="form-control"  minlength="3" maxlength="10" required="required" />
+			</div>
+			<div class="col-sm-12">
+				<form:errors class="form-label" path="card.description"/>		
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-12">
+				<form:input path="card.health" placeholder="Health" class="form-control"   maxlength="10" required="required" />
+			</div>
+			<div class="col-sm-12">
+				<form:errors class="form-label" path="card.health"/>		
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<div class="col-sm-12">
+				<form:input path="card.damage" placeholder="Damage" class="form-control"  maxlength="10" required="required" />
+			</div>
+			<div class="col-sm-12">
+				<form:errors class="form-label" path="card.damage"/>		
+			</div>
+		</div>
+		<form:hidden path="deckTitle"/>
+		
+		
+		<div class="form-group">
+			<div class="col-sm-12">
+				<input type="submit" class="col-sm-offset-3 col-sm-6 btn btn-default" value="Submit"/>			
+			</div>
+		</div>
+		
+		
+	</form:form>	
 </div>

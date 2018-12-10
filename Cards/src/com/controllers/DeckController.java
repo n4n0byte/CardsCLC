@@ -93,7 +93,7 @@ public class DeckController {
 	@PostMapping("addCard")
 	public String addCard(@ModelAttribute("cardWithDeckTitle")CardWithDeckTitle cardWithDeckTitle, ModelMap modelMap, BindingResult result) {
 		
-		System.out.println("IN CARD: " + cardWithDeckTitle);
+		System.out.println("IN ADD CARD POST: " + cardWithDeckTitle);
 		
 		//validate only title and description
 		if (FieldChecker.hasError(result, "title", "description")) {
