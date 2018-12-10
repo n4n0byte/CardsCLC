@@ -3,6 +3,14 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 	
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a href="/Card">Card CLC</a></li>
+    </ul>
+  </div>
+</nav>
+
 
 <script type="text/javascript">
 
@@ -50,24 +58,28 @@
 	})
 	
 </script>			
-<br/>
 
 
-<div align="center">
+<div class="container">
 	<h2>Welcome ${user.username}</h2>
 	<h3>List of Decks</h3>
 	<div id="deleteConfirmation"></div>
-	<table class="table-hover">
+	<div>
+	
+	<table class="table table-condensed table-hover panel panel-default">
 		<tr>
 			<th><label>Title</label></th>
 			<th><label>Description</label></th>
 			<th><label>Add Card</label></th>
+			<th><label>Delete Card</label></th>
+			<th><label>Update Deck</label></th>
+			
 		</tr>
 		<c:forEach var="deck" items="${decks}">
 			
 			<tr>
 				
-				<td>
+				<td class="col-xs-3">
 					<label><a href="/Card/displayDeck/${deck.deckId}">${deck.title}</a></label>
 				</td>
 				<td><label>${deck.description}</label></td>
@@ -85,10 +97,8 @@
 				</td>
 			</tr>
 		</c:forEach>
-		<tr>
-			<td colspan="2">
-				<a href="/Card/newDeck">Add a Deck</a>
-			</td>
-		</tr>
 	</table>
+	<a href="/Card/newDeck">Add a Deck</a>
+</div>
+	
 </div>
