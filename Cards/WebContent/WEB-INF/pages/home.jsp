@@ -49,14 +49,7 @@
 		
 	})
 	
-</script>		
-		
-<ul>
-	<li><a href="/Card">Log Out</a></li>
-</ul>
-
-
-	
+</script>			
 <br/>
 
 
@@ -64,7 +57,7 @@
 	<h2>Welcome ${user.username}</h2>
 	<h3>List of Decks</h3>
 	<div id="deleteConfirmation"></div>
-	<table>
+	<table class="table-hover">
 		<tr>
 			<th><label>Title</label></th>
 			<th><label>Description</label></th>

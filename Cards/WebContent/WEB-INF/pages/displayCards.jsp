@@ -9,7 +9,7 @@
 <div align="center"></div>
 <h2>List of Cards</h2>
 <div class="table-responsive">
-	<table class="table">
+	<table class="table-hover">
 		<tr>
 			<th><label>Card Title</label></th>
 			<th><label>Description</label></th>

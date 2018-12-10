@@ -11,11 +11,11 @@
 <br>
 <div align="center">	
 	<h2>Create New Deck</h2>
-	<form:form method="POST" modelAttribute="deck" action="newDeck" class="form-horizontal">
-	<div class="table-responsive">
-		<table class="table">
+	<form:form method="POST" modelAttribute="deck" action="newDeck" class="form-horizontal" aling="center">
+	<div class="table-responsive" align="center">
+		<table class="table-hover" align="center">
 			<tr>
-				<td><form:label path="title">Title:</form:label></td>
+				<td><form:label path="title" align="center">Title:</form:label></td>
 				<td><form:errors path="title"/></td>								
 				<td><form:input path="title" minlength="3" maxlength="10" required="required" class="control-label col-xs-2"/></td>			
 			</tr>

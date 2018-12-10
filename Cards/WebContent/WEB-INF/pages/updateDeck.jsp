@@ -13,7 +13,7 @@
 	<h2>Update New Deck</h2>
 	<form:form method="POST" modelAttribute="Deck" action="/Card/updateResponse" class="form-horizontal">
 	<div class="table-responsive">
-		<table class="table">
+		<table class="table-hover">
 			<tr>
 				<td><form:label path="title">Title:</form:label></td>
 				<td><form:errors path="title"/></td>								

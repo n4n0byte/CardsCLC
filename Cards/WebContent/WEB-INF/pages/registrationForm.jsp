@@ -13,7 +13,7 @@ pageEncoding="ISO-8859-1"%>
 
 <form:form method="POST" modelAttribute="user" action="register">
 <div align="center" class="table responsive">	
-		<table class="table">
+		<table class="table-hover">
 			<tr>				
 				<td>${message}</td>
 			</tr>

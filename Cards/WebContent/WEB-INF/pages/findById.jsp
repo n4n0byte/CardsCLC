@@ -10,7 +10,7 @@
 <body>
 	<form:form method="POST" modelAttribute="Deck" action="findById" class="form-horizontal">
 	<div class="form-horizontal">
-		<table class="table">
+		<table class="table-hover">
 			<tr>
 				<td><form:label path="title">Title:</form:label></td>
 				<td><form:errors path="title"/></td>								

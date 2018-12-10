@@ -8,7 +8,7 @@
 	<h2>Add Card To Deck</h2>
 	<form:form method="POST" modelAttribute="cardWithDeckTitle" action="/Card/addCard" class="form-horizontal">
 	<div class="table-responsive">
-		<table class="table">
+		<table class="table-hover">
 			<tr>
 				<td><form:label path="card.title">Title:</form:label></td>
 				<td><form:errors path="card.title"/></td>								
