@@ -9,16 +9,13 @@
     </ul>
   </div>
 </nav>
-<br>
-<div align="center">	
-	<h2>Create New Deck</h2>
+
 	<div class="container">
 	
 	<form:form method="POST" class="panel panel-default margin col-sm-offset-4 col-sm-4 form-horizontal"  modelAttribute="deck" action="newDeck">	
-	
 		
 		<h2>
-			${message}
+			Create New Deck
 		</h2>	
 		
 		<div id="loginForm" class="form-group">
@@ -50,6 +47,5 @@
 		
 		
 	</form:form>	
-</div>
 </div>
 

@@ -15,7 +15,7 @@
 <form:form method="POST" modelAttribute="registrationForm"
 	class="panel panel-default margin col-sm-offset-4 col-sm-4 form-horizontal"
 	action="register">
-
+	<h2>Registration</h2>
 	<h2>${message}</h2>
 
 	<div class="form-group">

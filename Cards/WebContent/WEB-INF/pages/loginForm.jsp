@@ -4,6 +4,7 @@ pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
@@ -55,4 +56,5 @@ pageEncoding="ISO-8859-1"%>
 		
 	</form:form>	
 </div>
+
 </div>

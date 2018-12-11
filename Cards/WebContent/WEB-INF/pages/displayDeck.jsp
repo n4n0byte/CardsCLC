@@ -2,13 +2,17 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<ul>
-		<li><a href="/Card/home">Home</a></li>		
-	</ul> <br/>
-<div align="center">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a href="/Card">Card CLC</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
 <h2>List of Cards in Deck: ${deck.title} </h2>
-<div class="table-responsive">
-	<table class="table-hover">
+	<table class="table table-condensed table-hover panel panel-default">
 		<tr>
 			<th><label>Title</label></th>
 			<th><label>Description</label></th>
@@ -24,5 +28,4 @@
 			</tr>
 		</c:forEach>
 	</table>
-</div>
 </div>

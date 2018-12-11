@@ -61,12 +61,14 @@
 
 
 <div class="container">
+	
+	<div id="deleteConfirmation"></div>
+	<div class="panel panel-default">
+			
 	<h2>Welcome ${user.username}</h2>
 	<h3>List of Decks</h3>
-	<div id="deleteConfirmation"></div>
-	<div>
-	
-	<table class="table table-condensed table-hover panel panel-default">
+		
+	<table class="table table-condensed table-hover">
 		<tr>
 			<th><label>Title</label></th>
 			<th><label>Description</label></th>
@@ -98,7 +100,9 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="/Card/newDeck">Add a Deck</a>
+	<div class="col-offset-sm-3 col-sm-12">
+		<a href="/Card/newDeck"><button>Add a Deck</button></a>		
+	</div>
 </div>
 	
 </div>
