@@ -3,16 +3,33 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="/Card">Card CLC</a></li>
-    </ul>
-  </div>
+		
+	<div class="navbar-header">
+		
+		<button data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+			<span class="sr-only">Toggle</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="/Card">Card CLC</a>
+				
+	</div>
+	
+	<div id="navbarCollapse" class="collapse navbar-collapse">
+				
+    	<ul class="nav navbar-nav">
+      		<li><a href="/Card/home">Home</a></li>      		
+	    </ul>
+	</div>
 </nav>
+
 
 <div class="container">
 <h2>List of Cards in Deck: ${deck.title} </h2>
-	<table class="table table-condensed table-hover panel panel-default">
+	<div class="table-hover table-responsive">
+
+	<table class="table panel panel-default">
 		<tr>
 			<th><label>Title</label></th>
 			<th><label>Description</label></th>
@@ -28,4 +45,5 @@
 			</tr>
 		</c:forEach>
 	</table>
+</div>
 </div>

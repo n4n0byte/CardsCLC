@@ -4,11 +4,25 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 	
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="/Card">Card CLC</a></li>
-    </ul>
-  </div>
+		
+	<div class="navbar-header">
+		
+		<button data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+			<span class="sr-only">Toggle</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="/Card">Card CLC</a>
+				
+	</div>
+	
+	<div id="navbarCollapse" class="collapse navbar-collapse">
+				
+    	<ul class="nav navbar-nav">
+      		<li><a href="/Card/home">Home</a></li>      		
+	    </ul>
+	</div>
 </nav>
 
 
@@ -67,8 +81,11 @@
 			
 	<h2>Welcome ${user.username}</h2>
 	<h3>List of Decks</h3>
+	
+	
+	<div class="table-hover table-responsive">
+		<table class="table">
 		
-	<table class="table table-condensed table-hover">
 		<tr>
 			<th><label>Title</label></th>
 			<th><label>Description</label></th>
@@ -77,6 +94,7 @@
 			<th><label>Update Deck</label></th>
 			
 		</tr>
+		
 		<c:forEach var="deck" items="${decks}">
 			
 			<tr>
@@ -100,6 +118,8 @@
 			</tr>
 		</c:forEach>
 	</table>
+		
+	</div>
 	<div class="col-offset-sm-3 col-sm-12">
 		<a href="/Card/newDeck"><button>Add a Deck</button></a>		
 	</div>

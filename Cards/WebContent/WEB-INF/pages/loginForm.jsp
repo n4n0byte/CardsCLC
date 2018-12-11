@@ -6,12 +6,25 @@ pageEncoding="ISO-8859-1"%>
 
 
 <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <ul class="nav navbar-nav">
-      <li><a href="/Card">Card CLC</a></li>
-      <li><a href="/Card/register">Register</a></li>
-    </ul>
-  </div>
+
+	<div class="navbar-header">
+		
+		<button data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+			<span class="sr-only">Toggle</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="/Card">Card CLC</a>
+				
+	</div>
+	
+	<div id="navbarCollapse" class="collapse navbar-collapse">
+				
+    	<ul class="nav navbar-nav">
+      		<li><a href="/Card/register">Register</a></li>      		
+	    </ul>
+	</div>
 </nav>
 
 
@@ -21,7 +34,7 @@ pageEncoding="ISO-8859-1"%>
 	
 	<form:form method="POST" class="panel panel-default margin col-sm-offset-4 col-sm-4 form-horizontal"  modelAttribute="user" action="login">	
 	
-		
+		<h2>Login</h2>
 		<h2>
 			${message}
 		</h2>
