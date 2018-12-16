@@ -32,9 +32,12 @@ pageEncoding="ISO-8859-1"%>
 	
 	<div class="container">
 	
+	
 	<form:form method="POST" class="panel panel-default margin col-sm-offset-4 col-sm-4 form-horizontal"  modelAttribute="user" action="login">	
 	
 		<h2>Login</h2>
+		<h3>${msg}</h3>
+		
 		<script>
 		
 		$(function() {
