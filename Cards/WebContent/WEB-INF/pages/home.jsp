@@ -55,7 +55,7 @@
 	<div id="deleteConfirmation"></div>
 	<div class="panel panel-default">
 
-		<h2 class="panel-title">Welcome ${user.username}</h2>
+		<h2>Welcome ${user.username}</h2>
 		<h3>List of Decks</h3>
 
 
