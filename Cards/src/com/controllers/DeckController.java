@@ -80,7 +80,7 @@ public class DeckController {
 		Deck deck = deckSvc.findDeckByDeckId(deckId);
 		System.out.println(deck);
 		
-		// 
+		// return home with deck not found
 		if (deck == null) {
 			modelMap.put("message", "error");
 			return "redirect:home";

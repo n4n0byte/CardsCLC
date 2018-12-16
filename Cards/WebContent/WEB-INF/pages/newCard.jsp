@@ -1,27 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-<nav class="navbar navbar-default">
-		
-	<div class="navbar-header">
-		
-		<button data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-			<span class="sr-only">Toggle</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		<a class="navbar-brand" href="/Card">Card CLC</a>
-				
-	</div>
-	
-	<div id="navbarCollapse" class="collapse navbar-collapse">
-				
-    	<ul class="nav navbar-nav">
-      		<li><a href="/Card/home">Home</a></li>      		
-	    </ul>
-	</div>
-</nav>
 
 <div align="center">	
 	<form:form method="POST" class="panel panel-default margin col-sm-offset-4 col-sm-4 form-horizontal"  modelAttribute="cardWithDeckTitle" action="/Card/addCard">	

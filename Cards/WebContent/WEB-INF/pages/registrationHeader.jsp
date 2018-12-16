@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default">
-
+		
 	<div class="navbar-header">
 		
 		<button data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
@@ -15,7 +15,7 @@
 	<div id="navbarCollapse" class="collapse navbar-collapse">
 				
     	<ul class="nav navbar-nav">
-      		<li><a href="/Card/register">Register</a></li>      		
+      		<li><a href="/Card">Login</a></li>      		
 	    </ul>
 	</div>
 </nav>

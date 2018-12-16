@@ -4,10 +4,11 @@
 <tiles-definitions>
 
 	<definition name="register" extends="DefaultTemplate">
+    	<put-attribute name="header" value="/WEB-INF/pages/registrationHeader.jsp" />			
     	<put-attribute name="body" value="/WEB-INF/pages/registrationForm.jsp" />
 	</definition>
 	<definition name="login" extends="DefaultTemplate">
-    	<put-attribute name="header" value="/WEB-INF/pages/loginHeader.jsp" />		
+    	<put-attribute name="header" value="/WEB-INF/pages/loginHeader.jsp" />				
     	<put-attribute name="body" value="/WEB-INF/pages/loginForm.jsp" />
 	</definition>
 	<definition name="home" extends="DefaultTemplate">
@@ -45,12 +46,6 @@
 	</definition>
 		<definition name="displayFindById" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/displayFindById.jsp" />
-	</definition>
-	<definition name="calculator" extends="DefaultTemplate">
-    	<put-attribute name="body" value="/WEB-INF/pages/calculator.jsp" />
-	</definition>
-	<definition name="result" extends="DefaultTemplate">
-    	<put-attribute name="body" value="/WEB-INF/pages/result.jsp" />
 	</definition>
 	<definition name="errorPage" extends="DefaultTemplate">
     	<put-attribute name="body" value="/WEB-INF/pages/errorPage.jsp" />
