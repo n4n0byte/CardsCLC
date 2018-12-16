@@ -24,10 +24,11 @@
 </nav>
 
 <div align="center">	
-	<h2>Add Card To Deck</h2>
 	<form:form method="POST" class="panel panel-default margin col-sm-offset-4 col-sm-4 form-horizontal"  modelAttribute="cardWithDeckTitle" action="/Card/addCard">	
 	
 		
+		<h2>Add Card To Deck</h2>
+				
 		<h2>
 			${message}
 		</h2>	
@@ -75,7 +76,7 @@
 		
 		<div class="form-group">
 			<div class="col-sm-12">
-				<input type="submit" class="col-sm-offset-3 col-sm-6 btn btn-default" value="Submit"/>			
+				<input type="submit" class="col-sm-offset-3 col-sm-6 btn btn-primary" value="Submit"/>			
 			</div>
 		</div>
 		

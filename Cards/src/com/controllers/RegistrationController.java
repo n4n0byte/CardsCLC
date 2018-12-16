@@ -46,9 +46,7 @@ private CredentialsBusinessServiceInterface credentialsService;
 	@GetMapping("/register")
 	public String registerPage(ModelMap map) {
 		RegistrationForm registrationForm = new RegistrationForm();
-		registrationForm.setUser(new User());
 		map.addAttribute("registrationForm", registrationForm);
-		map.addAttribute("user", registrationForm.getUser());
 		return "register";
 	}	
 	
@@ -61,7 +59,7 @@ private CredentialsBusinessServiceInterface credentialsService;
 	@PostMapping("/register")
 	public String register(@Valid @ModelAttribute("registrationForm")RegistrationForm form, BindingResult result, ModelMap map) {
 		
-		map.addAttribute("user", form);
+		map.addAttribute("user", new User(form));
 		
 		if (result.hasErrors()) {
 			return "register";

@@ -1,12 +1,26 @@
 
 package com.models;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class User {
 
 	private int id;
 
+	@NotBlank
+	@NotEmpty
+	@Size(min = 3, max = 30, message = "First Name Must be between 3 and 30 characters")    
+	@NotNull
 	private String username;
 	
+	@NotBlank
+	@NotEmpty
+	@Size(min = 3, max = 30, message = "First Name Must be between 3 and 30 characters")    
+	@NotNull
 	private String password;
 	
 	private String firstName;
@@ -29,10 +43,12 @@ public class User {
 	}
 	
 	public User(RegistrationForm registrationForm) {
-		this(registrationForm.getUser());
 		this.email = registrationForm.getEmail();
 		this.firstName = registrationForm.getFirstName();
 		this.lastName = registrationForm.getLastName();
+		this.password = registrationForm.getPassword();
+		this.username = registrationForm.getFirstName();
+		this.password = registrationForm.getLastName();
 	}
 	
 	public User(int id, String username, String password, String firstName, String lastName, String email) {

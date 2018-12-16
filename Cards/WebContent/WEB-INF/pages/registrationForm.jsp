@@ -26,11 +26,10 @@
 </nav>
 
 
-
-<form:form method="POST" modelAttribute="registrationForm"
-	class="panel panel-default col-sm-offset-4 col-sm-4 form-horizontal"
+<form:form method="POST" modelAttribute="registrationForm"	class="panel panel-default col-sm-offset-4 col-sm-4 form-horizontal"
 	action="register">
-	<h2>Registration</h2>
+	
+	<h2>Registration</h2>			
 	<h2>${message}</h2>
 
 	<div class="form-group">
@@ -58,16 +57,13 @@
 
 	<div class="form-group">
 		<div class="col-sm-12">
-			<form:input path="user.username" placeholder="Username"
+			<form:input path="username" placeholder="Username"
 				class="form-control" minlength="3" maxlength="10"
 				required="required" />
 		</div>
 
 	</div>
-
-	<div class="col-sm-12">
-		<form:errors class="control-label" path="user.username" />
-	</div>
+	
 
 	<div class="form-group">
 		<div class="col-sm-12">
@@ -82,22 +78,25 @@
 
 	<div class="form-group">
 		<div class="col-sm-12">
-			<form:password path="user.password" placeholder="Password"
-				class="form-control" minlength="3" maxlength="10"
+			<form:password path="password" placeholder="Password"
+				class="form-control" minlength="3" maxlength="30"
 				required="required" />
 		</div>
 		<div class="col-sm-12">
-			<form:errors class="form-label" path="user.password" />
+			<form:errors class="form-label" path="password" />
 		</div>
 	</div>
-
+	
+	<div class="form-group">
+		<form:errors class="form-label" path="username"/>
+	</div>
 
 
 
 	<div class="form-group">
 		<div class="col-sm-12">
 			<input type="submit" class="col-sm-offset-3 col-sm-6 btn btn-default"
-				value="Login" />
+				value="Register" />
 		</div>
 	</div>
 
