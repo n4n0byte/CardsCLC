@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.models.RegistrationForm;
 import com.models.User;
 import com.services.interfaces.CredentialsBusinessServiceInterface;
-import com.utils.FieldChecker;
 
 
 /**

@@ -19,7 +19,7 @@ import com.models.User;
 import com.services.implementations.DeckBusinessService;
 import com.services.interfaces.DeckBusinessServiceInterface;
 import com.services.interfaces.GenericDAOInterface;
-import com.utils.FieldChecker;
+
 /**
  * 
  * @author Ali Cooper & Anthony Natividad
@@ -50,7 +50,8 @@ public class DeckController {
 	 */
 	@PostMapping("newDeck")
 	public String newDeck(@Valid @ModelAttribute("deck")Deck deck,ModelMap modelMap, BindingResult result, HttpServletRequest sess) {
-		if (FieldChecker.hasError(result, "title", "description")) {
+
+		if (result.hasErrors()) {
 			modelMap.put("message", "Validation Error");
 			return "newDeck";
 		}
@@ -96,7 +97,7 @@ public class DeckController {
 		System.out.println("IN ADD CARD POST: " + cardWithDeckTitle);
 		
 		//validate only title and description
-		if (FieldChecker.hasError(result, "title", "description")) {
+		if (result.hasErrors()) {
 			modelMap.put("message", "Validation Error");
 			return "newCard";
 		}
@@ -128,7 +129,7 @@ public class DeckController {
 	public String updateResponse(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result, HttpServletRequest req) {
 		
 		//validate only title and description
-		if (FieldChecker.hasError(result, "title", "description")) {
+		if (result.hasErrors()) {
 			modelMap.put("message", "Validation Error");
 			return "updateResponse.jsp";
 		}
@@ -153,7 +154,7 @@ public class DeckController {
 	public String displayfindById(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result) {
 		
 		//validate only title and description
-		if (FieldChecker.hasError(result, "title", "description")) {
+		if (result.hasErrors()) {
 			modelMap.put("message", "Validation Error");
 			return "displayFindByid.jsp";
 		}
