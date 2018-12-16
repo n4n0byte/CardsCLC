@@ -35,9 +35,21 @@ pageEncoding="ISO-8859-1"%>
 	<form:form method="POST" class="panel panel-default margin col-sm-offset-4 col-sm-4 form-horizontal"  modelAttribute="user" action="login">	
 	
 		<h2>Login</h2>
-		<h2>
-			${message}
-		</h2>
+		<script>
+		
+		$(function() {
+			if ("${msg}" !== ""){
+				// Some error notification
+				$("body").overhang({
+				  type: "error",
+				  message: "You could not be logged in at this time.",
+				  closeConfirm: "true"
+				});
+			}
+			
+		})
+
+		</script>
 		
 		<div id="loginForm" class="form-group">
 			

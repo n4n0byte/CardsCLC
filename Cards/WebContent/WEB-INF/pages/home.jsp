@@ -28,7 +28,7 @@
 <script type="text/javascript">
 	// wait until page is ready
 	$(function() {
-
+		
 		// initialize hidden confirmation dialog
 		$('#deleteConfirmation').dialog({
 			modal : true,
@@ -65,6 +65,7 @@
 
 		})
 
+		
 	})
 </script>
 

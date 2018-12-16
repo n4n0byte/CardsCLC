@@ -13,24 +13,18 @@
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.0/css/responsive.dataTables.css">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="//cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.js"></script>
-	
 	<spring:url value="/resources/css/main.css" var="mainCss" />
 	<link href="${mainCss}" rel="stylesheet" />
 	<script type="text/javascript" src="/Card/resources/external/jquery/jquery.js"></script>
 	<script type="text/javascript" src="/Card/resources/jquery-ui.js"></script>
 	<link href="/Card/resources/jquery-ui.css" rel="stylesheet">	
-	<script src="/Card/resources/anime.min.js"></script>
 	<script src="/Card/resources/particles.min.js"></script>	
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<!-- 
-	<spring:url value="/resources/bootstrap-3.3.7-dist/css/bootstrap.css" var="bootstrapCss" />
-	<link href="${bootstrapCss}" rel="stylesheet" />
-	<spring:url value="/resources/bootstrap-3.3.7-dist/js/bootstrap.js" var="bootstrapJs" />
-	<link href="${bootstrapJs}" rel="stylesheet" />
-	 -->
+	
+	<link rel="stylesheet" type="text/css" href="/Card/resources/overhang.min.css" />
+	<script type="text/javascript" src="/Card/resources/overhang.min.js"></script>
+	
 </head>
 
 <body>
@@ -163,8 +157,7 @@
 				    }
 				  },
 				  "retina_detect": true
-				}, function() {
-			  console.log('callback - particles.js config loaded');
+				}, function() {			  
 			});
 	  </script>
 	
