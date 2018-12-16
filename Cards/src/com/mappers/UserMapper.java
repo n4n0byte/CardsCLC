@@ -6,6 +6,11 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 import com.models.User;
 
+/**
+ * 
+ * @author Ali Cooper
+ * Maps objects to their respective db rows
+ */
 public class UserMapper implements RowMapper<User>{
 
 	@Override

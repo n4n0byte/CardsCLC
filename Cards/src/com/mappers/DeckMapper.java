@@ -7,6 +7,11 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.models.Deck;
 
+/**
+ * 
+ * @author Ali Cooper
+ * Maps objects to their respective db rows
+ */
 public class DeckMapper implements RowMapper<Deck>{
 
 	@Override

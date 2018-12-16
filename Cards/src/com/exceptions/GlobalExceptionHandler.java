@@ -4,6 +4,11 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * 
+ * @author Ali Cooper
+ * custom exception handling class 
+ */
 @ControllerAdvice(basePackages = "com.controllers")
 public class GlobalExceptionHandler {	
 	

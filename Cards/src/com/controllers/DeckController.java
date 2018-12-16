@@ -32,7 +32,7 @@ public class DeckController {
 	DeckBusinessServiceInterface deckSvc;
 	
 	/**
-	 * 
+	 * inject deck business service
 	 * @param iDeckBusinessService
 	 */
 	@Autowired
@@ -41,20 +41,25 @@ public class DeckController {
 	}
 	
 	/**
-	 * 
+	 * Creates a new deck with 
+	 * submitted deck model
 	 * @param deck
 	 * @param modelMap
 	 * @param result
 	 * @param sess
-	 * @return
+	 * @return new Deck View 
 	 */
 	@PostMapping("newDeck")
 	public String newDeck(@Valid @ModelAttribute("deck")Deck deck,ModelMap modelMap, BindingResult result, HttpServletRequest sess) {
-
+		
+		// validation 
 		if (result.hasErrors()) {
 			modelMap.put("message", "Validation Error");
 			return "newDeck";
 		}
+		
+		// get user from session and assign the given userId to
+		// the deck
 		User user = (User) sess.getSession().getAttribute("user");
 		deck.setUserId(user.getId());
 		deckSvc.addDeck(deck);
@@ -67,14 +72,17 @@ public class DeckController {
 	 * @param modelMap
 	 * @param attrs
 	 * @param sess
-	 * @return
+	 * @return Display deck View
 	 */
 	@GetMapping("displayDeck/{deckId}")
 	public String displayDeck(@PathVariable("deckId") int deckId,ModelMap modelMap, RedirectAttributes attrs, HttpServletRequest sess) {
 				
 		Deck deck = deckSvc.findDeckByDeckId(deckId);
 		System.out.println(deck);
+		
+		// 
 		if (deck == null) {
+			modelMap.put("message", "error");
 			return "redirect:home";
 		}
 		
@@ -89,7 +97,7 @@ public class DeckController {
 	 * @param cardWithDeckTitle
 	 * @param modelMap
 	 * @param result
-	 * @return
+	 * @return Deck View
 	 */
 	@PostMapping("addCard")
 	public String addCard(@ModelAttribute("cardWithDeckTitle")CardWithDeckTitle cardWithDeckTitle, ModelMap modelMap, BindingResult result) {
@@ -115,7 +123,7 @@ public class DeckController {
 	 * @param modelMap
 	 * @param result
 	 * @param attrs
-	 * @return
+	 * @return Updates deck
 	 */
 	@GetMapping("updateDeck/{deckTitle}")
 	public ModelAndView updateDeck(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result, RedirectAttributes attrs) {
@@ -125,6 +133,14 @@ public class DeckController {
 		
 	}
 	
+	/**
+	 * Updates a deck
+	 * @param deck
+	 * @param modelMap
+	 * @param result
+	 * @param req
+	 * @return Home View
+	 */
 	@PostMapping("updateResponse")
 	public String updateResponse(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result, HttpServletRequest req) {
 		
@@ -143,6 +159,12 @@ public class DeckController {
 		
 	}	
 	
+	/**
+	 * Deletes a deck
+	 * @param title
+	 * @param modelMap
+	 * @return Home View
+	 */
 	@GetMapping("deleteDeck/{deckTitle}")
 	public String deleteDeck(@PathVariable("deckTitle") String title, ModelMap modelMap) {
 		deckSvc.deleteDeckByTitle(title);
@@ -150,6 +172,13 @@ public class DeckController {
 		
 	}
 	
+	/**
+	 * displays deck by id
+	 * @param deck
+	 * @param modelMap
+	 * @param result
+	 * @return Display Deck View
+	 */
 	@PostMapping("displayfindById")
 	public String displayfindById(@ModelAttribute("Deck")Deck deck, ModelMap modelMap, BindingResult result) {
 		
@@ -160,7 +189,6 @@ public class DeckController {
 		}
 		
 		modelMap.put("message", "Successfully updated Deck");
-//		deckSvc.updateByModelName(deck, deck.getTitle());
 		deckSvc.updateDeck(deck);
 		return "redirect:/home";
 		

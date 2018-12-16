@@ -9,6 +9,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.exceptions.DAOException;
+import com.exceptions.NotImplementedException;
 import com.mappers.UserMapper;
 import com.models.Card;
 import com.models.User;
@@ -17,7 +18,7 @@ import com.services.interfaces.GenericDAOInterface;
  * 
  * @author Anthony Natividad and Ali Cooper
  * CardDAO has all CRUD operations for our Card model
- * however only few are used and are used for authentification purposes
+ * however only few are used and are used for authentication purposes
  */
 public class UserDAO implements GenericDAOInterface<User> {
 
@@ -81,7 +82,7 @@ public class UserDAO implements GenericDAOInterface<User> {
 	 */
 	@Override
 	public boolean deleteById(int id) {
-		return false;
+		throw new NotImplementedException();
 	}
 
 	/**
@@ -89,7 +90,7 @@ public class UserDAO implements GenericDAOInterface<User> {
 	 */
 	@Override
 	public boolean updateById(User input, int id) {
-		return false;
+		throw new NotImplementedException();
 	}
 
 	/**

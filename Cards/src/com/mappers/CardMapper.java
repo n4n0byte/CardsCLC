@@ -7,8 +7,14 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.models.Card;
 
+/**
+ * 
+ * @author Ali Cooper
+ * Maps objects to their respective db rows
+ */
 public class CardMapper implements RowMapper<Card> {
-
+	
+	
 	@Override
 	public Card mapRow(ResultSet arg0, int arg1) throws SQLException {
 		

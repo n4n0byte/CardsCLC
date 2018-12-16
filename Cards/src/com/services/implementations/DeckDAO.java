@@ -25,10 +25,10 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 	private DataSource dataSource;
 	private JdbcTemplate jdbcTemplateObject;
 	private GenericDAOInterface<Card> cardDAO;
-	
+
 	/**
-	 * sets data source
-	 * instantiates JDBC templae object
+	 * sets data source instantiates JDBC templae object
+	 * 
 	 * @param dataSource
 	 */
 	@Autowired
@@ -40,6 +40,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 
 	/**
 	 * sets Card Data Access Object
+	 * 
 	 * @param cardDAO
 	 */
 	@Autowired
@@ -57,8 +58,8 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 		List<Deck> decks = null;
 
 		try {
-			decks = jdbcTemplateObject.query("select * from carddb.decks where id = BINARY ? limit 1", new Object[] { id },
-					new DeckMapper());
+			decks = jdbcTemplateObject.query("select * from carddb.decks where id = BINARY ? limit 1",
+					new Object[] { id }, new DeckMapper());
 			if (decks.size() > 0) {
 				decks.get(0).setCards(cardDAO.findAllById(decks.get(0).getDeckId()));
 				return decks.get(0);
@@ -77,11 +78,19 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 	 */
 	@Override
 	public Deck findByName(String title) {
-		List<Deck> decks = jdbcTemplateObject.query("select * from carddb.decks where title = BINARY ? limit 1",
-				new Object[] { title }, new DeckMapper());
-		if (decks.size() > 0) {
-			decks.get(0).setCards(cardDAO.findAllById(decks.get(0).getDeckId()));
-			return decks.get(0);
+		List<Deck> decks = null;
+
+		try {
+			decks = jdbcTemplateObject.query("select * from carddb.decks where title = BINARY ? limit 1",
+					new Object[] { title }, new DeckMapper());
+			if (decks.size() > 0) {
+				decks.get(0).setCards(cardDAO.findAllById(decks.get(0).getDeckId()));
+				return decks.get(0);
+			}
+		} catch (DataAccessException e) {
+			throw new DAOException(e.getMessage() + "\n" + e.getStackTrace(), e);
+		} catch (Exception e) {
+			throw new DAOException(e.getMessage(), e);
 		}
 
 		return null;
@@ -127,8 +136,7 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 	}
 
 	/**
-	 * updates deck by its id
-	 * passes in a deck object
+	 * updates deck by its id passes in a deck object
 	 */
 	@Override
 	public boolean updateById(Deck input, int id) {
@@ -212,7 +220,6 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 
 	}
 
-
 	/**
 	 * Not used for Deck object
 	 */
@@ -223,21 +230,10 @@ public class DeckDAO implements GenericDAOInterface<Deck> {
 	}
 
 	/**
-	 * Passes in a card model
-	 * adds a card to an existing deck
-	 * deck is updated
+	 * Passes in a card model adds a card to an existing deck deck is updated
 	 */
 	@Override
 	public void addCardWithName(Card model, String name) {
-		try {
-//			jdbcTemplateObject.update("INSERT INTO carddb.cards (deckId,title,description,health,damage) VALUES (?,?,?,?,?)",name+"WHERE deckId=);
-
-		} catch (DataAccessException e) {
-			throw new DAOException(e.getMessage() + "\n" + e.getStackTrace(), e);
-		} catch (Exception e) {
-			throw new DAOException(e.getMessage(), e);
-		}
-		
 	}
 
 }

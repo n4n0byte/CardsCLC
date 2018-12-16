@@ -37,23 +37,7 @@ pageEncoding="ISO-8859-1"%>
 	
 		<h2>Login</h2>
 		<h3>${msg}</h3>
-		
-		<script>
-		
-		$(function() {
-			if ("${msg}" !== ""){
-				// Some error notification
-				$("body").overhang({
-				  type: "error",
-				  message: "You could not be logged in at this time.",
-				  closeConfirm: "true"
-				});
-			}
-			
-		})
-
-		</script>
-		
+				
 		<div id="loginForm" class="form-group">
 			
 			<div class="col-sm-12">

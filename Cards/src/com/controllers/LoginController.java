@@ -34,7 +34,7 @@ public class LoginController {
 	
 	/**
 	 * home page for login
-	 * @return
+	 * @return Login view with an empty user model
 	 */
 	@GetMapping("/")
 	public ModelAndView login() {
